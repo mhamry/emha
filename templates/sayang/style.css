@@ -1,0 +1,924 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+  background-image: url("image/home-bg.png");
+}
+
+:root {
+  --primary: #d25353;
+  --secondary: #ea7b7b;
+  --dark: #9e3b3b;
+  --light: #ffead3;
+  --sacramento: "Sacramento";
+  --poppins: "Poppins";
+  --ballet: "Ballet";
+  --cinzel: "Cinzel";
+}
+
+/* landing-top */
+
+.landing-top {
+  position: fixed;
+  left: 250px;
+  right: 250px;
+  height: 100vh;
+  overflow: hidden;
+  background-image: radial-gradient(circle at top left, var(--dark), var(--secondary));
+  z-index: 10;
+  transition: 2s ease-in-out;
+}
+
+.landing-top.hide {
+  transform: translateY(-100%);
+}
+
+.landing-top .floral-wrapper .top-left,
+.hero .floral-wrapper .top-left,
+.groom-bride .floral-wrapper .top-left,
+.love-story .floral- .top-left,
+.galery .floral-wrapper .top-left,
+.congrat .floral-wrapper .top-left,
+.rsvp .floral-wrapper .top-left,
+.thankyou .floral-wrapper .top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.landing-top .floral-wrapper .bottom-right,
+.hero .floral-wrapper .bottom-right,
+.groom-bride .floral-wrapper .bottom-right,
+.love-story .floral-wrapper .bottom-right,
+.galery .floral-wrapper .bottom-right,
+.congrat .floral-wrapper .bottom-right,
+.rsvp .floral-wrapper .bottom-right,
+.thankyou .floral-wrapper .bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.floral-wrapper img {
+  animation: scaling 10s infinite;
+  transition: 2s;
+}
+
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.09);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.landing-top button {
+  padding: 5px 15px;
+  background-color: var(--light);
+  color: var(--dark);
+  border-radius: 20px;
+  border: 4px solid var(--light);
+}
+
+.landing-top .content {
+  position: relative;
+  margin-top: 50px;
+  color: white;
+}
+.landing-top h2 {
+  font-family: var(--sacramento);
+  font-size: 50px;
+}
+
+.landing-top .gambar {
+  position: relative;
+}
+
+.landing-top .pengantin {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-53%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.landing-top .gambar {
+  line-height: 0;
+}
+
+.landing-top .lingkaran {
+  animation: rotating 70s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* landing bottom */
+.landing-bottom {
+  width: calc(100% - 500px);
+  margin: auto;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* background-color: #262626; */
+  height: 100vh;
+  height: 100vh;
+  background-image: radial-gradient(circle, #280905, #262626);
+  color: white;
+}
+.hero .content {
+  margin-top: 50px;
+  overflow-x: hidden;
+}
+
+.hero h2 {
+  font-family: var(--sacramento);
+  font-size: 50px;
+}
+
+.hero .content > * {
+  position: relative;
+  z-index: 3;
+}
+
+.hero .content .image-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: auto;
+  --bg: url("image/2.jpg");
+  border: 4px solid white;
+  position: relative;
+  overflow: hidden;
+}
+.hero .content .image-wrapper::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bg);
+  background-position: center;
+  background-size: cover;
+  transition: all 2s ease-in-out;
+}
+
+.hero .content .image-wrapper.fade-out::before {
+  opacity: 0.1;
+}
+.hero .content .image-wrapper.fade-in::before {
+  opacity: 0.8;
+}
+
+/* quote */
+
+.quote {
+  padding: 70px 0;
+  background-color: var(--light);
+  color: black;
+  overflow-x: hidden;
+}
+
+.quote .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-family: var(--cinzel);
+  font-weight: bold;
+}
+
+.quote .header h1 {
+  font-size: 60px;
+}
+.quote p {
+  font-family: "Poppins";
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.quote .span {
+  font-style: italic;
+  font-size: larger;
+}
+
+.quote .header i {
+  font-size: 40px;
+  color: var(--dark);
+}
+/* groom-bride */
+.groom-bride {
+  padding: 70px 40px;
+  font-family: var(--poppins);
+  color: white;
+  background-color: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.groom-bride .couple {
+  padding: 40px 40px !important;
+
+  border-radius: 20px;
+  color: white;
+  position: relative;
+}
+
+.groom-bride .couple > * {
+  position: relative;
+  z-index: 1;
+}
+
+.groom-bride .couple::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  opacity: 0.5;
+  border-radius: 20px;
+}
+
+.groom-bride h2 {
+  font-size: 60px;
+  font-family: var(--sacramento);
+  font-weight: bold;
+}
+.groom-bride h3 {
+  font-size: 20px;
+}
+
+.groom-bride .couple img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  aspect-ratio: 1;
+}
+
+/* info-acara */
+
+.info-acara {
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  --bg: url("image/2.jpg");
+}
+
+.info-acara > * {
+  position: relative;
+  z-index: 1;
+}
+
+.info-acara::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.9;
+}
+.info-acara::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 2s;
+  opacity: 0.4;
+}
+
+.info-acara.fade-out::after {
+  opacity: 0.2;
+}
+.info-acara.fade-in::after {
+  opacity: 0.4;
+}
+
+.info-acara h2 {
+  font-family: var(--sacramento);
+  font-size: 60px;
+  font-weight: bold;
+}
+.info-acara h3 {
+  font-size: 25px;
+}
+
+/* Love story */
+.love-story {
+  padding: 70px 0;
+  position: relative;
+  color: white !important;
+  background-image: radial-gradient(circle, #280905, #262626);
+  z-index: 2;
+  font-family: var(--poppins);
+  overflow: hidden;
+}
+
+.love-story .floral-wrapper {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+
+.love-story .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.love-story .header .line {
+  width: 40%;
+  height: 4px;
+  background-color: var(--dark);
+}
+.love-story .header .text1 {
+  font-size: 50px;
+  font-family: "Poppins";
+  font-style: italic;
+}
+.love-story .header .text2 {
+  font-size: 60px;
+  font-family: "Ballet";
+  font-style: italic;
+  margin-top: -50px;
+}
+
+.love-story img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.love-story .floral-wrapper img {
+  width: 400px;
+}
+
+.love-story .gambar {
+  box-shadow: 10px 10px 10px rgba(200, 200, 200, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.love-story .judul {
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Poppins";
+  margin-top: 20px;
+}
+.love-story .ket {
+  font-size: 14px;
+  font-family: "Poppins";
+  font-style: italic;
+  color: #fff;
+}
+
+/* Galery */
+
+.galery {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 70px;
+  background-color: var(--dark);
+  z-index: 1;
+}
+
+.galery h3 {
+  font-size: 42px;
+  font-family: var(--sacramento);
+}
+
+.galery .content {
+  padding: 30px 20px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.galery .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  padding: 40px 0;
+  opacity: 0.6;
+  z-index: -1;
+  border-radius: 15px;
+}
+.galery a img {
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.galery .satu {
+  display: none;
+}
+
+.galery iframe {
+  border-radius: 20px;
+}
+
+/* wedding-gift */
+.gift {
+  padding: 100px 0;
+  position: relative;
+  --bgImage: url("image/2.jpg");
+  z-index: 2;
+  overflow: hidden;
+}
+.gift > * {
+  position: relative;
+  z-index: 2;
+}
+
+.gift::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bgImage);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 2s;
+}
+
+.gift.fade-out::after {
+  opacity: 0.2;
+}
+.gift.fade-in::after {
+  opacity: 0.8;
+}
+.gift::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.gift .bri {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins";
+  text-align: start;
+}
+.gift .bri span {
+  font-family: "Poppins";
+}
+.gift .bri img {
+  width: 100px;
+  height: 50px;
+}
+
+.gift .bri span {
+  color: black;
+}
+.gift .bri h3 {
+  color: black;
+}
+
+.gift .rek {
+  padding: 10px 100px;
+}
+
+.gift .line {
+  width: 100%;
+  height: 4px;
+  background-color: crimson;
+  margin-top: 7px;
+}
+.gift button {
+  font-size: small;
+}
+
+.gift .card {
+  opacity: 0.7;
+}
+
+/* base */
+.collapse {
+  overflow: hidden;
+}
+
+/* saat proses buka & tutup */
+.collapsing {
+  transition:
+    height 5s ease,
+    opacity 5s ease,
+    transform 6s ease-in-out;
+}
+
+/* kondisi tertutup */
+.collapse:not(.show) {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* kondisi terbuka */
+.collapse.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.audio-icon .icon-wrapper {
+  mix-blend-mode: difference;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Congrat */
+
+.congrat {
+  padding: 80px 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark);
+}
+
+.congrat .content {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.congrat .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  padding: 40px 0;
+  opacity: 0.6;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.congrat h2 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+  color: #222;
+}
+.congrat p {
+  font-family: "Poppins";
+  color: #888;
+}
+
+.congrat input,
+.congrat textarea {
+  font-family: "Poppins";
+  font-size: 15px;
+  padding: 15px 15px;
+  color: grey;
+}
+
+.congrat .kotak-pesan {
+  height: 60vh;
+  margin-top: 20px;
+  background: #f0fafa;
+  overflow-y: scroll;
+  padding: 20px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.congrat .kotak-pesan .text-pesan {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+.congrat .kotak-pesan .text-pesan p {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.congrat .kotak-pesan .text-pesan span {
+  font-family: "Poppins";
+  color: grey;
+}
+
+/* rsvp */
+
+.rsvp {
+  padding: 80px 50px;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #280905, #262626);
+  z-index: 1;
+}
+
+.rsvp .floral-wrapper img {
+  z-index: 2;
+}
+
+.rsvp .content {
+  position: relative;
+  padding: 30px 0;
+  border-radius: 20px;
+  z-index: 2;
+}
+.rsvp .content::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: #fff7cd;
+  padding: 30px 0;
+  border-radius: 20px;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.rsvp .floral-wrapper img {
+  z-index: 2;
+}
+
+.rsvp h3 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+}
+.rsvp p {
+  font-family: "Poppins";
+  color: gray;
+}
+
+.rsvp label {
+  font-family: "Poppins";
+  font-weight: bold;
+}
+
+.rsvp input,
+.rsvp select {
+  padding: 10px 10px;
+}
+
+/* thankyou */
+
+.thankyou {
+  padding: 70px 50px;
+  position: relative;
+  color: white !important;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--light);
+}
+
+.thankyou .floral-wrapper img {
+  z-index: 3;
+}
+
+.thankyou > * {
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou .content {
+  position: relative;
+  padding: 50px 0;
+  border-radius: 20px;
+}
+
+.thankyou .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--dark);
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.thankyou h3 {
+  font-size: 30px;
+  font-family: "Poppins";
+  font-style: italic;
+  margin-bottom: 20px;
+  color: black;
+}
+.thankyou i {
+  color: red;
+}
+
+.thankyou .nama_pengantin {
+  font-size: 45px;
+}
+
+.thankyou p {
+  color: black;
+}
+
+.thankyou .medsos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+.thankyou .medsos i {
+  color: black;
+}
+
+.thankyou .floral-wrapper {
+  position: absolute;
+  inset: 0;
+}
+/* audio-icon */
+.audio-icon {
+  position: fixed;
+  display: flex;
+  place-content: center;
+  line-height: 0;
+  transform-origin: center;
+  cursor: pointer;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  z-index: 11;
+  animation: rotating 4s linear infinite;
+}
+/* responsive */
+@media (max-width: 578px) {
+  .landing-top {
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .landing-top .content {
+    margin-top: 50px;
+    overflow-x: hidden;
+  }
+
+  .landing-top .floral-wrapper img {
+    width: 350px;
+  }
+
+  .landing-top .lingkaran {
+    width: 310px;
+  }
+
+  .landing-top .pengantin {
+    width: 250px;
+    top: 20px;
+  }
+
+  .landing-top .nama-pengantin {
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .landing-top .undangan {
+    margin-top: -30px;
+  }
+
+  .landing-top .nama {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* landing-bottom */
+  .landing-bottom {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* hero */
+
+  .hero .content {
+    margin-top: 80px;
+    overflow-x: hidden;
+  }
+
+  .hero .content .image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  /* groom-bride */
+
+  .groom-bride {
+    padding: 80px 10px;
+    overflow-x: hidden;
+  }
+
+  .groom-bride h2 {
+    font-size: 40px;
+  }
+  .groom-bride h3 {
+    font-size: 15px;
+  }
+  .groom-bride p {
+    font-size: 12px;
+  }
+  .groom-bride .couple {
+    padding: 0 10px !important;
+  }
+
+  /* galery */
+
+  .galery {
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+  .galery iframe {
+    width: 100%;
+    height: 250px;
+  }
+
+  .galery .floral-wrapper img {
+    width: 350px;
+  }
+
+  .galery a img {
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .galery .satu {
+    display: block;
+  }
+
+  /* gift */
+
+  .gift {
+    overflow-x: hidden;
+  }
+  .gift .rek {
+    padding: 10px 15px;
+  }
+
+  /* congrat */
+
+  .congrat {
+    margin-top: 50px;
+    padding: 50px 15px;
+    overflow-x: hidden;
+  }
+
+  .congrat .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* rsvp */
+
+  .rsvp {
+    padding: 50px 15px;
+  }
+
+  .rsvp .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* thankyou */
+  .thankyou .nama_pengantin {
+    font-size: 35px;
+  }
+
+  .thankyou i {
+    font-size: 25px;
+  }
+
+  .thankyou .medsos i {
+    font-size: 20px;
+  }
+
+  .thankyou {
+    padding: 40px 20px;
+  }
+  .thankyou img {
+    width: 300px;
+  }
+}

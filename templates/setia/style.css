@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sacramento: "Sacramento";
+  --swash: "Berkshire Swash";
+  --poppins: "Poppins";
+  --primary: #0c7779;
+  --secondary: #005461;
+  --blue: #3bc1a8;
+  --bluedark: #249e94;
+}
+body {
+  background-image: url(image/body-bg.png);
+  overflow: hidden;
+}
+
+.landing-top {
+  position: fixed;
+  display: flex;
+  left: 250px;
+  right: 250px;
+  align-items: center;
+  height: 100vh;
+  background-image: url(image/bg-landingtop.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: 2s;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.landing-top::before {
+  content: "";
+  background-image: linear-gradient(to top, rgba(0, 84, 97, 1) 0%, rgba(0, 84, 97, 0));
+  bottom: 0;
+  position: absolute;
+  display: block;
+  height: 80%;
+  width: 100%;
+  z-index: -1;
+}
+
+.landing-top.hide {
+  transform: translateY(-100vh);
+  opacity: 0.3;
+}
+
+.landing-top .content {
+  color: white;
+}
+
+.landing-top .nama-pengantin {
+  font-family: var(--swash);
+  font-size: 45px;
+  letter-spacing: 7px;
+}
+
+.landing-top button {
+  padding: 5px 15px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.floral-wrapper .bottom-satu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.floral-wrapper .bottom-dua {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+}
+.floral-wrapper .bottom-tiga {
+  position: absolute;
+  bottom: 0;
+  left: 60%;
+}
+.floral-wrapper .bottom-empat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.floral-wrapper .kupu-satu {
+  position: absolute;
+  bottom: 25%;
+  left: 40px;
+}
+.floral-wrapper .kupu-dua {
+  position: absolute;
+  bottom: 25%;
+  right: 40px;
+}
+
+.floral-wrapper .bottom-satu img,
+.floral-wrapper .bottom-dua img,
+.floral-wrapper .bottom-tiga img,
+.floral-wrapper .bottom-empat img {
+  transition: 3s;
+  animation: rotating 10s infinite linear;
+  transform-origin: bottom center;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.floral-wrapper .bottom-satu img {
+  animation-delay: 0;
+}
+.floral-wrapper .bottom-dua img {
+  animation-delay: 2s;
+}
+.floral-wrapper .bottom-tiga img {
+  animation-delay: 4s;
+}
+.floral-wrapper .bottom-empat img {
+  animation-delay: 6s;
+}
+
+/* landing bottom */
+
+.landing-bottom {
+  position: relative;
+  background-color: red;
+  transition: 2s;
+  width: calc(100% - 500px);
+  margin: auto;
+  overflow: hidden;
+}
+
+/* hero */
+
+.hero {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  margin: auto;
+  background-image: radial-gradient(circle at top left, var(--secondary), var(--blue));
+}
+
+.hero .image-wrapper {
+  width: 280px;
+  height: 330px;
+  --bg: url("image/9.jpg");
+  border: 4px solid white;
+  border-radius: 20px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  transition: 2s;
+}
+.hero .nama-pengantin {
+  font-family: var(--swash);
+  font-size: 45px;
+  letter-spacing: 7px;
+}
+
+.hero .image-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero .image-wrapper::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bg);
+  background-position: center;
+  background-size: cover;
+  transition: all 3s;
+}
+
+.hero .image-wrapper.fade-in::before {
+  opacity: 0.05;
+}
+.hero .image-wrapper.fade-out::before {
+  opacity: 0.7;
+}
+
+/* quote */
+
+.quote {
+  padding: 80px 0;
+  background-image: linear-gradient(to top, var(--blue), white);
+  color: black;
+  position: relative;
+}
+
+.quote .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-family: var(--swash);
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.quote .kupu-satu {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  right: -10px;
+  animation: flying 20s infinite linear;
+}
+
+.quote span {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+/* aglery */
+
+.galery {
+  padding: 80px 0;
+  background-image: linear-gradient(to top, var(--primary), white);
+}
+
+/* thumbnail carousel */
+.thumb-wrapper {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.thumb-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+}
+
+.thumb-track img {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.thumb-track img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumb-track img.active {
+  opacity: 1;
+  border: 2px solid white;
+}
+
+.thumb-track {
+  animation: run 20s linear infinite;
+}
+
+@keyframes run {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.thumb-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-inner {
+  border-radius: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 576px) {
+  .main-gallery {
+    border-radius: 12px;
+  }
+
+  .thumb-track img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 578px) {
+  .landing-top {
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .landing-top h6 {
+    margin-top: 200px;
+  }
+
+  .landing-top .nama-pengantin,
+  .hero .nama-pengantin {
+    font-size: 30px;
+  }
+
+  .landing-top .floral-wrapper img {
+    width: 70px;
+  }
+
+  .landing-top .floral-wrapper .kupu-satu {
+    position: absolute;
+    bottom: 6%;
+    left: 40px;
+  }
+  .landing-top .floral-wrapper .kupu-dua {
+    position: absolute;
+    bottom: 7%;
+    right: 40px;
+  }
+  .floral-wrapper .kupu-satu {
+    position: absolute;
+    bottom: 14%;
+    left: 40px;
+  }
+  .floral-wrapper .kupu-dua {
+    position: absolute;
+    bottom: 15%;
+    right: 40px;
+  }
+
+  /* landing bottom */
+  .landing-bottom {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* hero */
+
+  .hero .floral-wrapper img {
+    width: 90px;
+  }
+}

@@ -1,0 +1,1040 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden; /* scroll terkunci awal */
+  background-color: bisque;
+}
+
+/* main */
+main {
+  margin: auto;
+  max-width: calc(100% - 500px);
+}
+
+/* ================= LANDING ATAS ================= */
+.landing-top {
+  position: absolute;
+  left: 200px;
+  right: 200px;
+  height: 100vh;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%),
+    url("image/thumbnail/1.png") center / cover no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  transition: transform 3s ease-in;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  transition: transform 3s ease-in;
+}
+
+.landing-top h2 {
+  font-family: "Sacramento";
+  font-size: 60px;
+  color: #ff0087;
+}
+
+.landing-top.hide {
+  transform: translateY(-100vh);
+}
+
+.landing-top h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: "Poppins";
+}
+.landing-top h3 {
+  font-size: 2rem;
+  font-family: "Poppins";
+}
+
+.landing-top p {
+  margin-bottom: 30px;
+  font-family: "Poppins";
+}
+
+.btn-open {
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: none;
+  background: #d4af37;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-open:hover {
+  background: #b8962e;
+}
+
+.landing-top button {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.landing-top .maaf {
+  font-size: 12px;
+  font-style: italic;
+  color: white;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  transition: all 2s ease-in-out;
+  z-index: 1;
+  position: relative;
+  color: white;
+}
+
+.hero h2 {
+  font-family: "Sacramento";
+  font-size: 70px;
+}
+
+.fade-out::before {
+  opacity: 0.3;
+}
+
+.hero::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  opacity: 0.5;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+.hero .content {
+  padding-top: 400px;
+}
+
+/* quote */
+
+.quote {
+  padding: 70px 0;
+  background-image: url("image/home-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.quote .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.quote .header h1 {
+  font-size: 60px;
+}
+.quote p {
+  font-family: "Poppins";
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.quote .span {
+  font-style: italic;
+  font-size: larger;
+}
+
+.quote .header .line {
+  width: 1px;
+  height: 100px;
+  background-color: #777;
+}
+/* groom-bride */
+
+.groom-bride {
+  padding: 80px 0;
+  --bg: url("image/utama/1.png");
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.groom-bride > * {
+  position: relative;
+  z-index: 2;
+}
+
+.groom-bride::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 0 -113px;
+  transition: all 2s ease-in-out;
+  z-index: 0;
+}
+.groom-bride.fade-out::before {
+  opacity: 0.04;
+}
+.groom-bride.fade-in::before {
+  opacity: 0.1;
+}
+
+.groom-bride .groom {
+  font-size: 60px;
+  font-family: "Poppins";
+  display: inline-block;
+}
+.groom-bride .bride {
+  font-size: 60px;
+  display: inline-block;
+  font-family: "Ballet";
+  margin-top: -35px;
+}
+
+.groom-bride .h5,
+.groom-bride p {
+  font-family: "Poppins";
+}
+
+.groom-bride .tombol,
+.save-date .tombol {
+  display: flex;
+  padding: 6px 3px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  width: 180px;
+  justify-content: center;
+  border-radius: 6px;
+}
+.save-date .tombol {
+  margin: auto;
+}
+
+.groom-bride .groom-text {
+  margin-left: 30px;
+}
+.groom-bride .groom-text h5,
+.groom-bride .bride-text h5 {
+  font-size: 25px;
+}
+.groom-bride .bride-text {
+  margin-left: 30px;
+}
+
+.groom-bride .kiri {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.groom-bride .kanan {
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Membalik arah slide carousel (kiri → kanan) */
+.kiri .carousel-item-next:not(.carousel-item-start),
+.kiri .active.carousel-item-end {
+  transform: translateX(-100%);
+}
+
+.kiri .carousel-item-prev:not(.carousel-item-end),
+.kiri .active.carousel-item-start {
+  transform: translateX(100%);
+}
+
+.groom-bride .carousel-item {
+  transition: 4s ease-in-out;
+}
+
+/* save the date */
+
+.save-date {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.save-date h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.save-date > * {
+  position: relative;
+  z-index: 2;
+}
+
+.save-date::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.save-date .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* animasi carousel bawah-atas */
+
+.bawah-atas .carousel-item-next:not(.carousel-item-start),
+.bawah-atas .active.carousel-item-end {
+  transform: translateY(100%);
+}
+
+.bawah-atas .carousel-item-prev:not(.carousel-item-end),
+.bawah-atas .active.carousel-item-start {
+  transform: translateY(-100%);
+}
+
+.save-date .carousel-item {
+  transition: 4s ease-in-out;
+}
+/* wedding event */
+
+.wedding-event {
+  padding: 80px 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.wedding-event > * {
+  z-index: 2;
+  position: relative;
+}
+
+.wedding-event::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: url("image/home-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  /* opacity: 0.5; */
+}
+
+/* Membalik arah slide carousel (kiri → kanan) */
+.two .carousel-item-next:not(.carousel-item-start),
+.two .active.carousel-item-end {
+  transform: translateX(-100%);
+}
+
+.two .carousel-item-prev:not(.carousel-item-end),
+.two .active.carousel-item-start {
+  transform: translateX(100%);
+}
+
+.wedding-event .carousel-inner .carousel-item {
+  transition: all 4s;
+}
+
+.wedding-event .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.wedding-event .header .line {
+  width: 50%;
+  height: 4px;
+  background-color: crimson;
+}
+.wedding-event .header .text1 {
+  font-size: 50px;
+  font-family: "Poppins";
+  font-style: italic;
+}
+.wedding-event .header .text2 {
+  font-size: 60px;
+  font-family: "Ballet";
+  font-style: italic;
+  margin-top: -50px;
+}
+
+.wedding-event .satu {
+  border-top-right-radius: 50%;
+}
+.wedding-event .dua {
+  border-top-left-radius: 50%;
+}
+.wedding-event .tiga {
+  border-top-right-radius: 50%;
+}
+.wedding-event .card .card-body .widget {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wedding-event .card .card-body .widget .resepsi p {
+  transform: rotate(-90deg);
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+.wedding-event .card .card-body .tanggal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+
+/* Love story */
+.love-story {
+  padding: 80px 0;
+  position: relative;
+  --bgImg: url("image/utama/1.png");
+}
+
+.love-story > * {
+  position: relative;
+  z-index: 3;
+}
+
+.love-story::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bgImg);
+  background-position: 0 -115px;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: all 2s ease-in-out;
+  z-index: 0;
+}
+
+.love-story.fade-out::before {
+  opacity: 0.04;
+}
+.love-story.fade-in::before {
+  opacity: 0.1;
+}
+
+.love-story .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.love-story .header .line {
+  width: 40%;
+  height: 4px;
+  background-color: crimson;
+}
+.love-story .header .text1 {
+  font-size: 50px;
+  font-family: "Poppins";
+  font-style: italic;
+}
+.love-story .header .text2 {
+  font-size: 60px;
+  font-family: "Ballet";
+  font-style: italic;
+  margin-top: -50px;
+}
+
+.love-story img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.love-story .gambar {
+  box-shadow: 10px 10px 10px rgba(78, 0, 20, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.love-story .judul {
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Poppins";
+  margin-top: 20px;
+}
+.love-story .ket {
+  font-size: 14px;
+  font-family: "Poppins";
+  font-style: italic;
+  color: #999;
+}
+
+/* galery */
+
+.galery {
+  padding: 80px 0;
+  background-color: #f0fafa;
+}
+.galery .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.galery .header .line {
+  width: 40%;
+  height: 4px;
+  background-color: crimson;
+}
+.galery .header .text1 {
+  font-size: 50px;
+  font-family: "Poppins";
+  font-style: italic;
+}
+.galery .header .text2 {
+  font-size: 60px;
+  font-family: "Ballet";
+  font-style: italic;
+  margin-top: -50px;
+}
+
+/* wedding-gift */
+.wedding-gift {
+  padding: 100px 0;
+  position: relative;
+  --bgImage: url("image/utama/1.png");
+  z-index: 2;
+}
+.wedding-gift > * {
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-gift::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bgImage);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 2s;
+}
+
+.wedding-gift.fade-out::after {
+  opacity: 0.2;
+}
+.wedding-gift.fade-in::after {
+  opacity: 0.8;
+}
+.wedding-gift::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.wedding-gift .bri {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins";
+  text-align: start;
+}
+.wedding-gift .bri span {
+  font-family: "Poppins";
+}
+.wedding-gift .bri img {
+  width: 100px;
+  height: 50px;
+}
+
+.wedding-gift .bri span {
+  color: black;
+}
+.wedding-gift .bri h3 {
+  color: black;
+}
+
+.wedding-gift .rek {
+  padding: 10px 200px;
+}
+
+.wedding-gift .line {
+  width: 100%;
+  height: 4px;
+  background-color: crimson;
+  margin-top: 7px;
+}
+.wedding-gift button {
+  font-size: small;
+}
+
+.wedding-gift .card {
+  opacity: 0.7;
+}
+
+/* base */
+.collapse {
+  overflow: hidden;
+}
+
+/* saat proses buka & tutup */
+.collapsing {
+  transition:
+    height 5s ease,
+    opacity 5s ease,
+    transform 6s ease-in-out;
+}
+
+/* kondisi tertutup */
+.collapse:not(.show) {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* kondisi terbuka */
+.collapse.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Congrat */
+
+.congrat {
+  padding: 80px 0;
+  position: relative;
+}
+
+.congrat > * {
+  position: relative;
+  z-index: 2;
+}
+
+.congrat::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: url("image/home-bg.png");
+  opacity: 0.5;
+  background-attachment: fixed;
+}
+
+.congrat h2 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+  color: #222;
+}
+.congrat p {
+  font-family: "Poppins";
+  color: #888;
+}
+
+.congrat input,
+.congrat textarea {
+  font-family: "Poppins";
+  font-size: 15px;
+  padding: 15px 15px;
+  color: grey;
+}
+
+.congrat .kotak-pesan {
+  height: 60vh;
+  margin-top: 20px;
+  background: #f0fafa;
+  overflow-y: scroll;
+  padding: 20px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.congrat .kotak-pesan .text-pesan {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+.congrat .kotak-pesan .text-pesan p {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.congrat .kotak-pesan .text-pesan span {
+  font-family: "Poppins";
+  color: grey;
+}
+
+/* rsvp */
+
+.rsvp {
+  padding: 80px 0;
+  background-color: #f0def0;
+}
+
+.rsvp h3 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+}
+.rsvp p {
+  font-family: "Poppins";
+  color: gray;
+}
+
+.rsvp label {
+  font-family: "Poppins";
+  font-weight: bold;
+}
+
+.rsvp input,
+.rsvp select {
+  padding: 10px 10px;
+}
+
+/* thankyou */
+
+.thankyou {
+  padding: 80px 0;
+  height: 100vh;
+  position: relative;
+  color: white;
+  z-index: 1;
+  --gambar: url("image/utama/1.png");
+}
+
+.thankyou > * {
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--gambar);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 2s ease-in-out;
+  z-index: -2;
+}
+.thankyou::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.thankyou.fade-out::after {
+  opacity: 0.4;
+}
+.thankyou.fade-in::after {
+  opacity: 0.6;
+}
+.thankyou h3 {
+  font-size: 30px;
+  font-family: "Poppins";
+  font-style: italic;
+  margin-bottom: 20px;
+  color: white;
+}
+.thankyou i {
+  color: red;
+}
+
+.thankyou .nama_pengantin {
+  font-size: 45px;
+}
+
+.thankyou p {
+  color: white;
+}
+
+.thankyou .medsos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+.thankyou .medsos i {
+  color: white;
+}
+
+/* audio */
+
+.audio-icon {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  height: 80px;
+  width: 80px;
+  font-size: 4rem;
+  border-radius: 50%;
+  animation: rotating 2s linear infinite;
+  color: white;
+  cursor: pointer;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= LANDING BAWAH ================= */
+.landing-bottom {
+  min-height: 100vh;
+  max-width: calc(100% - 400px);
+  background: #fafafa;
+  margin: auto;
+  position: relative;
+}
+
+@media (max-width: 578px) {
+  body {
+    overflow-x: hidden;
+    background-color: transparent;
+    z-index: -1;
+    max-width: 100%;
+  }
+
+  .congrat {
+    overflow-x: hidden;
+  }
+
+  .landing-top {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .landing-top h2 {
+    font-size: 60px;
+  }
+
+  .landing-top h3 {
+    font-size: 1.3rem;
+    font-family: "Poppins";
+  }
+
+  .landing-top.hide {
+    transform: translateY(-100vh);
+  }
+  .landing-top h1 {
+    font-size: 1.8rem;
+  }
+
+  .landing-top small {
+    font-size: 10px;
+    color: white;
+    font-style: italic;
+  }
+
+  .landing-bottom {
+    max-width: 100%;
+    height: 100vh;
+  }
+
+  .hero h2 {
+    font-family: "Sacramento";
+    font-size: 50px;
+  }
+
+  .btn-open {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  .groom-bride .groom {
+    font-size: 40px;
+    font-family: "Poppins";
+    display: inline-block;
+  }
+
+  .groom-bride .line {
+    width: 200px;
+    height: 1px;
+    background-color: #777;
+  }
+
+  .groom-bride .carousel {
+    height: 320px; /* bebas, misal 280 / 300 / 350 */
+  }
+
+  .groom-bride .carousel .carousel-inner,
+  .groom-bride .carousel .carousel-item {
+    height: 100%;
+  }
+
+  .groom-bride .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 🔥 ini yang bikin penuh */
+  }
+
+  .groom-bride .groom-text h5,
+  .groom-bride .bride-text h5 {
+    font-size: 20px;
+  }
+  .groom-bride .groom-text p,
+  .groom-bride .bride-text p {
+    font-size: 13px;
+  }
+
+  .groom-bride::before {
+    background-position: center;
+  }
+
+  /* save-date */
+  .save-date .carousel,
+  .save-date .carousel-inner,
+  .save-date .carousel-item {
+    height: 70vh; /* 👈 tambah tinggi di HP */
+  }
+
+  .save-date .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .save-date .text h2 {
+    font-size: 1.6rem;
+  }
+
+  .save-date .tombol {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  .audio-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+
+  .wedding-event .header .text1 {
+    font-size: 30px;
+    font-family: "Poppins";
+    font-style: italic;
+  }
+  .wedding-event .header .text2 {
+    font-size: 50px;
+    font-family: "Ballet";
+    font-style: italic;
+    margin-top: -50px;
+  }
+  .love-story img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+  .love-story::before {
+    background-position: center;
+  }
+
+  .galery {
+    padding: 30px 6px;
+  }
+  .galery img {
+    height: 200px;
+  }
+
+  .galery .header .text1 {
+    font-size: 30px;
+    font-family: "Poppins";
+    font-style: italic;
+  }
+  .galery .header .text2 {
+    font-size: 40px;
+    font-family: "Ballet";
+    font-style: italic;
+    margin-top: -30px;
+  }
+
+  .wedding-gift .rek {
+    padding: 10px 15px;
+  }
+
+  .thankyou .nama_pengantin {
+    font-size: 35px;
+  }
+
+  .thankyou i {
+    font-size: 25px;
+  }
+
+  .thankyou .medsos i {
+    font-size: 20px;
+  }
+
+  .landing-top .maaf {
+    font-size: 10px;
+    font-style: italic;
+    color: white;
+  }
+}
+@media (max-width: 978px) {
+  .landing-top {
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+  }
+
+  .landing-top.hide {
+    transform: translateY(-100vh);
+  }
+  .landing-top h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-open {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}

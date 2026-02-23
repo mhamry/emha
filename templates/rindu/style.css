@@ -1,0 +1,1172 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background-image: url("image/home-bg.png");
+}
+
+:root {
+  --primary: #982598;
+  --secondary: #e491c9;
+  --dark: #15173d;
+  --light: #f1e9e9;
+  --swash: "Berkshire Swash";
+}
+
+.landing-top {
+  left: 250px;
+  right: 250px;
+  height: 100vh;
+  background-image: radial-gradient(circle at top left, #f1e9e9, #e491c9, #982598);
+  position: fixed;
+  transition: 4s ease-in-out;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.landing-top .bird-gif {
+  position: absolute;
+  top: 10px;
+  left: -60px;
+  right: 0;
+  animation: flying 10s infinite linear;
+}
+
+@keyframes flying {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.landing-top .content {
+  margin-top: 100px;
+}
+
+.landing-top .floral-wrapper .bottom-left,
+.hero .floral-wrapper .bottom-left,
+.groom-bride .floral-wrapper .bottom-left,
+.acara .floral-wrapper .bottom-left,
+.love-story .floral-wrapper .bottom-left,
+.galery .floral-wrapper .bottom-left,
+.congrat .floral-wrapper .bottom-left,
+.rsvp .floral-wrapper .bottom-left,
+.thankyou .floral-wrapper .bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.landing-top .floral-wrapper .bottom-right,
+.hero .floral-wrapper .bottom-right,
+.groom-bride .floral-wrapper .bottom-right,
+.acara .floral-wrapper .bottom-right,
+.love-story .floral-wrapper .bottom-right,
+.galery .floral-wrapper .bottom-right,
+.congrat .floral-wrapper .bottom-right,
+.rsvp .floral-wrapper .bottom-right,
+.thankyou .floral-wrapper .bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.hero .floral-wrapper .top-right,
+.groom-bride .floral-wrapper .top-right,
+.acara .floral-wrapper .top-right,
+.love-story .floral-wrapper .top-right,
+.galery .floral-wrapper .top-right,
+.congrat .floral-wrapper .top-right,
+.rsvp .floral-wrapper .top-right,
+.thankyou .floral-wrapper .top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.hero .floral-wrapper .top-left,
+.groom-bride.floral-wrapper .top-left,
+.acara .floral-wrapper .top-left,
+.love-story .floral-wrapper .top-left,
+.galery .floral-wrapper .top-left,
+.congrat .floral-wrapper .top-left,
+.rsvp .floral-wrapper .top-left,
+.thankyou .floral-wrapper .top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.floral-wrapper .bottom-right img,
+.floral-wrapper .bottom-left img {
+  animation: windy 10s infinite;
+  transform-origin: bottom center; /* penting */
+}
+.floral-wrapper .top-right img,
+.floral-wrapper .top-left img {
+  animation: windy 10s infinite;
+  transform-origin: top center; /* penting */
+}
+
+@keyframes windy {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+
+  50% {
+    transform: rotate(10deg) translateX(10px);
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
+/* delay animasi */
+
+.floral-wrapper .bottom-right img {
+  animation-delay: 0s;
+}
+.floral-wrapper .top-right img {
+  animation-delay: 1ms;
+}
+.floral-wrapper .bottom-left img {
+  animation-delay: 2s;
+}
+.floral-wrapper .top-left img {
+  animation-delay: 3s;
+}
+
+.landing-top img {
+  aspect-ratio: 1;
+}
+
+.landing-top button {
+  padding: 7px 15px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.landing-top.hide {
+  transform: translateY(-100%);
+}
+
+.landing-top .nama-pengantin {
+  font-family: "Berkshire Swash";
+  font-size: 35px;
+  letter-spacing: 7px;
+}
+
+/* landing-bottom */
+
+.landing-bottom {
+  width: calc(100% - 500px);
+  margin: auto;
+  position: relative;
+}
+
+/* hero */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: radial-gradient(circle, #e491c9, #f1e9e9);
+  position: relative;
+  overflow: hidden;
+}
+.hero .content {
+  margin-top: 60px;
+}
+.hero .nama-pengantin {
+  font-family: "Berkshire Swash";
+  font-size: 40px;
+  letter-spacing: 7px;
+}
+.hero .image-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  --bg: url("image/2.jpg");
+  aspect-ratio: 1;
+  border: 4px solid white;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .image-wrapper::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bg);
+  background-position: center;
+  background-size: cover;
+  transition: all 2s ease-in-out;
+}
+
+.hero .image-wrapper.fade-in::before {
+  opacity: 0.2;
+}
+.hero .image-wrapper.fade-out::before {
+  opacity: 0.7;
+}
+
+.hero .floral-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+/* quote */
+
+.quote {
+  padding: 70px 0;
+  background-color: #15173d;
+  color: white;
+}
+
+.quote .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.quote .header h1 {
+  font-size: 60px;
+}
+.quote p {
+  font-family: "Poppins";
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.quote .span {
+  font-style: italic;
+  font-size: larger;
+}
+
+.quote .header .line {
+  width: 1px;
+  height: 100px;
+  background-color: #777;
+}
+
+/* groom-bride */
+.groom-bride {
+  padding: 30px 30px;
+  background-color: var(--primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.groom-bride .floral-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.groom-bride .groom img,
+.groom-bride .bride img {
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+}
+.groom-bride .image-wrapper {
+  width: 250px;
+  height: 300px;
+  border: 4px solid var(--primary);
+  border-radius: 30%;
+  overflow: hidden;
+  margin: auto;
+}
+.groom-bride .image-wrapper img {
+  object-fit: cover;
+}
+.groom-bride i {
+  font-size: 45px;
+  color: crimson;
+}
+.groom-bride .groom .man,
+.groom-bride .bride .woman {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Berkshire Swash";
+  margin-top: 20px;
+}
+
+.groom-bride .floral-wrapper img {
+  z-index: 2;
+}
+
+.groom-bride .content {
+  background-color: white;
+  padding: 20px 0;
+  border-radius: 20px;
+  aspect-ratio: 1;
+  opacity: 0.7;
+}
+
+/* acara */
+
+.acara {
+  padding: 80px 0;
+  background-color: var(--dark);
+  position: relative;
+  font-family: "Poppins";
+  z-index: 1;
+  overflow: hidden;
+}
+
+.acara .akad-nikah {
+  height: 50vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 20px;
+  transition: 1s linear;
+}
+
+.acara .akad-nikah::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: var(--primary);
+  opacity: 0.7;
+  z-index: -1;
+}
+.acara .resepsi {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 1;
+  color: white;
+}
+
+.acara .resepsi::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: var(--primary);
+  opacity: 0.7;
+  z-index: -1;
+}
+.acara .live-streaming {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 20px;
+  color: white;
+}
+
+.acara .live-streaming::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: var(--primary);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.acara .floral-wrapper img {
+  z-index: 2;
+}
+
+.acara .akad-nikah .content h3,
+.acara .resepsi .content h3,
+.acara .live-streaming .content h3 {
+  font-family: var(--swash);
+  font-size: 30px;
+}
+.acara .waktu {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.acara .waktu .line,
+.acara .waktu .line,
+.acara .waktu .line {
+  width: 2px;
+  background-color: white;
+  height: 50px;
+}
+
+.acara .tanggal-wrapper {
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.acara .waktu .tgl {
+  margin-top: 10px;
+  font-family: "Poppins";
+  font-size: 35px;
+}
+
+.acara .waktu .th {
+  margin-top: -27px;
+}
+/* landing bottom */
+
+.landing-bottom {
+  margin: auto;
+  width: calc(100% - 500px);
+  position: relative;
+}
+
+.acara .akad-nikah a,
+.acara .resepsi a,
+.acara .live-streaming a {
+  padding: 6px 15px;
+  border-radius: 10px;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  border: 4px solid white;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* love-story */
+.love-story {
+  padding: 70px 70px;
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+  color: white;
+  z-index: 1;
+}
+
+.love-story .content {
+  position: relative;
+  padding: 40px 0;
+  color: white;
+  z-index: 2;
+}
+
+.love-story .floral-wrapper {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+.love-story .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--dark);
+  padding: 40px 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.love-story .floral-wrapper img {
+  z-index: 4;
+}
+
+.love-story h2 {
+  font-size: 32px;
+  font-family: "Berkshire Swash";
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding-left: 40px;
+  --line-height: 0px;
+}
+
+/* Garis vertikal */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 5px;
+  height: var(--line-height);
+  background: var(--secondary);
+  transition: height 0.2s ease-out;
+  z-index: 1;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--light);
+}
+
+/* Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 80px;
+  margin-left: 10px;
+  color: black;
+}
+
+.timeline-content {
+  background-color: var(--light) !important;
+}
+
+.timeline-item .speech-buble::after {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 26px;
+  top: 13px;
+  left: -12px;
+  transform: rotate(45deg);
+  border: 1px solid var(--light);
+  background-color: var(--light);
+}
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  left: -55px;
+  /* width: 40px;
+  height: 40px; */
+  /* background: #b89b7a; */
+  /* border-radius: 50%; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  text-align: center; */
+  /* border: 4px solid #fff; */
+  z-index: 2;
+  transition: all 5s;
+  font-size: 35px;
+  /* color: red; */
+}
+
+.timeline-dot i {
+  color: var(--light);
+  transition: all 0.4s ease;
+}
+
+.timeline-dot.active i {
+  color: var(--secondary);
+}
+
+/* Content kanan */
+.timeline-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Image */
+.timeline-content .image img {
+  width: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Text */
+.timeline-content .text h4 {
+  margin-bottom: 5px;
+}
+
+.timeline-content .date {
+  font-size: 14px;
+  color: black;
+  display: block;
+  margin-bottom: 10px;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Galery */
+
+.galery {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 70px;
+  background-color: var(--dark);
+  z-index: 1;
+}
+
+.galery .header {
+  font-size: 50px;
+  font-family: "Berkshire Swash";
+}
+
+.galery .content {
+  padding: 30px 20px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.galery .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  padding: 40px 0;
+  opacity: 0.6;
+  z-index: -1;
+  border-radius: 15px;
+}
+.galery a img {
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.galery .satu {
+  display: none;
+}
+
+.galery iframe {
+  border-radius: 20px;
+}
+
+/* wedding-gift */
+.gift {
+  padding: 100px 0;
+  position: relative;
+  --bgImage: url("image/2.jpg");
+  z-index: 2;
+  overflow: hidden;
+}
+.gift > * {
+  position: relative;
+  z-index: 2;
+}
+
+.gift::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bgImage);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 2s;
+}
+
+.gift.fade-out::after {
+  opacity: 0.2;
+}
+.gift.fade-in::after {
+  opacity: 0.8;
+}
+.gift::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.gift .bri {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins";
+  text-align: start;
+}
+.gift .bri span {
+  font-family: "Poppins";
+}
+.gift .bri img {
+  width: 100px;
+  height: 50px;
+}
+
+.gift .bri span {
+  color: black;
+}
+.gift .bri h3 {
+  color: black;
+}
+
+.gift .rek {
+  padding: 10px 100px;
+}
+
+.gift .line {
+  width: 100%;
+  height: 4px;
+  background-color: crimson;
+  margin-top: 7px;
+}
+.gift button {
+  font-size: small;
+}
+
+.gift .card {
+  opacity: 0.7;
+}
+
+/* base */
+.collapse {
+  overflow: hidden;
+}
+
+/* saat proses buka & tutup */
+.collapsing {
+  transition:
+    height 5s ease,
+    opacity 5s ease,
+    transform 6s ease-in-out;
+}
+
+/* kondisi tertutup */
+.collapse:not(.show) {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* kondisi terbuka */
+.collapse.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.audio-icon .icon-wrapper {
+  mix-blend-mode: difference;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Congrat */
+
+.congrat {
+  padding: 80px 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark);
+}
+
+.congrat .content {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.congrat .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  padding: 40px 0;
+  opacity: 0.6;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.congrat h2 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+  color: #222;
+}
+.congrat p {
+  font-family: "Poppins";
+  color: #888;
+}
+
+.congrat input,
+.congrat textarea {
+  font-family: "Poppins";
+  font-size: 15px;
+  padding: 15px 15px;
+  color: grey;
+}
+
+.congrat .kotak-pesan {
+  height: 60vh;
+  margin-top: 20px;
+  background: #f0fafa;
+  overflow-y: scroll;
+  padding: 20px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.congrat .kotak-pesan .text-pesan {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+.congrat .kotak-pesan .text-pesan p {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.congrat .kotak-pesan .text-pesan span {
+  font-family: "Poppins";
+  color: grey;
+}
+
+/* rsvp */
+
+.rsvp {
+  padding: 80px 50px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary);
+  z-index: 1;
+}
+
+.rsvp .floral-wrapper img {
+  z-index: 2;
+}
+
+.rsvp .content {
+  position: relative;
+  padding: 30px 0;
+  border-radius: 20px;
+  z-index: 2;
+}
+.rsvp .content::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: #fff7cd;
+  padding: 30px 0;
+  border-radius: 20px;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.rsvp .floral-wrapper img {
+  z-index: 2;
+}
+
+.rsvp h3 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+}
+.rsvp p {
+  font-family: "Poppins";
+  color: gray;
+}
+
+.rsvp label {
+  font-family: "Poppins";
+  font-weight: bold;
+}
+
+.rsvp input,
+.rsvp select {
+  padding: 10px 10px;
+}
+
+/* thankyou */
+
+.thankyou {
+  padding: 70px 50px;
+  position: relative;
+  color: black !important;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #15173d;
+}
+
+.thankyou .floral-wrapper img {
+  z-index: 3;
+}
+
+.thankyou > * {
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou .content {
+  position: relative;
+  padding: 50px 0;
+  border-radius: 20px;
+  color: black !important;
+}
+
+.thankyou .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.thankyou h3 {
+  font-size: 30px;
+  font-family: "Poppins";
+  font-style: italic;
+  margin-bottom: 20px;
+  color: black;
+}
+.thankyou i {
+  color: red;
+}
+
+.thankyou .nama_pengantin {
+  font-size: 45px;
+}
+
+.thankyou p {
+  color: black;
+}
+
+.thankyou .medsos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+.thankyou .medsos i {
+  color: black;
+}
+
+.thankyou .floral-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+/* audio icon */
+.audio-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  place-content: center;
+  transform-origin: center;
+  font-size: 40px;
+  z-index: 12;
+  line-height: 0;
+  animation: rotating 2s infinite linear;
+  cursor: pointer;
+}
+
+/* media query */
+
+@media (max-width: 578px) {
+  .landing-top {
+    left: 0;
+    right: 0;
+  }
+
+  .landing-top .content {
+    margin-top: 110px;
+  }
+
+  .landing-top .gambar img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .landing-bottom {
+    width: 100%;
+  }
+
+  .landing-top .floral-wrapper img {
+    width: 250px;
+  }
+
+  /* hero */
+
+  .hero .nama-pengantin {
+    font-size: 35px;
+    letter-spacing: 6px;
+  }
+
+  .hero .content {
+    margin-top: 120px;
+  }
+
+  .hero .image-wrapper {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .hero .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* groom-bride */
+
+  .groom-bride {
+    padding: 30px 10px;
+  }
+
+  .groom-bride .content {
+    padding: 20px 0;
+  }
+
+  .groom-bride .image-wrapper {
+    width: 200px;
+    height: 250px;
+    border-radius: 30%;
+    border: 4px solid var(--primary);
+  }
+
+  .groom-bride .floral-wrapper img {
+    width: 250px;
+  }
+
+  /* acara */
+
+  .acara .waktu {
+    width: 100%;
+  }
+
+  .acara .floral-wrapper img {
+    width: 250px;
+  }
+
+  /* love story */
+
+  .love-story {
+    padding: 50px 10px;
+  }
+
+  .timeline-dot {
+    left: -56px;
+  }
+
+  .timeline {
+    padding-left: 40px;
+  }
+
+  .timeline-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timeline-content .image img {
+    width: 100%;
+  }
+
+  .timeline::after {
+    height: 100%;
+  }
+
+  .love-story .content {
+    position: relative;
+    padding: 30px 10px;
+  }
+
+  .love-story .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* galery */
+
+  .galery {
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+  .galery h3 {
+    font-size: 37px !important;
+    margin-bottom: 10px;
+  }
+  .galery iframe {
+    width: 100%;
+    height: 250px;
+  }
+
+  .galery .floral-wrapper img {
+    width: 350px;
+  }
+
+  .galery a img {
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .galery .satu {
+    display: block;
+  }
+
+  /* gift */
+
+  .gift {
+    overflow-x: hidden;
+  }
+  .gift .rek {
+    padding: 10px 15px;
+  }
+
+  /* congrat */
+
+  .congrat {
+    margin-top: 50px;
+    padding: 50px 15px;
+    overflow-x: hidden;
+  }
+
+  .congrat .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* rsvp */
+
+  .rsvp {
+    padding: 50px 15px;
+  }
+
+  .rsvp .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* thankyou */
+  .thankyou .nama_pengantin {
+    font-size: 35px;
+  }
+
+  .thankyou i {
+    font-size: 25px;
+  }
+
+  .thankyou .medsos i {
+    font-size: 20px;
+  }
+
+  .thankyou {
+    padding: 40px 20px;
+  }
+  .thankyou img {
+    width: 300px;
+  }
+}
