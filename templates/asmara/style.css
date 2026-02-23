@@ -442,7 +442,7 @@ body {
   top: 0;
   width: 5px;
   height: var(--line-height);
-  background: crimson;
+  background: #fff7cd;
   transition: height 0.2s ease-out;
   z-index: 1;
 }
@@ -922,13 +922,12 @@ body {
     object-fit: cover;
     background-position: center;
   }
+
   .landing-top button {
     background-color: black;
     color: white;
-    margin-top: -100px;
     border-radius: 10px;
     padding: 10px 15px;
-    z-index: 11;
   }
 
   .landing-top img {
@@ -936,7 +935,7 @@ body {
   }
 
   .landing-top h6 {
-    margin-top: 400px;
+    margin-top: 300px;
   }
 
   .landing-bottom {
@@ -952,7 +951,7 @@ body {
     width: 300px;
   }
   .hero .content {
-    margin-top: 170px;
+    margin-top: 80px;
   }
 
   .hero .image-wrapper {

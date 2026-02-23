@@ -172,6 +172,27 @@ body {
   color: white;
 }
 
+.quote .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  color: white;
+  font-family: var(--swash);
+  margin-bottom: 15px;
+}
+
+.quote .header h1 {
+  font-size: 55px;
+}
+
+.quote .header .line {
+  width: 2px;
+  height: 50px;
+  background-color: white;
+}
+
 .quote span {
   font-size: 16px;
   font-weight: bold;
@@ -449,12 +470,16 @@ body {
   position: relative;
   margin-bottom: 80px;
   margin-left: 10px;
-  color: black;
+  color: white;
   background-color: var(--secondary);
 }
 
 .timeline-content {
   background-color: var(--light) !important;
+}
+
+.timeline-content .text .date {
+  color: white;
 }
 
 .timeline-item .speech-buble::after {
@@ -510,9 +535,11 @@ body {
 
 /* Image */
 .timeline-content .image img {
-  width: 200px;
+  width: 250px;
+  height: 300px;
   border-radius: 15px;
   object-fit: cover;
+  margin-bottom: 50px;
 }
 
 /* Text */
@@ -549,12 +576,18 @@ body {
 .galery .header {
   font-size: 50px;
   font-family: "Berkshire Swash";
+  color: white;
+  padding-top: 40px;
 }
 
 .galery .content {
   padding: 30px 20px;
   border-radius: 15px;
   position: relative;
+}
+
+.galery .content img {
+  margin-top: 10px;
 }
 
 .galery .content::before {
@@ -657,6 +690,8 @@ body {
 }
 .gift button {
   font-size: small;
+  background-color: var(--primary);
+  color: white;
 }
 
 .gift .card {
@@ -927,6 +962,14 @@ body {
     background-size: cover;
   }
 
+  .landing-top h6 {
+    margin-top: 200px;
+  }
+
+  .landing-top .floral-wrapper img {
+    height: 90px;
+  }
+
   .landing-bottom {
     width: 100%;
   }
@@ -1002,10 +1045,16 @@ body {
   .timeline-content {
     flex-direction: column;
     text-align: center;
+    padding: 10px 10px !important;
   }
 
-  .timeline-content .image img {
+  .timeline-item .timeline-content .text {
+    margin-top: 80px !important;
+  }
+
+  .timeline-content .image {
     width: 100%;
+    height: 200px !important;
   }
 
   .timeline::after {
@@ -1027,6 +1076,10 @@ body {
     padding: 50px 10px;
     overflow: hidden;
   }
+
+  .galery .content img {
+    margin-top: -8px;
+  }
   .galery h3 {
     font-size: 37px !important;
     margin-bottom: 10px;
@@ -1047,6 +1100,10 @@ body {
   }
   .galery .satu {
     display: block;
+  }
+
+  .galery .content .vidio {
+    margin-bottom: 60px !important;
   }
 
   /* gift */
