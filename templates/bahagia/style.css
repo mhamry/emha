@@ -1,0 +1,81 @@
+/* RESET */
+body {
+  margin: 0;
+  overflow: hidden; /* LOCK awal */
+  font-family: Poppins, sans-serif;
+}
+
+/* MAIN SPLIT */
+.split-layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT PANEL (8 GRID) */
+.left-panel {
+  flex: 2;
+  background: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RIGHT PANEL (4 GRID) */
+.right-panel {
+  flex: 1;
+  background: white;
+  height: 100vh;
+  overflow-y: hidden; /* LOCK awal */
+  position: relative;
+}
+
+/* LANDING TOP (FULL SCREEN) */
+.landing-top {
+  position: absolute;
+  inset: 0;
+  background: black;
+  color: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 3s;
+}
+
+.landing-top.hide {
+  transform: translateY(-100vh);
+}
+
+/* ISI UNDANGAN */
+.landing-bottom {
+  padding: 40px 20px;
+  background-color: bisque;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+  height: 100vh;
+}
+
+/* quote */
+
+.quote {
+  padding: 80px 0;
+  background-color: brown;
+  height: 100vh;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+}

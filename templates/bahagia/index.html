@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bahagia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!--Awal font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Berkshire+Swash&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Akhir font -->
+    <!-- awal css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- akhir css -->
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- icon -->
+
+    <!-- Awal countdown -->
+    <link rel="stylesheet" href="countdown/circle.css" />
+    <script src="countdown/simplyCountdown.umd.js"></script>
+    <!-- akhir countdown -->
+
+    <!-- awal Glightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <!-- ahir GLlightbox -->
+
+    <!-- awal aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- akhir aos -->
+  </head>
+  <body>
+    <main class="split-layout">
+      <!-- LEFT PANEL (8 GRID) -->
+      <div class="left-panel desktop" id="leftPanel">
+        <div class="left-content text-center">
+          <h6>THE WEDDING OF</h6>
+          <h2 class="nama-pengantin">Amri & Nikel</h2>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL (4 GRID) -->
+      <div class="right-panel" id="rightPanel">
+        <!-- LANDING TOP (LOCK SCREEN) -->
+        <section class="landing-top" id="landing-top">
+          <h6>THE WEDDING OF</h6>
+          <h2 class="nama-pengantin">Amri & Nikel</h2>
+
+          <p>Kepada Yth</p>
+          <span class="nama-undangan">Tamu Undangan</span>
+
+          <button class="btn-open mt-3" id="openBtn"><i class="bi bi-envelope-check-fill"></i> Lihat Undangan</button>
+        </section>
+
+        <!-- LANDING BOTTOM (ISI UNDANGAN) -->
+        <section class="landing-bottom" id="landing-bottom">
+          <section class="hero" id="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <h5>THE WEDDING OF</h5>
+                  <img src="image/9.jpg" class="img-fluid mb-3" />
+                  <h2>Amri & Nikel</h2>
+                  <p>09 - 11 - 2025</p>
+                  <div class="simply-countdown-circle"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="quote" id="quote">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <h1>A & N</h1>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate assumenda asperiores id mollitia error perferendis eos? Eveniet quidem laboriosam necessitatibus vitae iste, totam, dolores, ipsum voluptatum deleniti
+                    dolorum libero. Odio vel deleniti doloribus non possimus, cum sed placeat tempore. Ipsum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- j-query cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 220,
+      });
+    </script>
+
+    <!-- carousel thumbnail -->
+    <script>
+      const carousel = document.querySelector("#carouselExample");
+      const thumbs = document.querySelectorAll(".thumb-track img");
+
+      carousel.addEventListener("slide.bs.carousel", function (e) {
+        thumbs.forEach((img) => img.classList.remove("active"));
+        thumbs[e.to].classList.add("active");
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
