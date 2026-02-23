@@ -719,6 +719,7 @@ body {
 }
 .gift button {
   font-size: small;
+  color: white;
 }
 
 .gift .card {
@@ -975,6 +976,26 @@ body {
   line-height: 0;
   animation: rotating 2s infinite linear;
   cursor: pointer;
+}
+
+footer {
+  padding: 50px 0;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer .medsos {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 /* media query */
