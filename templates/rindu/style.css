@@ -84,7 +84,8 @@ body {
 .galery .floral-wrapper .top-right,
 .congrat .floral-wrapper .top-right,
 .rsvp .floral-wrapper .top-right,
-.thankyou .floral-wrapper .top-right {
+.thankyou .floral-wrapper .top-right,
+.landing-top .floral-wrapper .top-right {
   position: absolute;
   top: 0;
   right: 0;
@@ -100,30 +101,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-}
-.floral-wrapper .bottom-right img,
-.floral-wrapper .bottom-left img {
-  animation: windy 10s infinite;
-  transform-origin: bottom center; /* penting */
-}
-.floral-wrapper .top-right img,
-.floral-wrapper .top-left img {
-  animation: windy 10s infinite;
-  transform-origin: top center; /* penting */
-}
-
-@keyframes windy {
-  0% {
-    transform: rotate(0deg) translateX(0);
-  }
-
-  50% {
-    transform: rotate(10deg) translateX(10px);
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(0);
-  }
 }
 
 /* delay animasi */
@@ -1020,7 +997,7 @@ footer .medsos {
   }
 
   .landing-top .floral-wrapper img {
-    width: 250px;
+    width: 200px;
   }
 
   /* hero */
