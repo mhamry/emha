@@ -2,6 +2,7 @@ const openBtn = document.getElementById("openBtn");
 const landingTop = document.getElementById("landing-top");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
+const scrollDown = document.querySelector(".scroll-down");
 
 openBtn.addEventListener("click", () => {
   // Hilangkan layar pembuka
@@ -12,13 +13,14 @@ openBtn.addEventListener("click", () => {
 
   // Aktifkan scroll body (mobile)
   document.body.style.overflow = "auto";
-});
+  scrollDown.classList.add("muncul");
 
-// Saat scroll di panel kiri
-leftPanel.addEventListener("wheel", function (e) {
-  // Arahkan scroll ke panel kanan
-  rightPanel.scrollTop += e.deltaY;
+  // Saat scroll di panel kiri
+  leftPanel.addEventListener("wheel", function (e) {
+    // Arahkan scroll ke panel kanan
+    rightPanel.scrollTop += e.deltaY;
 
-  // Cegah panel kiri ikut scroll
-  e.preventDefault();
+    // Cegah panel kiri ikut scroll
+    e.preventDefault();
+  });
 });
