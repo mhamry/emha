@@ -3,8 +3,6 @@ const landingTop = document.getElementById("landingTop");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
 const scrollDown = document.querySelector(".scroll-down");
-const scrollIndicatorewraaper = document.querySelector(".scroll-indicator-wrapper");
-
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflowY = "auto";
@@ -12,14 +10,7 @@ tombol.addEventListener("click", function () {
 
   leftPanel.addEventListener("wheel", function (e) {
     rightPanel.scrollTop += e.deltaY;
-    e.preventDefault();
-  });
 
-  rightPanel.addEventListener("scroll", function () {
-    if (rightPanel.scrollTop > 100) {
-      scrollIndicatorewraaper.classList.add("hide");
-    } else {
-      scrollIndicatorewraaper.classList.remove("hide");
-    }
+    e.preventDefault();
   });
 });

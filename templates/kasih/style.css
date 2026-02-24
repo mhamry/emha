@@ -13,6 +13,8 @@ body {
   /* height: 100vh; */
 }
 
+/* left panel */
+
 .left-panel {
   flex: 2;
   background-color: aqua;
@@ -22,6 +24,38 @@ body {
   align-items: center;
 }
 
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 33%;
+  transform: translate(-50%, -300px);
+  font-size: 30px;
+  color: yellow;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.scroll-down.muncul {
+  transform: translate(-50%, 0);
+  animation: bounce 1.5s infinite 0.8s;
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, 10px);
+    opacity: 0.3;
+  }
+}
+
+/* right-panel */
+
 .right-panel {
   flex: 1;
   background: white;
@@ -30,6 +64,7 @@ body {
   position: relative;
 }
 
+/* landing top */
 .landing-top {
   position: absolute;
   inset: 0;
@@ -45,7 +80,7 @@ body {
 .landing-top.hide {
   transform: translateY(-100vh);
 }
-
+/* hero */
 .hero {
   text-align: center;
   margin-bottom: 60px;
@@ -54,6 +89,47 @@ body {
   display: flex;
   align-items: center;
 }
+
+.scroll-indicator-wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 20px;
+  height: 30px;
+  background-color: yellowgreen;
+  border: 1px solid grey;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.scroll-indicator {
+  animation: bouncing 1s infinite linear;
+  transition: 1s;
+  border: 1px solid grey;
+  margin-right: -18px;
+  border-radius: 6px;
+  background-color: violet;
+}
+
+.scroll-indicator-wrapper.hide {
+  display: none;
+}
+
+@keyframes bouncing {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+/* quote */
 
 .quote {
   padding: 70px 0;
@@ -72,6 +148,8 @@ body {
   height: 50px;
   background-color: black;
 }
+
+/* responsive */
 
 @media (max-width: 768px) {
   .left-panel {
