@@ -955,6 +955,8 @@ body {
   cursor: pointer;
 }
 
+/* footer */
+
 footer {
   padding: 50px 0;
   background-color: var(--primary);
@@ -995,9 +997,13 @@ footer .medsos {
   .landing-bottom {
     width: 100%;
   }
+  .landing-top .floral-wrapper .top-right {
+    z-index: -1;
+  }
 
   .landing-top .floral-wrapper img {
-    width: 200px;
+    width: 250px;
+    z-index: -1;
   }
 
   /* hero */
@@ -1074,6 +1080,8 @@ footer .medsos {
 
   .timeline-content .image img {
     width: 100%;
+    height: 300px;
+    border: 4px solid var(--primary);
   }
 
   .timeline::after {
