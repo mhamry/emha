@@ -497,7 +497,8 @@ body {
 /* Dot */
 .timeline-dot {
   position: absolute;
-  left: -55px;
+  left: -38px;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   z-index: 2;
@@ -1024,10 +1025,6 @@ body {
 
   .love-story {
     padding: 50px 10px;
-  }
-
-  .timeline-dot {
-    left: -55px;
   }
 
   .timeline {

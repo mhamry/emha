@@ -246,7 +246,8 @@ body {
 /* Dot */
 .timeline-dot {
   position: absolute;
-  left: -55px;
+  left: -38px;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   z-index: 2;
