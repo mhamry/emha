@@ -34,7 +34,7 @@ function changeImg() {
 changeImg();
 setInterval(changeImg, 9000);
 
-// // //animasi effect timeline
+//animasi effect timeline
 
 $(window).on("scroll", function () {
   let scrollTop = $(window).scrollTop();

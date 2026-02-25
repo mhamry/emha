@@ -23,3 +23,67 @@ tombol.addEventListener("click", function () {
     }
   });
 });
+
+// //animasi effect timeline
+
+// $(window).on("scroll", function () {
+//   let scrollTop = $(window).scrollTop();
+//   let windowHeight = $(window).height();
+//   let viewportCenter = scrollTop + windowHeight / 2;
+
+//   let sectionTop = $(".love-story").offset().top;
+//   let sectionHeight = $(".love-story").outerHeight();
+//   let sectionBottom = sectionTop + sectionHeight;
+
+//   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+//     let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+//     let timelineHeight = $(".timeline").height();
+//     let lineHeight = progress * timelineHeight;
+
+//     lineHeight = Math.min(lineHeight, timelineHeight);
+
+//     document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+//     $(".timeline-dot").each(function () {
+//       let dotTop = $(this).offset().top - $(".timeline").offset().top;
+
+//       if (lineHeight >= dotTop) {
+//         $(this).addClass("active");
+//       } else {
+//         $(this).removeClass("active");
+//       }
+//     });
+//   }
+// });
+
+$("#rightPanel").on("scroll", function () {
+  let scrollTop = $(this).scrollTop();
+  let windowHeight = $(this).height();
+  let viewportCenter = scrollTop + windowHeight / 2;
+
+  let sectionTop = $(".love-story").position().top;
+  let sectionHeight = $(".love-story").outerHeight();
+  let sectionBottom = sectionTop + sectionHeight;
+
+  if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+    let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+    let timelineHeight = $(".timeline").height();
+    let lineHeight = progress * timelineHeight;
+
+    lineHeight = Math.min(lineHeight, timelineHeight);
+
+    document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+    $(".timeline-dot").each(function () {
+      let dotTop = $(this).position().top;
+
+      if (lineHeight >= dotTop) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  }
+});

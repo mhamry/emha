@@ -149,6 +149,160 @@ body {
   background-color: black;
 }
 
+/* love-story */
+.love-story {
+  padding: 70px 20px;
+  background: burlywood;
+  position: relative;
+  overflow: hidden;
+  color: black;
+  z-index: 1;
+}
+
+.love-story .content {
+  position: relative;
+  padding: 40px 10px;
+  color: black;
+  z-index: 2;
+}
+
+.love-story .floral-wrapper {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+.love-story .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: purple;
+  padding: 40px 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.love-story .floral-wrapper img {
+  z-index: 4;
+}
+
+.love-story h2 {
+  font-size: 32px;
+  font-family: "Berkshire Swash";
+}
+
+.timeline {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  padding-left: 39px;
+  --line-height: 0px;
+}
+
+/* Garis vertikal */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 5px;
+  height: var(--line-height);
+  background: white;
+  transition: height 0.2s ease-out;
+  z-index: 1;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: red;
+}
+
+/* Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 80px;
+  margin-left: 10px;
+}
+
+.timeline-content .text .date {
+  color: white;
+}
+
+.timeline-item .speech-buble::after {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 26px;
+  top: 13px;
+  left: -12px;
+  transform: rotate(45deg);
+
+  background-color: white;
+}
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  left: -55px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  transition: all 5s;
+  font-size: 35px;
+}
+
+.timeline-dot i {
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.timeline-dot.active i {
+  color: red;
+}
+
+/* Content kanan */
+.timeline-content {
+  color: black;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Image */
+.timeline-content .image img {
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.timeline-content .text h4 {
+  margin-bottom: 5px;
+}
+
+.timeline-content .text .date {
+  font-size: 14px;
+  color: black;
+  display: block;
+  margin-bottom: 5px;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* responsive */
 
 @media (max-width: 768px) {
