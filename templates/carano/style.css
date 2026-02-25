@@ -634,6 +634,12 @@ body {
   transition: 2s;
 }
 
+.gift .card-body {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
 .gift.fade-out::after {
   opacity: 0.2;
 }
@@ -660,8 +666,8 @@ body {
   font-family: "Poppins";
 }
 .gift .bri img {
-  width: 100px;
-  height: 50px;
+  width: 70px;
+  height: 30px;
 }
 
 .gift .bri span {
@@ -673,6 +679,8 @@ body {
 
 .gift .rek {
   padding: 10px 100px;
+  border: 2px black solid !important;
+  border-radius: 10px;
 }
 
 .gift .line {
@@ -682,7 +690,7 @@ body {
   margin-top: 7px;
 }
 .gift button {
-  font-size: small;
+  font-size: 12px;
   background-color: var(--primary);
   color: white;
 }
@@ -1102,6 +1110,9 @@ body {
   }
   .gift .rek {
     padding: 10px 15px;
+  }
+  .gift .card button {
+    padding: 3px 7px;
   }
 
   /* congrat */
