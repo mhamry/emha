@@ -246,7 +246,7 @@ body {
 /* Dot */
 .timeline-dot {
   position: absolute;
-  left: -38px;
+  left: -37px;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
@@ -261,7 +261,7 @@ body {
 }
 
 .timeline-dot.active i {
-  color: red;
+  color: white;
 }
 
 /* Content kanan */

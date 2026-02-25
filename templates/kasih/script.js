@@ -57,32 +57,70 @@ tombol.addEventListener("click", function () {
 //   }
 // });
 
-$("#rightPanel").on("scroll", function () {
-  let scrollTop = $(this).scrollTop();
-  let windowHeight = $(this).height();
-  let viewportCenter = scrollTop + windowHeight / 2;
+// $(document).ready(function () {
+//   $("#rightPanel").on("scroll", function () {
+//     let scrollTop = $(this).scrollTop();
+//     let windowHeight = $(this).height();
+//     let viewportCenter = scrollTop + windowHeight / 2;
 
-  let sectionTop = $(".love-story").position().top;
-  let sectionHeight = $(".love-story").outerHeight();
-  let sectionBottom = sectionTop + sectionHeight;
+//     let sectionTop = $(".love-story").position().top;
+//     let sectionHeight = $(".love-story").outerHeight();
+//     let sectionBottom = sectionTop + sectionHeight;
+
+//     if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+//       let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+//       let timelineHeight = $(".timeline").height();
+//       let lineHeight = progress * timelineHeight;
+
+//       lineHeight = Math.min(lineHeight, timelineHeight);
+
+//       document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+//       $(".timeline-dot").each(function () {
+//         let dotTop = $(this).position().top;
+
+//         if (lineHeight >= dotTop) {
+//           $(this).addClass("active");
+//         } else {
+//           $(this).removeClass("active");
+//         }
+//       });
+//     }
+//   });
+// });
+
+//animasi effect timeline tanpa j-query
+
+rightPanel.addEventListener("scroll", function () {
+  const scrollTop = rightPanel.scrollTop;
+  const windowHeight = rightPanel.clientHeight;
+  const viewportCenter = scrollTop + windowHeight / 2;
+
+  const section = document.querySelector(".love-story");
+
+  const sectionTop = section.offsetTop;
+  const sectionHeight = section.offsetHeight;
+  const sectionBottom = sectionTop + sectionHeight;
 
   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-    let progress = (viewportCenter - sectionTop) / sectionHeight;
+    const progress = (viewportCenter - sectionTop) / sectionHeight;
 
-    let timelineHeight = $(".timeline").height();
+    const timeline = document.querySelector(".timeline");
+    const timelineHeight = timeline.offsetHeight;
+
     let lineHeight = progress * timelineHeight;
-
     lineHeight = Math.min(lineHeight, timelineHeight);
 
-    document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+    timeline.style.setProperty("--line-height", lineHeight + "px");
 
-    $(".timeline-dot").each(function () {
-      let dotTop = $(this).position().top;
+    document.querySelectorAll(".timeline-dot").forEach((dot) => {
+      const dotTop = dot.offsetTop;
 
       if (lineHeight >= dotTop) {
-        $(this).addClass("active");
+        dot.classList.add("active");
       } else {
-        $(this).removeClass("active");
+        dot.classList.remove("active");
       }
     });
   }
