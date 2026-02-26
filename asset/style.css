@@ -128,7 +128,7 @@ body {
 }
 
 .template {
-  padding: 80px 0;
+  padding: 50px 0;
 }
 
 .template .header h2 {
@@ -158,6 +158,32 @@ body {
   color: #6e026f;
 }
 
+/* advantages */
+.advantages {
+  padding: 50px 0;
+  background-color: #fffbf1;
+  color: #6e026f;
+}
+
+.advantages .header {
+  text-align: center;
+  margin-bottom: 50px;
+  width: 300px;
+  margin: auto;
+}
+.advantages .header h4 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.advantages .header ul li {
+  font-weight: lighter;
+  margin-bottom: 20px !important;
+  display: inline-block;
+}
+
+/* responsive */
+
 @media (max-width: 576px) {
   .hero {
     overflow-x: hidden;
@@ -170,6 +196,7 @@ body {
     width: 180px;
     font-size: 12px;
     flex-direction: column;
+    margin-top: 180px;
   }
 
   .hero .tagline p {
