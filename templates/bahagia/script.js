@@ -9,7 +9,9 @@ openBtn.addEventListener("click", () => {
   landingTop.classList.add("hide");
 
   // Aktifkan scroll panel kanan
-  rightPanel.style.overflowY = "auto";
+  setTimeout(() => {
+    rightPanel.style.overflowY = "auto";
+  });
 
   // Aktifkan scroll body (mobile)
   document.body.style.overflow = "auto";

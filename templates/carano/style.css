@@ -29,12 +29,9 @@ body {
   position: fixed;
   left: 250px;
   right: 250px;
-  /* width: calc(100% - 500px);
-  margin: auto; */
   height: 100vh;
   display: flex;
   align-items: center;
-  /* position: relative; */
   background-image: url(image/bg-landingpage.jpg);
   background-position: 0 -70px;
   background-size: cover;

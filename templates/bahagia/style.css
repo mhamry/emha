@@ -41,7 +41,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: 3s;
+  transition: 2s;
 }
 
 .landing-top.hide {

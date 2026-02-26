@@ -9,7 +9,9 @@ tombol.addEventListener("click", function () {
   playSong();
   audioIcon.style.display = "flex";
 
-  document.body.style.overflow = "auto";
+  setTimeout(() => {
+    document.body.style.overflow = "auto";
+  }, 2000);
 });
 
 function playSong() {

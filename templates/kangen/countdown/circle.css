@@ -1,7 +1,7 @@
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
   --sc-circle-secondary: #fff;
-  --sc-circle-bg: #9bc264;
+  --sc-circle-bg: #000;
   --sc-circle-text: #fff;
 
   display: flex;

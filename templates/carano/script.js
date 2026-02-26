@@ -6,7 +6,10 @@ const song = document.querySelector(".song");
 
 tombol.addEventListener("click", function () {
   // Hero naik dari bawah
-  landingTop.classList.add("hide");
+  setTimeout(() => {
+    landingTop.classList.add("hide");
+  }, 3000);
+
   song.play();
 
   // Aktifkan scroll
