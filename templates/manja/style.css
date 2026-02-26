@@ -35,6 +35,7 @@ body {
   background-color: black;
   color: white;
   text-align: center;
+  transition: 2s;
 }
 
 .landing-top.hide {
@@ -43,4 +44,47 @@ body {
 
 .landing-top h5 {
   margin-top: 200px;
+}
+
+/* hero */
+
+.hero {
+  padding: 70px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: bisque;
+  height: 100vh;
+}
+
+/* quote */
+
+.quote {
+  padding: 70px 0;
+}
+
+.quote .header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.quote .header .line {
+  width: 2px;
+  background-color: black;
+  height: 50px;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
 }
