@@ -755,6 +755,30 @@ body {
   position: absolute;
   inset: 0;
 }
+
+/* footer */
+
+footer {
+  padding: 40px 0;
+  background-color: #d25353;
+  color: black;
+}
+
+footer .medsos {
+  display: flex;
+  gap: 30px;
+  width: 300px;
+  margin: auto;
+  justify-content: center;
+  color: black;
+}
+
+footer a {
+  color: black;
+}
+footer a i {
+  color: black;
+}
 /* audio-icon */
 .audio-icon {
   position: fixed;
