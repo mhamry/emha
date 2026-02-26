@@ -86,19 +86,31 @@ body {
 
 /* ISI UNDANGAN */
 .landing-bottom {
-  padding: 40px 20px;
   background-color: bisque;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  margin-bottom: 60px;
   height: 100vh;
   background-color: lightgreen;
 }
+.hero img {
+  width: 250px;
+  height: 250px;
+}
+.hero h5 {
+  margin-top: 100px;
+}
 
 /* scroll indicator */
+
+.scroll-indicator-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .scroll-indicator {
   width: 25px;
   height: 40px;
