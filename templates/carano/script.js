@@ -6,16 +6,15 @@ const song = document.querySelector(".song");
 
 tombol.addEventListener("click", function () {
   // Hero naik dari bawah
-  setTimeout(() => {
-    landingTop.classList.add("hide");
-  }, 3000);
+
+  landingTop.classList.add("hide");
 
   song.play();
 
   // Aktifkan scroll
   setTimeout(() => {
     document.body.style.overflowY = "auto";
-  });
+  }, 2000);
 });
 
 // animasi bg-hero
