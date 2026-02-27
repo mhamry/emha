@@ -49,10 +49,10 @@ simplyCountdown(".simply-countdown-circle", {
   seconds: 0, // Target second [0-59], default: 0
   words: {
     // Custom labels, with lambda for plurals
-    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "s" : root) },
+    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "" : root) },
   },
   plural: true, // Use plurals for labels
   inline: false, // Inline format: e.g., "24 days, 4 hours, 2 minutes"
@@ -82,10 +82,10 @@ simplyCountdown(".simply-countdown", {
   seconds: 0, // Target second [0-59], default: 0
   words: {
     // Custom labels, with lambda for plurals
-    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "s" : root) },
+    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "" : root) },
   },
   plural: true, // Use plurals for labels
   inline: false, // Inline format: e.g., "24 days, 4 hours, 2 minutes"
