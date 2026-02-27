@@ -146,7 +146,6 @@ body {
 
 .landing-bottom {
   position: relative;
-  background-color: red;
   transition: 2s;
   width: calc(100% - 500px);
   margin: auto;
@@ -313,6 +312,22 @@ body {
   overflow: hidden;
 }
 
+.acara .header {
+  margin-bottom: 20px;
+}
+
+.acara .header h3 {
+  font-size: 40px;
+  font-family: "Ballet";
+  color: var(--primary);
+  line-height: 30px;
+}
+.acara .header span {
+  font-size: 30px;
+  font-family: var(--swash);
+  color: black;
+}
+
 .acara .akad-nikah {
   height: 50vh;
   color: white;
@@ -477,7 +492,7 @@ body {
   top: 0;
   width: 5px;
   height: var(--line-height);
-  background: var(--yellow);
+  background: white;
   transition: height 0.2s ease-out;
   z-index: 1;
 }
@@ -533,12 +548,12 @@ body {
 }
 
 .timeline-dot i {
-  color: var(--yellow);
+  color: var(--blue);
   transition: all 0.4s ease;
 }
 
 .timeline-dot.active i {
-  color: var(--secondary);
+  color: white;
 }
 
 /* Content kanan */
@@ -573,15 +588,7 @@ body {
   margin-bottom: 10px;
 }
 
-@keyframes rotating {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* aglery */
+/* galery */
 
 .galery {
   padding: 80px 0;
@@ -641,6 +648,199 @@ body {
 .carousel-inner {
   border-radius: 20px;
 }
+
+/* wedding-gift */
+.gift {
+  padding: 100px 0;
+  position: relative;
+  --bgImage: url("image/8.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 2;
+  overflow-x: hidden;
+}
+.gift > * {
+  position: relative;
+  z-index: 2;
+}
+
+.gift::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bgImage);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 2s;
+}
+
+.gift.fade-out::after {
+  opacity: 0.1;
+}
+.gift.fade-in::after {
+  opacity: 0.7;
+}
+
+.gift .card-body {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+}
+
+.gift.fade-out::after {
+  opacity: 0.2;
+}
+.gift.fade-in::after {
+  opacity: 0.8;
+}
+.gift::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--blue);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.gift .bri {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins";
+  text-align: start;
+}
+.gift .bri span {
+  font-family: "Poppins";
+}
+.gift .bri img {
+  width: 70px;
+  height: 30px;
+}
+
+.gift .bri span {
+  color: black;
+}
+.gift .bri h3 {
+  color: black;
+}
+
+.gift .line {
+  width: 100%;
+  height: 4px;
+  background-color: var(--dark);
+  margin-top: 7px;
+}
+.gift button {
+  font-size: 12px;
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Congrat */
+
+.congrat {
+  padding: 30px 50px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(to top, var(--primary), white);
+}
+
+.congrat .content {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.congrat .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  padding: 40px 0;
+  opacity: 0.6;
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.congrat h2 {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-style: italic;
+  color: #222;
+}
+.congrat p {
+  font-family: "Poppins";
+  color: #888;
+}
+
+.congrat input,
+.congrat textarea {
+  font-family: "Poppins";
+  font-size: 15px;
+  padding: 15px 15px;
+  color: grey;
+}
+
+.congrat .kotak-pesan {
+  height: 60vh;
+  margin-top: 20px;
+  background: #f0fafa;
+  overflow-y: scroll;
+  padding: 20px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.congrat .kotak-pesan .text-pesan {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+}
+.congrat .kotak-pesan .text-pesan p {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.congrat .kotak-pesan .text-pesan span {
+  font-family: "Poppins";
+  color: grey;
+}
+
+/* base */
+.collapse {
+  overflow: hidden;
+}
+
+/* saat proses buka & tutup */
+.collapsing {
+  transition:
+    height 5s ease,
+    opacity 5s ease,
+    transform 6s ease-in-out;
+}
+
+/* kondisi tertutup */
+.collapse:not(.show) {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* kondisi terbuka */
+.collapse.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.audio-icon .icon-wrapper {
+  mix-blend-mode: difference;
+}
+
 /* countdown */
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
@@ -872,6 +1072,29 @@ body {
 
   .love-story .floral-wrapper img {
     width: 100%;
+  }
+
+  /* gift */
+
+  .gift {
+    overflow-x: hidden;
+  }
+  .gift .rek {
+    padding: 10px 15px;
+  }
+  .gift .card button {
+    padding: 3px 7px;
+  }
+
+  /* congrat */
+
+  .congrat {
+    padding: 50px 15px;
+    overflow-x: hidden;
+  }
+
+  .congrat .floral-wrapper img {
+    width: 150px;
   }
 
   /* countdown */

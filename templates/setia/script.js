@@ -91,3 +91,58 @@ simplyCountdown(".simply-countdown", {
   onResume: () => {}, // Callback when countdown is resumed
   onUpdate: (params) => {}, // Callback when countdown is updated
 });
+
+//animasi effect timeline
+
+$(window).on("scroll", function () {
+  let scrollTop = $(window).scrollTop();
+  let windowHeight = $(window).height();
+  let viewportCenter = scrollTop + windowHeight / 2;
+
+  let sectionTop = $(".love-story").offset().top;
+  let sectionHeight = $(".love-story").outerHeight();
+  let sectionBottom = sectionTop + sectionHeight;
+
+  if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+    let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+    let timelineHeight = $(".timeline").height();
+    let lineHeight = progress * timelineHeight;
+
+    lineHeight = Math.min(lineHeight, timelineHeight);
+
+    document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+    $(".timeline-dot").each(function () {
+      let dotTop = $(this).offset().top - $(".timeline").offset().top;
+
+      if (lineHeight >= dotTop) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  }
+});
+
+// animasi gift
+
+const gift = document.querySelector(".gift");
+const imgList = ["image/6.jpg", "image/7.jpg", "image/8.jpg", "image/9.jpg"];
+let index = 0;
+
+function gantiImg() {
+  gift.classList.add("fade-out");
+  gift.classList.remove("fade-in");
+
+  setTimeout(() => {
+    gift.style.setProperty("--bgImage", `url(${imgList[index]})`);
+    gift.classList.remove("fade-out");
+    gift.classList.add("fade-in");
+
+    index = (index + 1) % imgList.length;
+  }, 2000);
+}
+
+gantiImg();
+setInterval(gantiImg, 8000);
