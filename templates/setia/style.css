@@ -247,10 +247,20 @@ body {
 .groom-bride {
   padding: 30px 0;
   padding-bottom: 100px;
-  background-color: var(--blue);
+  background-image: linear-gradient(to top, var(--blue), white);
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+.groom-bride .header h3 {
+  font-family: "Ballet";
+  font-size: 30px;
+  color: var(--primary);
+}
+.groom-bride .header span {
+  font-family: var(--swash);
+  font-size: 30px;
+  color: black;
 }
 
 .groom-bride .groom img,
@@ -268,14 +278,15 @@ body {
   margin: auto;
 }
 
-.groom-bride i {
+.groom-bride span i {
   font-size: 45px;
-  color: crimson;
+  color: var(--primary);
 }
 .groom-bride .groom .man,
 .groom-bride .bride .woman {
   font-size: 25px;
-  font-weight: bold;
+  font-family: var(--swash);
+  letter-spacing: 2px;
 }
 
 .groom-bride .floral-wrapper img {
@@ -285,6 +296,7 @@ body {
 .groom-bride .content {
   background-color: white;
   padding: 20px 0;
+  padding-bottom: 40px;
   border-radius: 20px;
   aspect-ratio: 1;
   opacity: 0.7;
@@ -406,6 +418,168 @@ body {
   border-radius: 10px;
   text-decoration: none;
   color: black;
+}
+
+/* love-story */
+.love-story {
+  padding: 70px 70px;
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+  color: white;
+  z-index: 1;
+}
+
+.love-story .content {
+  position: relative;
+  padding: 40px 0;
+  color: white;
+  z-index: 2;
+}
+
+.love-story .floral-wrapper {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+.love-story .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--dark);
+  padding: 40px 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.love-story .floral-wrapper img {
+  z-index: 4;
+}
+
+.love-story h2 {
+  font-size: 32px;
+  font-family: "Berkshire Swash";
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding-left: 40px;
+  --line-height: 0px;
+}
+
+/* Garis vertikal */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 5px;
+  height: var(--line-height);
+  background: var(--yellow);
+  transition: height 0.2s ease-out;
+  z-index: 1;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--secondary);
+}
+
+/* Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 80px;
+  margin-left: 10px;
+  color: white;
+  background-color: var(--secondary);
+}
+
+.timeline-content {
+  background-color: var(--light) !important;
+}
+
+.timeline-content .text .date {
+  color: white;
+}
+
+.timeline-item .speech-buble::after {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 26px;
+  top: 13px;
+  left: -12px;
+  transform: rotate(45deg);
+
+  background-color: var(--secondary);
+}
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  left: -37px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  transition: all 5s;
+  font-size: 35px;
+}
+
+.timeline-dot i {
+  color: var(--yellow);
+  transition: all 0.4s ease;
+}
+
+.timeline-dot.active i {
+  color: var(--secondary);
+}
+
+/* Content kanan */
+.timeline-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Image */
+.timeline-content .image img {
+  width: 250px;
+  height: 300px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+/* Text */
+.timeline-content .text h4 {
+  margin-bottom: 5px;
+}
+
+.timeline-content .date {
+  font-size: 14px;
+  color: black;
+  display: block;
+  margin-bottom: 10px;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 /* aglery */
 
@@ -638,7 +812,7 @@ body {
   }
 
   .groom-bride img {
-    width: 250px;
+    width: 100px;
   }
 
   .groom-bride .woman,
@@ -659,6 +833,44 @@ body {
   }
 
   .acara .floral-wrapper img {
+    width: 100%;
+  }
+
+  /* love story */
+
+  .love-story {
+    padding: 50px 10px;
+  }
+
+  .timeline {
+    padding-left: 40px;
+  }
+
+  .timeline-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 10px !important;
+  }
+
+  .timeline-item .timeline-content .text {
+    margin-top: 80px !important;
+  }
+
+  .timeline-content .image {
+    width: 100%;
+    height: 200px !important;
+  }
+
+  .timeline::after {
+    height: 100%;
+  }
+
+  .love-story .content {
+    position: relative;
+    padding: 30px 10px;
+  }
+
+  .love-story .floral-wrapper img {
     width: 100%;
   }
 
