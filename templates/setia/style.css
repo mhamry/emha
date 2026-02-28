@@ -567,13 +567,20 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
+.timeline-content .image {
+  flex: 1;
+}
+.timeline-content .text {
+  flex: 1;
+}
+
 /* Image */
 .timeline-content .image img {
   width: 250px;
   height: 300px;
   border-radius: 15px;
   object-fit: cover;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 /* Text */
@@ -1231,10 +1238,6 @@ footer .medsos {
     flex-direction: column;
     text-align: center;
     padding: 10px 10px !important;
-  }
-
-  .timeline-item .timeline-content .text {
-    margin-top: 80px !important;
   }
 
   .timeline-content .image {

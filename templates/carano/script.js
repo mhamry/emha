@@ -3,18 +3,36 @@ const landingBottom = document.querySelector(".landing-bottom");
 const hero = document.querySelector(".hero");
 const tombol = document.getElementById("openBtn");
 const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
 
 tombol.addEventListener("click", function () {
   // Hero naik dari bawah
 
   landingTop.classList.add("hide");
-
+  audioIcon.style.display = "flex";
   song.play();
 
   // Aktifkan scroll
   setTimeout(() => {
     document.body.style.overflowY = "auto";
   }, 2000);
+});
+
+//audio
+let isPlaying = true;
+iconWrapper.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle-fill");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle-fill");
+  }
 });
 
 // animasi bg-hero
