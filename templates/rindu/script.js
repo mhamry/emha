@@ -3,7 +3,6 @@ const landingTop = document.getElementById("landing-top");
 const song = document.querySelector(".song");
 const audioIcon = document.querySelector(".audio-icon");
 const iconWrapper = document.querySelector(".icon-wrapper i");
-let isPlaying = false;
 
 tombol.addEventListener("click", () => {
   landingTop.classList.add("hide");
@@ -17,19 +16,19 @@ tombol.addEventListener("click", () => {
 });
 
 // audio
-
-audioIcon.addEventListener("click", function () {
+let isPlaying = true;
+iconWrapper.addEventListener("click", function () {
   if (isPlaying) {
     song.pause();
-    song.volume(0.6);
+    // song.volume(0.6);
     isPlaying = false;
-    iconWrapper.classList.remove("bi-disc");
-    iconWrapper.classList.add("bi-pause-circle");
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle-fill");
   } else {
     song.play();
     isPlaying = true;
-    iconWrapper.classList.add("bi-disc");
-    iconWrapper.classList.remove("bi-pause-circle");
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle-fill");
   }
 });
 

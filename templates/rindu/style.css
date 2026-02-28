@@ -768,7 +768,7 @@ body {
 }
 
 .congrat h2 {
-  font-family: "Poppins";
+  font-family: var(--swash);
   font-size: 30px;
   font-style: italic;
   color: #222;

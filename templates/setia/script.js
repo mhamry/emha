@@ -1,12 +1,39 @@
 const landingBottom = document.querySelector(".landing-bottom");
 const landingTop = document.getElementById("landing-top");
 const tombol = document.getElementById("openBtn");
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
 
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
+  song.play();
+  audioIcon.style.display = "flex";
 
-  document.body.style.overflow = "auto";
+  setTimeout(() => {
+    document.body.style.overflow = "auto";
+  }, 2000);
 });
+
+//audio
+let isPlaying = true;
+iconWrapper.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle-fill");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle-fill");
+  }
+});
+
+function playSong() {
+  song.play();
+}
 
 const imageWrapper = document.querySelector(".hero .image-wrapper");
 const listImg = ["image/6.jpg", "image/7.jpg", "image/8.jpg", "image/9.jpg"];

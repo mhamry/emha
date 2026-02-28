@@ -791,7 +791,16 @@ footer a i {
   right: 20px;
   font-size: 40px;
   z-index: 11;
-  animation: rotating 4s linear infinite;
+  animation: putar 4s linear infinite;
+}
+
+@keyframes putar {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* countdown */

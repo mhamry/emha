@@ -277,7 +277,7 @@ body {
   margin: auto;
 }
 
-.groom-bride span i {
+.groom-bride p i {
   font-size: 45px;
   color: var(--primary);
 }
@@ -512,11 +512,11 @@ body {
   margin-bottom: 80px;
   margin-left: 10px;
   color: white;
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
 }
 
 .timeline-content {
-  background-color: var(--light) !important;
+  background-color: var(--secondary) !important;
 }
 
 .timeline-content .text .date {
@@ -593,6 +593,11 @@ body {
 .galery {
   padding: 80px 0;
   background-image: linear-gradient(to top, var(--primary), white);
+}
+
+.galery h3 {
+  font-family: var(--swash);
+  font-size: 30px;
 }
 
 /* thumbnail carousel */
@@ -837,8 +842,184 @@ body {
   transform: translateY(0);
 }
 
+/* rsvp */
+.rsvp {
+  padding: 80px 50px;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(to top, var(--bluedark), white);
+  z-index: 1;
+}
+
+.rsvp .floral-wrapper img {
+  z-index: 2;
+}
+
+.rsvp .content {
+  position: relative;
+  padding: 30px 0;
+  border-radius: 20px;
+  z-index: 2;
+  background-color: var(--primary);
+}
+.rsvp .content::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: #fff7cd;
+  padding: 30px 0;
+  border-radius: 20px;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.rsvp .floral-wrapper img {
+  z-index: 2;
+}
+
+.rsvp h3 {
+  font-family: var(--swash);
+  font-size: 30px;
+  font-style: italic;
+  color: black;
+}
+.rsvp p {
+  font-family: "Poppins";
+  color: gray;
+}
+
+.rsvp label {
+  font-family: "Poppins";
+  font-weight: bold;
+}
+
+.rsvp input,
+.rsvp select {
+  padding: 10px 10px;
+}
+
+/* thankyou */
+
+.thankyou {
+  padding: 70px 50px;
+  position: relative;
+  color: black !important;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #3bc1a8;
+}
+
+.thankyou .floral-wrapper img {
+  z-index: 3;
+}
+
+.thankyou > * {
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou .content {
+  position: relative;
+  padding: 50px 0;
+  border-radius: 20px;
+  color: black !important;
+}
+
+.thankyou .content::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--light);
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.thankyou h3 {
+  font-size: 30px;
+  font-family: var(--swash);
+  font-style: italic;
+  margin-bottom: 20px;
+  color: black;
+}
+.thankyou i {
+  color: red;
+}
+
+.thankyou .nama_pengantin {
+  font-size: 45px;
+  color: black;
+  font-weight: bold !important;
+}
+
+.thankyou p {
+  color: black;
+}
+
+.thankyou .medsos {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+.thankyou .medsos i {
+  color: black;
+}
+
+.thankyou .floral-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
 .audio-icon .icon-wrapper {
   mix-blend-mode: difference;
+}
+
+/* audio icon */
+.audio-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  place-content: center;
+  transform-origin: center;
+  font-size: 40px;
+  z-index: 12;
+  line-height: 0;
+  animation: putar 5s infinite linear;
+  cursor: pointer;
+}
+
+@keyframes putar {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* footer */
+
+footer {
+  padding: 50px 0;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer .medsos {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 /* countdown */
@@ -1096,7 +1277,39 @@ body {
   .congrat .floral-wrapper img {
     width: 150px;
   }
+  /* rsvp */
 
+  .rsvp {
+    padding: 50px 15px;
+  }
+
+  .rsvp .floral-wrapper img {
+    width: 300px;
+  }
+
+  /* thankyou */
+  .thankyou .nama_pengantin {
+    font-size: 35px;
+  }
+
+  .thankyou i {
+    font-size: 25px;
+  }
+
+  .thankyou .medsos i {
+    font-size: 20px;
+  }
+
+  .thankyou {
+    padding: 40px 20px;
+  }
+  .thankyou img {
+    width: 300px;
+  }
+
+  .thankyou .floral-wrapper img {
+    width: 150px;
+  }
   /* countdown */
   .simply-countdown-circle {
     gap: 0.9rem; /* kecilkan jarak antar lingkaran */

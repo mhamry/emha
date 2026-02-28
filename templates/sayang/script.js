@@ -3,7 +3,6 @@ const tombol = document.getElementById("openBtn");
 const audioIcon = document.querySelector(".audio-icon");
 const song = document.querySelector(".song");
 const iconWrapper = document.querySelector(".icon-wrapper i");
-let isPlaying = true;
 
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
@@ -15,6 +14,8 @@ tombol.addEventListener("click", function () {
   }, 2000);
 });
 
+//audio
+let isPlaying = true;
 iconWrapper.addEventListener("click", function () {
   if (isPlaying) {
     song.pause();
