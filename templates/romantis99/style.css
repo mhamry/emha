@@ -42,7 +42,11 @@ main {
   align-items: center;
   text-align: center;
   z-index: 10;
-  transition: transform 3s ease-in;
+  transition: transform 2s ease-in;
+}
+
+.landing-top .content {
+  margin-top: 200px;
 }
 
 .landing-top h2 {
@@ -119,6 +123,21 @@ main {
   color: white;
 }
 
+.hero-hidden {
+  visibility: hidden;
+}
+
+.hero a {
+  padding: 5px 10px;
+  background-color: black;
+  border-radius: 8px;
+  border: 4px solid white;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin-top: 20px;
+}
+
 .hero h2 {
   font-family: "Sacramento";
   font-size: 70px;
@@ -140,7 +159,7 @@ main {
 }
 
 .hero .content {
-  padding-top: 400px;
+  padding-top: 300px;
 }
 
 /* quote */
@@ -283,6 +302,18 @@ main {
 .save-date {
   position: relative;
   overflow-x: hidden;
+  text-align: center;
+}
+
+.save-date a {
+  padding: 5px 10px;
+  background-color: black;
+  border-radius: 8px;
+  border: 4px solid white;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .save-date h2 {
@@ -1033,6 +1064,10 @@ footer .medsos {
     width: 100%;
     height: 100vh;
   }
+
+  .landing-top .content {
+    margin-top: 200px;
+  }
   .landing-top h2 {
     font-size: 60px;
   }
@@ -1059,12 +1094,18 @@ footer .medsos {
     max-width: 100%;
     height: 100vh;
   }
-
+  /* hero */
   .hero h2 {
     font-family: "Sacramento";
     font-size: 50px;
   }
+  .hero .content {
+    margin: 50px;
+  }
 
+  .hero-hiden {
+    opacity: 0;
+  }
   .btn-open {
     padding: 12px 28px;
     font-size: 0.9rem;

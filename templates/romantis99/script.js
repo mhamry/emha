@@ -3,6 +3,7 @@ const landingTop = document.getElementById("landingTop");
 const song = document.querySelector(".song");
 const audioIcon = document.querySelector(".audio-icon");
 const iconWrapper = document.querySelector(".icon-wrapper i");
+const hero = document.querySelector(".hero-hidden");
 let isPlaying = false;
 
 tombol.addEventListener("click", () => {
@@ -13,7 +14,16 @@ tombol.addEventListener("click", () => {
   // aktifkan scroll setelah animasi
   setTimeout(() => {
     document.body.style.overflowY = "auto";
-  }, 1000);
+    // tampilkan hero
+    hero.classList.remove("hero-hidden");
+
+    // reset AOS manual
+    hero.classList.remove("aos-animate");
+
+    setTimeout(() => {
+      AOS.refreshHard(); // lebih kuat dari refresh()
+    }, 2000);
+  }, 2000);
 });
 
 // audio
@@ -243,3 +253,18 @@ function gantiGambar() {
 
 gantiGambar();
 setInterval(gantiGambar, 10000);
+
+// save the date
+const saveBtn = document.getElementById("saveDate");
+
+if (saveBtn) {
+  const title = "Wedding Rama & Sinta";
+  const startDate = "20260309T100000";
+  const endDate = "20260309T130000";
+  const details = "Acara pernikahan Rama dan Sinta";
+  const location = "Jorong Tabing Pauh Agam, Sumatera Barat";
+
+  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
+
+  saveBtn.href = url;
+}

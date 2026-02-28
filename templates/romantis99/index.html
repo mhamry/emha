@@ -38,14 +38,13 @@
   <body>
     <!-- LAPISAN ATAS -->
     <section class="landing-top" id="landingTop">
-      <div>
-        <h6 data-aos="zoom-in" data-aos-duration="3000">THE WEDDING OF</h6>
-        <h2 data-aos="zoom-in" data-aos-duration="3000">Amri & Nikel</h2>
-        <p data-aos="zoom-in" data-aos-duration="3000">Kepada Yth <br />Bapak/Ibu/Saudara/i</p>
-        <h3 class="tamu_undangan" data-aos="zoom-in" data-aos-duration="3000"></h3>
-        <p class="maaf" data-aos="zoom-in" data-aos-duration="3000">Mohon maaf Jika ada kesalahan dalam penulisan nama/gelar</p>
-        <br />
-        <button class="btn-open mt-3" id="openBtn" data-aos="zoom-in" data-aos-duration="3000"><i class="bi bi-envelope-check-fill"></i> Lihat Undangan</button>
+      <div class="content" data-aos="fade-down" data-aos-duration="2000">
+        <h6>THE WEDDING OF</h6>
+        <h2>Amri & Nikel</h2>
+        <p>Kepada Yth <br />Bapak/Ibu/Saudara/i</p>
+        <span class="tamu_undangan"></span>
+        <p class="maaf">Mohon maaf Jika ada kesalahan dalam penulisan nama/gelar</p>
+        <button class="btn-open mt-3" id="openBtn"><i class="bi bi-envelope-check-fill"></i> Lihat Undangan</button>
       </div>
     </section>
 
@@ -55,11 +54,12 @@
       <div class="section hero">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-7 col-12 text-center content">
+            <div class="col-lg-7 col-12 text-center content hero-hidden" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="0">
               <h5>THE WEDDING OF</h5>
               <h2>Amri & Nikel</h2>
-              <p data-aos="fade-up" data-aos-duration="3000">09 - 11 - 2025</p>
-              <div class="simply-countdown-circle" data-aos="fade-up" data-aos-duration="3000"></div>
+              <p>09 - 11 - 2025</p>
+              <div class="simply-countdown-circle"></div>
+              <a href="" id="saveDate" target="_blank">Simpan Tanggal</a>
             </div>
           </div>
         </div>
@@ -151,6 +151,21 @@
       </div>
 
       <div class="section save-date">
+        <!-- awal kode save the date -->
+        <!-- <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE
+                &text=Wedding%20Rama%20%26%20Sinta
+                &dates=20250817T100000/20250817T130000
+                &details=Acara%20pernikahan%20Rama%20dan%20Sinta
+                &location=Jakarta
+                &sf=true
+                &output=xml"
+              target="_blank"
+              class="btn-save-date"
+                >
+                  Simpan ke Google Calendar
+                </a> -->
+        <!-- ahir kode save the date -->
         <div class="container">
           <div class="row">
             <div class="col">
@@ -168,7 +183,8 @@
                   <div class="text mb-4">
                     <h2>Save the Date</h2>
                     <div class="simply-countdown"></div>
-                    <button class="tombol mt-3"><i class="bi bi-floppy2-fill me-2"></i>Simpan Tanggal</button>
+                    <a id="saveDate" target="_blank">Simpan Tanggal</a>
+                    <!-- <button class="tombol mt-3" id="saveDate" target="_blank"><i class="bi bi-floppy2-fill me-2"></i> Simpan Tanggal</button> -->
                   </div>
                 </div>
               </div>
