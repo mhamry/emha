@@ -42,7 +42,13 @@ if (isset($_POST['generate'])) {
     <input type="text" name="slug" placeholder="alan-laila" required><br>
 
     <label>Daftar Tamu (1 nama per baris)</label><br>
-    <textarea name="tamu" placeholder="Pak Budi&#10;Ibu Sari&#10;Keluarga Andi"></textarea><br>
+    <textarea name="tamu" placeholder="
+    Pak Budi
+    Ibu Sari 
+    Keluarga Andi
+    faiz
+    zahra aken 
+    "></textarea><br>
 
     <button type="submit" name="generate">Generate Link</button>
 </form>

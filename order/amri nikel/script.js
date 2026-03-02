@@ -28,7 +28,7 @@ tombol.addEventListener("click", function () {
 const urlParams = new URLSearchParams(window.location.search);
 const nama = urlParams.get("nama") || "Tamu Undangan";
 const namaElement = document.querySelector(".landing-top .undangan");
-namaElement.innerHTML = `${nama}`;
+namaElement.textContent = `${nama}`;
 
 // //animasi effect timeline
 
