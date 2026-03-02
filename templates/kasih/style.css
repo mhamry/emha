@@ -8,6 +8,12 @@ body {
   overflow: hidden;
 }
 
+:root {
+  --primary: #280905;
+  --secondary: #740a03;
+  --swash: "Berkshire Swash";
+}
+
 .split-layout {
   display: flex;
   height: 100vh;
@@ -17,11 +23,26 @@ body {
 
 .left-panel {
   flex: 2;
-  background-color: aqua;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
+  background-image: url("image/bg-leftpanel.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.left-panel .content {
+  margin-top: 300px;
+  color: white;
+}
+
+.left-panel::before {
+  content: "";
+  background-image: linear-gradient(to top, rgba(40, 9, 5, 0.5));
+  inset: 0;
+  position: absolute;
+  display: block;
 }
 
 .scroll-down {
@@ -67,17 +88,59 @@ body {
 .landing-top {
   position: absolute;
   inset: 0;
-  background-color: blue;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   transition: 3s;
+  background-image: url("image/bg-leftpanel.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-top .content > * {
+  position: relative;
+  z-index: 2;
+}
+
+.landing-top::before {
+  content: "";
+  background-image: linear-gradient(to top, rgba(40, 9, 5, 1) 0%, rgba(40, 9, 5, 1) 10%, rgba(40, 9, 5, 0.9) 20%, rgba(40, 9, 5, 0.8) 30%, rgba(40, 9, 5, 0.7) 40%, rgba(40, 9, 5, 0.6) 50%, rgba(40, 9, 5, 0.5) 60%, rgba(40, 9, 5, 0) 90%);
+  bottom: 0;
+  position: absolute;
+  display: block;
+  height: 90%;
+  width: 100%;
 }
 
 .landing-top.hide {
   transform: translateY(-100vh);
+}
+.landing-top h5 {
+  color: white;
+}
+
+.landing-top .maaf {
+  font-size: 11px;
+}
+
+.landing-top .nama-pengantin {
+  font-family: var(--swash);
+  font-size: 30px;
+  letter-spacing: 7px;
+}
+
+.landing-top .content {
+  margin-top: 250px;
+  color: white;
+}
+
+.landing-top button {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
 }
 /* hero */
 .hero {
@@ -303,6 +366,53 @@ body {
   }
 }
 
+/* save date */
+
+.save-date {
+}
+
+.save-date .content {
+  height: 100vh;
+  padding-top: 150px;
+  position: relative;
+  color: white;
+  --bgImage: url("image/bg-leftpanel.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.save-date .content > * {
+  position: relative;
+  z-index: 2;
+}
+
+.save-date .content:before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bgImage);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.save-date a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 15px;
+  background-color: black;
+  border: 4px solid white;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.save-date .tanggal {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
 /* countdown */
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
@@ -385,57 +495,30 @@ body {
   }
 }
 
-/* responsive */
-
-@media (max-width: 768px) {
-  .left-panel {
-    display: none;
-  }
-
-  .right-panel {
-    flex: 1;
-  }
-
-  /* countdown */
-  .simply-countdown-circle {
-    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
-  }
-
-  .simply-countdown-circle > .simply-section {
-    width: 67px;
-    height: 67px;
-    padding: 0.8rem;
-  }
-
-  .simply-countdown-circle .simply-amount {
-    font-size: 1rem;
-  }
-
-  .simply-countdown-circle .simply-word {
-    font-size: 0.55rem;
-  }
-}
-
 /* batas */
 
 .simply-countdown {
-  --sc-circle-primary: #fff;
-  --sc-circle-secondary: #fff;
+  --sc-circle-primary: #000;
+  --sc-circle-secondary: #000;
   /* --sc-circle-bg: #ff0087; */
-  --sc-circle-text: #fff;
+  --sc-circle-text: #000;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   font-family: "Inter", sans-serif;
+  width: 300px;
+  margin: auto;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .simply-countdown > .simply-section {
   position: relative;
   width: 100px;
   height: 100px;
-  padding: 1rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -466,7 +549,7 @@ body {
   display: block;
   font-size: 1.75rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.9;
   background: linear-gradient(to right, var(--sc-circle-primary), var(--sc-circle-secondary));
   -webkit-background-clip: text;
   background-clip: text;
@@ -489,5 +572,36 @@ body {
   50% {
     transform: scale(0.98);
     opacity: 0.9;
+  }
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+
+  /* countdown */
+  .simply-countdown-circle {
+    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
+  }
+
+  .simply-countdown-circle > .simply-section {
+    width: 67px;
+    height: 67px;
+    padding: 0.8rem;
+  }
+
+  .simply-countdown-circle .simply-amount {
+    font-size: 1rem;
+  }
+
+  .simply-countdown-circle .simply-word {
+    font-size: 0.55rem;
   }
 }
