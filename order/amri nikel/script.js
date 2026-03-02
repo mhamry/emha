@@ -23,6 +23,12 @@ tombol.addEventListener("click", function () {
     }
   });
 });
+//ambil nama tamu undangan dari url
+
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("nama") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.innerHTML = `${nama}`;
 
 // //animasi effect timeline
 

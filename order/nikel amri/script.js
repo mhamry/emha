@@ -35,6 +35,13 @@ iconWrapper.addEventListener("click", function () {
   }
 });
 
+//ambil nama tamu undangan dari url
+
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("nama") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.innerHTML = `${nama}`;
+
 // animasi bg-hero
 const bgHero = document.querySelector(".bg-hero");
 const gambar = ["1", "2", "3"];
