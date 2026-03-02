@@ -8,6 +8,12 @@ body {
   overflow: hidden;
 }
 
+:root {
+  --swash: "Berkshire Swash";
+  --ballet: "Ballet";
+  --primary: #280905;
+}
+
 .split-layout {
   display: flex;
   height: 100vh;
@@ -18,13 +24,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
   text-align: center;
 }
 
 .right-panel {
   flex: 1;
-  background: white;
   height: 100vh;
   overflow-y: hidden; /* LOCK awal */
   position: relative;
@@ -34,12 +38,47 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   z-index: 10;
-  background-color: blueviolet;
+  background-image: url("image/2.png");
+  background-position: center;
+  background-size: cover;
   transition: 3s;
+  color: white;
+}
+.landing-top > * {
+  position: relative;
+  z-index: 1;
+}
+.landing-top::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+.landing-top h5 {
+  margin-top: 60px;
+}
+.landing-top .nama-pengantin {
+  font-family: var(--ballet);
+
+  letter-spacing: 7px;
+  margin-top: 10px;
+}
+
+.landing-top .maaf {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.landing-top .undangan {
+  font-size: 17px;
+}
+
+.landing-top .content-bottom {
+  margin-top: 330px;
 }
 
 .landing-top.hide {
@@ -47,19 +86,73 @@ body {
 }
 
 .landing-top button {
-  margin-top: 30px;
+  margin-top: 10px;
+  border: 1px solid white;
 }
-
+/* hero */
 .hero {
   height: 100vh;
   width: 100%;
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
-  background-color: brown;
+  background-image: url("image/4.png");
+  background-position: bottom;
+  background-size: cover;
+  color: black;
 }
 
+.hero .nama-pengantin {
+  font-family: var(--ballet);
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.hero h5 {
+  margin-top: 40px;
+}
+.hero .tanggal {
+  color: #fff;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .tanggal {
+  margin-top: 390px;
+}
+
+.hero::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: linear-gradient(to top, rgba(40, 9, 5, 1), rgba(255, 255, 255, 0));
+}
+/* slide */
+.slide {
+  margin-top: -1px;
+  padding: 40px 0;
+  background-color: var(--primary);
+  color: white;
+}
+.slide .carousel-item img {
+  width: 100%;
+  height: 130px; /* samakan tinggi */
+  object-fit: cover;
+  transition: 3s;
+}
+
+.slide .carousel-item {
+  transition: 10s ease-in-out;
+}
+
+.slide .text {
+  width: 80%;
+  margin: auto;
+}
+/* quote */
 .quote {
   padding: 80px 0;
   background-color: lightgreen;
@@ -88,7 +181,7 @@ body {
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
   --sc-circle-secondary: #fff;
-  --sc-circle-bg: #bcd9a2;
+  /* --sc-circle-bg: #bcd9a2; */
   --sc-circle-text: #fff;
 
   display: flex;
@@ -100,10 +193,10 @@ body {
 
 .simply-countdown-circle > .simply-section {
   position: relative;
-  background-color: #bcd9a2;
+  /* background-color: #bcd9a2; */
   width: 90px;
   height: 90px;
-  border: 2px solid #bcd9a2;
+  /* border: 2px solid #bcd9a2; */
   padding: 1rem;
   display: flex;
   border-radius: 10px;
@@ -140,7 +233,7 @@ body {
   display: block;
   font-size: 1.75rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.7;
   background: linear-gradient(to right, var(--sc-circle-primary), var(--sc-circle-secondary));
   -webkit-background-clip: text;
   background-clip: text;
