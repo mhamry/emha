@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generate Link Undangan</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin-top: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+      th {
+        background: #f4f4f4;
+      }
+      .link-input {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Generate Link Tamu Undangan</h2>
+
+    <label>Slug Undangan (nama folder)</label><br />
+    <input type="text" id="slug" placeholder="alan-laila" required /><br />
+
+    <label>Daftar Tamu (1 nama per baris)</label><br />
+    <textarea
+      id="tamu"
+      placeholder="Pak Budi
+Ibu Sari
+Keluarga Andi
+Faiz
+Zahra Aken"
+    ></textarea
+    ><br />
+
+    <button onclick="generateLink()">Generate Link</button>
+
+    <div id="hasil"></div>
+
+    <script>
+      function generateLink() {
+        const slug = document.getElementById("slug").value.trim();
+        const list = document.getElementById("tamu").value.trim();
+        const hasilDiv = document.getElementById("hasil");
+
+        if (!slug || !list) {
+          alert("Slug dan daftar tamu wajib diisi!");
+          return;
+        }
+
+        const tamuArray = list.split("\n");
+
+        let tableHTML = `
+        <h3>Hasil Link</h3>
+        <table>
+            <tr>
+                <th>Nama Tamu</th>
+                <th>Link Undangan</th>
+            </tr>
+    `;
+
+        tamuArray.forEach((nama) => {
+          nama = nama.trim();
+          if (nama !== "") {
+            const encodedNama = encodeURIComponent(nama);
+            const link = `https://mhamry.github.io/emha/order/${slug}/?to=${encodedNama}`;
+
+            tableHTML += `
+                <tr>
+                    <td>${nama}</td>
+                    <td>
+                        <input 
+                            type="text" 
+                            class="link-input"
+                            value="${link}" 
+                            onclick="this.select()"
+                            readonly
+                        >
+                    </td>
+                </tr>
+            `;
+          }
+        });
+
+        tableHTML += `</table>`;
+        hasilDiv.innerHTML = tableHTML;
+      }
+    </script>
+  </body>
+</html>
