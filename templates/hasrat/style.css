@@ -154,6 +154,7 @@ body {
 
 .slide .carousel-item {
   transition: 10s ease-in-out;
+  padding-right: 8px;
 }
 
 .slide .text {
