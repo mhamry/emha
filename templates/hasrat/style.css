@@ -344,7 +344,7 @@ body {
 }
 
 .wedding-event .card {
-  border-top-right-radius: 200px;
+  border-top-right-radius: 130px;
   overflow: hidden;
 }
 
@@ -368,10 +368,10 @@ body {
 }
 
 .wedding-event .carousel-inner {
-  height: 70vh;
+  height: 40vh;
 }
 .wedding-event .carousel-inner .carousel-item {
-  height: 70vh;
+  height: 40vh;
 }
 .wedding-event .carousel-inner .carousel-item img {
   height: 100%;
