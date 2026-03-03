@@ -139,25 +139,25 @@ body {
   background-image: linear-gradient(to top, rgba(40, 9, 5, 1), rgba(255, 255, 255, 0));
 }
 /* slide */
-.slide {
+.slider {
   margin-top: -1px;
   padding: 40px 0;
   background-color: var(--primary);
   color: white;
 }
-.slide .carousel-item img {
+.slider .carousel-item img {
   width: 100%;
   height: 130px; /* samakan tinggi */
   object-fit: cover;
   transition: 3s;
 }
 
-.slide .carousel-item {
+.slider .slide .carousel-item {
   transition: 10s ease-in-out;
   padding-right: 8px;
 }
 
-.slide .text {
+.slider .text {
   width: 80%;
   margin: auto;
 }
@@ -298,9 +298,22 @@ body {
 }
 /* quote */
 .quote {
-  padding: 80px 20px;
-  background-image: linear-gradient(to top, var(--primary), white);
+  padding: 30px 20px;
   text-align: center;
+  position: relative;
+  color: white;
+}
+
+.quote > * {
+  position: relative;
+  z-index: 2;
+}
+
+.quote::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: var(--primary);
 }
 
 .quote .header {
@@ -321,7 +334,49 @@ body {
 .quote .header .line {
   width: 2px;
   height: 50px;
-  background-color: black;
+  background-color: white;
+}
+
+/* wedding event */
+
+.wedding-event {
+  padding: 70px 20px;
+}
+
+.wedding-event .card {
+  border-top-right-radius: 200px;
+  overflow: hidden;
+}
+
+.wedding-event .card-body {
+  display: flex;
+  height: 250px;
+}
+.wedding-event .card-body .widget {
+  background: var(--primary);
+  color: #fff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wedding-event .card-body .widget p {
+  transform: rotate(-90deg);
+  font-family: var(--swash);
+  font-size: 30px;
+  letter-spacing: 7px;
+}
+
+.wedding-event .carousel-inner {
+  height: 70vh;
+}
+.wedding-event .carousel-inner .carousel-item {
+  height: 70vh;
+}
+.wedding-event .carousel-inner .carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* countdown */
