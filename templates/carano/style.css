@@ -706,12 +706,6 @@ body {
   color: black;
 }
 
-/* .gift .rek {
-  padding: 10px 100px;
-  border: 2px black solid !important;
-  border-radius: 10px;
-} */
-
 .gift .line {
   width: 100%;
   height: 4px;
@@ -774,7 +768,14 @@ body {
 .congrat .content {
   padding: 50px 0;
   position: relative;
+  background-color: #e6501b;
   z-index: 1;
+  color: #fff;
+}
+
+.congrat .content > * {
+  position: relative;
+  z-index: 2;
 }
 
 .congrat .content::before {
@@ -789,14 +790,13 @@ body {
 }
 
 .congrat h2 {
-  font-family: "Poppins";
+  font-family: var(--swash);
   font-size: 30px;
-  font-style: italic;
-  color: #222;
+  color: #fff;
 }
 .congrat p {
   font-family: "Poppins";
-  color: #888;
+  color: #fff;
 }
 
 .congrat input,
@@ -870,13 +870,13 @@ body {
 }
 
 .rsvp h3 {
-  font-family: "Poppins";
+  font-family: var(--swash);
   font-size: 30px;
-  font-style: italic;
+  color: #fff;
 }
 .rsvp p {
   font-family: "Poppins";
-  color: gray;
+  color: white;
 }
 
 .rsvp label {
@@ -928,10 +928,9 @@ body {
 
 .thankyou h3 {
   font-size: 30px;
-  font-family: "Poppins";
-  font-style: italic;
+  font-family: var(--swash);
   margin-bottom: 20px;
-  color: black;
+  color: white;
 }
 .thankyou i {
   color: red;
@@ -942,7 +941,7 @@ body {
 }
 
 .thankyou p {
-  color: black;
+  color: white;
 }
 
 .thankyou .medsos {
@@ -961,6 +960,28 @@ body {
   inset: 0;
 }
 
+/* footer */
+
+footer {
+  padding: 50px 0;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer .medsos {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
 /* audio icon */
 .audio-icon {
   position: fixed;
@@ -975,6 +996,8 @@ body {
   animation: rotating 2s infinite linear;
   cursor: pointer;
 }
+
+/* countdown */
 
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
@@ -1219,23 +1242,24 @@ body {
   /* congrat */
 
   .congrat {
-    margin-top: 50px;
-    padding: 50px 15px;
+    padding: 80px 15px;
     overflow-x: hidden;
   }
 
   .congrat .floral-wrapper img {
     width: 100%;
+    height: 100px;
   }
 
   /* rsvp */
 
   .rsvp {
-    padding: 50px 15px;
+    padding: 70px 15px;
   }
 
   .rsvp .floral-wrapper img {
     width: 100%;
+    height: 100%;
   }
 
   /* thankyou */
@@ -1254,8 +1278,8 @@ body {
   .thankyou {
     padding: 40px 20px;
   }
-  .thankyou img {
-    width: 300px;
+  .thankyou .floral-wrapper img {
+    width: 100%;
   }
 
   .simply-countdown-circle {
