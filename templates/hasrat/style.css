@@ -25,6 +25,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-image: linear-gradient(to top, var(--primary), white);
+  color: #fff;
+}
+
+.left-panel .nama-pengantin {
+  font-size: 40px;
+  font-family: var(--ballet);
+  margin-top: 30px;
 }
 
 .right-panel {
@@ -152,10 +160,87 @@ body {
   width: 80%;
   margin: auto;
 }
+/* groom bride */
+
+.groom-bride {
+  padding: 70px 20px;
+}
+
+.groom-bride .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.groom-bride .header h3 {
+  font-size: 40px;
+  font-family: var(--swash);
+  margin-bottom: 20px;
+}
+.groom-bride .image-wrapper {
+  height: 80vh;
+  box-shadow: 0 0 8px rgba(40, 9, 5, 0.9);
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper .nama {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ballet);
+  color: black;
+  font-size: 30px;
+  z-index: 2;
+}
+
+.groom-bride .text .nama {
+  font-family: var(--swash);
+  color: var(--primary);
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.groom-bride .image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0) 40%);
+}
+.groom-bride .image-wrapper img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.groom-bride .header .line {
+  height: 2px;
+  width: 70%;
+  background-color: var(--primary);
+}
+
+.groom-bride .and {
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: var(--ballet);
+  color: var(--primary);
+}
+
+.groom-bride .text a {
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
 /* quote */
 .quote {
-  padding: 80px 0;
-  background-color: lightgreen;
+  padding: 80px 20px;
+  background-image: linear-gradient(to top, var(--primary), white);
   text-align: center;
 }
 
@@ -164,11 +249,14 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.quote .header p {
-  font-size: 35px;
+.quote .header h1 {
+  font-family: var(--swash);
+}
+.quote span {
+  color: white;
 }
 
 .quote .header .line {

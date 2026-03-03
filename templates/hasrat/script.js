@@ -1,10 +1,16 @@
 const tombol = document.getElementById("btnOpen");
 const rightPanel = document.getElementById("rightPanel");
 const landingTop = document.getElementById("landingTop");
+const leftPanel = document.getElementById("leftPanel");
 
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflow = "auto";
+
+  leftPanel.addEventListener("wheel", function (e) {
+    e.preventDefault();
+    rightPanel.scrollTop += e.deltaY;
+  });
 });
 
 //countdown
