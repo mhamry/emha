@@ -419,6 +419,16 @@ body {
   border-radius: 8px;
 }
 
+.wedding-event .dua {
+  margin-top: 50px;
+  border-top-left-radius: 130px;
+  border-top-right-radius: 0;
+}
+
+.wedding-event .carousel-inner .carousel-item {
+  transition: all 4s;
+}
+
 /* countdown */
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
