@@ -494,8 +494,41 @@ body {
   margin-top: 70px;
 }
 
+/* love story */
+
+.love-story {
+  padding: 70px 20px;
+  background-image: linear-gradient(to top, var(--primary), white);
+}
+
+.love-story h3 {
+  font-family: var(--swash);
+  font-size: 30pxa;
+}
+
+.love-story .story {
+  text-align: left;
+}
+
+.love-story .tiga p,
+.love-story .empat p,
+.love-story .tiga h4,
+.love-story .empat h4 {
+  color: #fff;
+}
+
+.love-story .story h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.love-story .story img {
+  margin-top: 40px;
+}
+
 /* galery */
 .gallery {
+  margin-top: -1px;
   padding: 50px 20px;
   background-color: var(--primary);
 }
