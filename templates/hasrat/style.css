@@ -359,6 +359,7 @@ body {
 }
 .wedding-event .header {
   margin: auto;
+  margin-bottom: 40px;
 }
 
 .card .line {
@@ -420,9 +421,24 @@ body {
 }
 
 .wedding-event .dua {
-  margin-top: 50px;
+  margin-top: 70px;
   border-top-left-radius: 130px;
   border-top-right-radius: 0;
+}
+
+.wedding-event .carousel-inner .carousel-item {
+  transition: all 4s;
+}
+
+/* Membalik arah slide carousel (kiri → kanan) */
+.two .carousel-item-next:not(.carousel-item-start),
+.two .active.carousel-item-end {
+  transform: translateX(-100%);
+}
+
+.two .carousel-item-prev:not(.carousel-item-end),
+.two .active.carousel-item-start {
+  transform: translateX(100%);
 }
 
 .wedding-event .carousel-inner .carousel-item {
