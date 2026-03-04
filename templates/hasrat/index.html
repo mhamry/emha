@@ -366,6 +366,48 @@
               </div>
             </div>
           </section>
+          <section class="rsvp" id="rsvp">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="header">
+                    <h1>RSVP</h1>
+                  </div>
+                  <p>Untuk membantu kami mempersiapkan segalanya dengan lebih baik, silakan konfirmasi kehadiran Anda melalui formulir RSVP berikut:</p>
+                </div>
+                <form action="">
+                  <div class="mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" required />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label d-block">Kehadiran</label>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="kehadiran" id="hadir" value="Hadir" required />
+                      <label class="form-check-label" for="hadir"> Insya Allah Hadir </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="kehadiran" id="tidakHadir" value="Tidak Hadir" />
+                      <label class="form-check-label" for="tidakHadir"> Maaf bisa Tidak Hadir </label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="jumlahtamu" class="form-label">Jumlah Tamu</label>
+                    <select name="jumlahtamu" id="jumlahtamu" class="form-select">
+                      <option value="" disabled selected>--Pilih Jumlah Tamu--</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
           <section class="gallery" id="gallery">
             <div class="container">
               <div class="header">

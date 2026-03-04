@@ -526,11 +526,32 @@ body {
   margin-top: 40px;
 }
 
+/* rsvp */
+
+.rsvp {
+  padding: 70px 20px;
+  background-color: #5a0e24;
+  color: #fff;
+}
+
+.rsvp input,
+.rsvp select {
+  background-color: #5a0e24;
+}
+
+.rsvp .form-check input:active {
+  background-color: #fff;
+}
+
+.rsvp select {
+  color: #fff;
+}
+
 /* galery */
 .gallery {
   margin-top: -1px;
   padding: 50px 20px;
-  background-color: var(--primary);
+  background-color: azure;
 }
 
 .gallery .header {
