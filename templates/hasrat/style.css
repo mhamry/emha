@@ -445,6 +445,55 @@ body {
   transition: all 4s;
 }
 
+/* gift */
+.gift {
+  padding: 60px 0;
+  background-color: #5a0e24;
+  color: #fff;
+}
+
+.gift h3 {
+  font-family: var(--swash);
+}
+
+.gift .header i {
+  font-size: 40px;
+}
+
+.gift .card {
+  text-align: left;
+  margin: auto;
+  width: 85%;
+  height: 170px;
+  padding: 20px;
+  line-height: 5px;
+  position: relative;
+  background-image: url("image/bg-card.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gift .card .image-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 80px;
+  height: 30px;
+}
+
+.gift a {
+  margin-top: 20px;
+  background-color: #280905;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+.gift .card .nama {
+  margin-top: 70px;
+}
+
 /* galery */
 .gallery {
   padding: 50px 20px;
