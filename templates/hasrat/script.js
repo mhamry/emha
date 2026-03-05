@@ -2,15 +2,37 @@ const tombol = document.getElementById("btnOpen");
 const rightPanel = document.getElementById("rightPanel");
 const landingTop = document.getElementById("landingTop");
 const leftPanel = document.getElementById("leftPanel");
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
+let isPlaying = false;
 
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflow = "auto";
+  song.play();
+  audioIcon.style.display = "flex";
 
   leftPanel.addEventListener("wheel", function (e) {
     e.preventDefault();
     rightPanel.scrollTop += e.deltaY;
   });
+});
+
+// audio
+
+audioIcon.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle");
+  }
 });
 
 //countdown

@@ -247,6 +247,11 @@ body {
   text-decoration: none;
 }
 
+.groom-bride .bride .text a {
+  background-color: #fff;
+  color: black;
+}
+
 /* save the date */
 
 .save-date {
@@ -399,6 +404,9 @@ body {
   font-size: 30px;
   letter-spacing: 7px;
 }
+.wedding-event .card-body .widget .akad {
+  font-size: 25px;
+}
 
 .wedding-event .carousel-inner {
   height: 40vh;
@@ -497,8 +505,14 @@ body {
 /* love story */
 
 .love-story {
-  padding: 70px 20px;
+  padding: 70px 10px;
   background-image: linear-gradient(to top, var(--primary), white);
+}
+
+.love-story img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .love-story h3 {
@@ -534,17 +548,83 @@ body {
   color: #fff;
 }
 
-.rsvp input,
-.rsvp select {
-  background-color: #5a0e24;
+.rsvp .header {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.rsvp .form-check input:active {
+.rsvp .header h1 {
+  font-family: var(--swash);
+}
+
+.rsvp p {
+  text-align: center;
+}
+
+.rsvp button {
   background-color: #fff;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
-.rsvp select {
+/* congrat */
+
+.congrat {
+  padding: 50px 20px;
+  padding-bottom: 80px;
+  background-color: #280905;
+  color: white;
+}
+
+.congrat .header h2 {
+  font-family: var(--swash);
+  font-size: 30px;
+}
+.congrat .header p {
+  margin-bottom: 50px;
+}
+
+.congrat .kotak-pesan {
+  height: 40vh;
+  margin-top: 40px;
+  background: #f0fafa;
+  overflow-y: scroll;
+  padding: 20px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.congrat .kotak-pesan .text-pesan {
+  color: black;
+  padding: 0 10px;
+  background-color: #5a0e24;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
   color: #fff;
+}
+.congrat .kotak-pesan .text-pesan .nama {
+  font-weight: bold;
+  margin-top: 14px;
+}
+.congrat .kotak-pesan .text-pesan p {
+  margin-top: -15px;
+}
+
+.congrat .text-pesan i {
+  color: red;
+  font-size: 30px;
+}
+
+.congrat button {
+  background-color: #fff;
+  color: #280905;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 /* galery */
@@ -587,7 +667,119 @@ body {
   grid-column: span 2;
   height: 180px;
 }
+/* tahnkyou */
+.thankyou {
+  padding: 80px 0;
+  height: 100vh;
+  position: relative;
+  color: white;
+  z-index: 1;
+  --gambar: url("image/2.png");
+}
+
+.thankyou > * {
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--gambar);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 2s ease-in-out;
+  z-index: -2;
+}
+.thankyou::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--primary);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.thankyou.fade-out::after {
+  opacity: 0.4;
+}
+.thankyou.fade-in::after {
+  opacity: 0.6;
+}
+.thankyou h3 {
+  font-size: 30px;
+  font-family: var(--swash);
+  margin-bottom: 20px;
+  color: white;
+}
+.thankyou i {
+  color: red;
+}
+
+.thankyou .nama_pengantin {
+  font-size: 30px;
+}
+
+.thankyou p {
+  color: white;
+}
+
+/* audio */
+
+.audio-icon {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  height: 40px;
+  width: 40px;
+  font-size: 2rem;
+  border-radius: 50%;
+  animation: rotating 2s linear infinite;
+  color: white;
+  cursor: pointer;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  mix-blend-mode: difference;
+  z-index: 10;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* footer */
+footer {
+  padding: 50px 0;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+footer .medsos {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
 /* countdown */
+
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
   --sc-circle-secondary: #fff;
@@ -600,7 +792,6 @@ body {
   gap: 1.5rem;
   font-family: "Inter", sans-serif;
 }
-
 .simply-countdown-circle > .simply-section {
   position: relative;
   /* background-color: #bcd9a2; */
