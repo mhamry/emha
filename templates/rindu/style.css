@@ -23,7 +23,7 @@ body {
   height: 100vh;
   background-image: radial-gradient(circle at top left, #f1e9e9, #e491c9, #982598);
   position: fixed;
-  transition: 4s ease-in-out;
+  transition: 2s ease-in-out;
   z-index: 10;
   overflow: hidden;
 }
@@ -159,6 +159,15 @@ body {
 .hero .content {
   margin-top: 30px;
 }
+
+.hero-hidden1 {
+  visibility: hidden;
+  transition: 2s;
+}
+.hero-hidden2 {
+  visibility: hidden;
+  transition: 2s;
+}
 .hero .nama-pengantin {
   font-family: "Berkshire Swash";
   font-size: 40px;
@@ -266,7 +275,7 @@ body {
 }
 .groom-bride i {
   font-size: 45px;
-  color: crimson;
+  color: #982598;
 }
 .groom-bride .groom .man,
 .groom-bride .bride .woman {

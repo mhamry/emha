@@ -3,6 +3,8 @@ const landingTop = document.getElementById("landing-top");
 const song = document.querySelector(".song");
 const audioIcon = document.querySelector(".audio-icon");
 const iconWrapper = document.querySelector(".icon-wrapper i");
+const heroSection1 = document.querySelector(".hero-hidden1");
+const heroSection2 = document.querySelector(".hero-hidden2");
 
 tombol.addEventListener("click", () => {
   landingTop.classList.add("hide");
@@ -12,6 +14,16 @@ tombol.addEventListener("click", () => {
   // aktifkan scroll setelah animasi
   setTimeout(() => {
     document.body.style.overflowY = "auto";
+    heroSection1.classList.remove("hero-hidden1");
+    heroSection2.classList.remove("hero-hidden2");
+
+    // reset AOS manual
+    heroSection1.classList.remove("aos-animate");
+    heroSection2.classList.remove("aos-animate");
+
+    setTimeout(() => {
+      AOS.refresh(); // lebih kuat dari refresh()
+    }, 1500);
   }, 1000);
 });
 
