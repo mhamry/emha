@@ -124,6 +124,7 @@ body {
 
 .hero button {
   border: 2px solid white;
+  display: block;
 }
 
 .template {
@@ -263,7 +264,7 @@ footer .medsos {
     overflow-x: hidden;
   }
   .hero .tombol {
-    width: 180px;
+    width: 250px;
     font-size: 12px;
     flex-direction: column;
     margin-top: 180px;
