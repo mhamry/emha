@@ -457,7 +457,7 @@ body {
   top: 0;
   width: 5px;
   height: var(--line-height);
-  background: #fff7cd;
+  background: #fff;
   transition: height 0.2s ease-out;
   z-index: 1;
 }
@@ -496,7 +496,7 @@ body {
 }
 
 .timeline-dot.active i {
-  color: crimson;
+  color: #fff;
 }
 
 /* Content kanan */
@@ -1079,16 +1079,16 @@ footer .medsos {
   /* groom-bride */
   .groom-bride .image-wrapper {
     width: 250px;
-    height: 250px;
+    height: 300px;
     border-radius: 20px;
-    border: 4px solid yellow;
+    border: 4px solid green;
     overflow: hidden;
   }
 
   .groom-bride .groom img,
   .groom-bride .bride img {
     width: 250px;
-    height: 250px;
+    height: 300px;
     border-radius: 20px;
   }
 
@@ -1104,7 +1104,7 @@ footer .medsos {
 
   .groom-bride i {
     font-size: 35px;
-    color: crimson;
+    color: green;
   }
 
   /* acara */
