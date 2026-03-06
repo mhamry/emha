@@ -1,0 +1,155 @@
+.left-panel {
+  height: 100vh;
+  background-color: aqua;
+}
+
+.right-panel {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: antiquewhite;
+}
+
+/* landing top */
+
+.landing-top {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  transition: 3s ease-in-out;
+  z-index: 10;
+  background-image: url("image/3.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.landing-top > * {
+  position: relative;
+  z-index: 2;
+}
+
+.landing-top h1 {
+  font-family: var(--love);
+  font-size: 40px;
+}
+
+.landing-top .maaf {
+  font-size: 12px;
+}
+
+.landing-top::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.landing-top .top {
+  margin-top: 50px;
+}
+
+.landing-top .bottom {
+  margin-top: 350px;
+}
+
+.landing-top.hide {
+  transform: translateY(-100vh);
+}
+
+.landing-top button {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 15px;
+}
+
+/* hero */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background-image: url("image/3.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 3;
+}
+
+.hero::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.hero .top {
+  margin-top: 50px;
+}
+
+.hero .bottom {
+  padding: 0 20px;
+  margin-top: 350px;
+}
+
+.hero .bottom p {
+  font-size: 12px;
+  font-weight: lighter;
+}
+.hero .top p {
+  font-size: 13px;
+  font-weight: bold;
+}
+.hero h1 {
+  font-family: var(--love);
+  font-size: 40px;
+}
+
+/* galery */
+.galery {
+  padding: 70px 0;
+  background-color: #bcd9a2;
+}
+
+.galery .header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* tinggi selang seling */
+.galery .satu,
+.galery .empat {
+  height: 280px;
+}
+
+.galery .dua,
+.galery .tiga {
+  height: 200px;
+}
+
+/* image */
+.galery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 6px;
+  display: block;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+}
