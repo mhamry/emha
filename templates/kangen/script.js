@@ -1,11 +1,15 @@
 const tombol = document.getElementById("btnOpen");
 const landingTop = document.getElementById("landingTop");
 const scrollDown = document.querySelector(".scroll-down");
-const landingBottom = document.querySelector(".landing-bottom");
+const leftPanel = document.getElementById("leftPanel");
+const rightPanel = document.getElementById("rightPanel");
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
-  document.body.style.overflowY = "auto";
-  scrollDown.classList.add("muncul");
+
+  setTimeout(() => {
+    rightPanel.style.overflowY = "auto";
+    scrollDown.classList.add("muncul");
+  }, 2000);
 });
 
 //ambil nama tamu undangan dari url
@@ -15,13 +19,38 @@ const nama = urlParams.get("n") || "Tamu Undangan";
 const namaElement = document.querySelector(".landing-top .undangan");
 namaElement.textContent = `${nama}`;
 
-// hero bg
-const bg = document.querySelector(".hero-bg");
+// animasi hero
 
-rightPanel.addEventListener("scroll", function () {
-  let scroll = rightPanel.scrollTop;
+const hero = document.querySelector(".hero-bg");
+const listImg = ["image/1.png", "image/2.png", "image/3.png", "image/4.png"];
+let index = 0;
 
-  bg.style.transform = `translateY(${scroll}px)`;
+function gantiImg() {
+  hero.classList.add("fade-in");
+  hero.classList.remove("fade-out");
+
+  setTimeout(() => {
+    hero.style.backgroundImage = `url(${listImg[index]})`;
+    hero.classList.remove("fade-in");
+    hero.classList.add("fade-out");
+    index = (index + 1) % listImg.length;
+  }, 2000);
+}
+
+gantiImg();
+setInterval(gantiImg, 8000);
+
+// fixed background
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero");
+  const rightPanel = document.getElementById("rightPanel");
+
+  rightPanel.addEventListener("scroll", function () {
+    let scroll = rightPanel.scrollTop;
+
+    hero.style.backgroundPosition = "center " + scroll * 0.2 + "px";
+  });
 });
 
 //countdown
