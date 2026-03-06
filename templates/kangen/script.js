@@ -15,6 +15,22 @@ tombol.addEventListener("click", function () {
   });
 });
 
+//ambil nama tamu undangan dari url
+
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("n") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.textContent = `${nama}`;
+
+// hero bg
+const bg = document.querySelector(".hero-bg");
+
+rightPanel.addEventListener("scroll", function () {
+  let scroll = rightPanel.scrollTop;
+
+  bg.style.transform = `translateY(${scroll}px)`;
+});
+
 //countdown
 simplyCountdown(".simply-countdown-circle", {
   year: 2026, // Target year (required)

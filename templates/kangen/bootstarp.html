@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kangen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+    <style>
+      .left-panel {
+        height: 100vh;
+        background-color: aqua;
+      }
+
+      .right-panel {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        background-color: antiquewhite;
+      }
+
+      @media (max-width: 768px) {
+        .left-panel {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container-fluid">
+      <div class="row vh-100">
+        <!-- LEFT PANEL -->
+        <div class="col-lg-8 d-none d-lg-flex left-panel align-items-center justify-content-center text-center" id="leftPanel">
+          <div>
+            <h5>The Wedding of</h5>
+            <h1>Amri & Nikel</h1>
+
+            <div class="scroll-down">
+              <i class="bi bi-file-arrow-down-fill"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="col-lg-4 right-panel p-0" id="rightPanel">
+          <!-- landing top -->
+          <section class="landing-top" id="landingTop">...</section>
+
+          <!-- landing bottom -->
+          <section class="landing-bottom">...</section>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -6,6 +6,13 @@
 
 body {
   overflow: hidden;
+  font-family: "Poppins";
+}
+
+:root {
+  --poppins: "Poppins";
+  --swash: "Berkshire Swash";
+  --love: "Loved by the King";
 }
 
 .split-layout {
@@ -75,16 +82,60 @@ body {
   inset: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
-  background-color: black;
   color: white;
   transition: 3s ease-in-out;
   z-index: 10;
+  background-image: url("image/3.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.landing-top > * {
+  position: relative;
+  z-index: 2;
+}
+
+.landing-top h1 {
+  font-family: var(--love);
+  font-size: 40px;
+}
+
+.landing-top .maaf {
+  font-size: 12px;
+}
+
+.landing-top::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.landing-top .top {
+  margin-top: 50px;
+}
+
+.landing-top .bottom {
+  margin-top: 350px;
 }
 
 .landing-top.hide {
   transform: translateY(-100vh);
+}
+
+.landing-top button {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 15px;
+}
+
+/* landing bottom */
+
+.landing-bottom {
+  position: relative;
+  overflow: hidden;
 }
 
 /* hero */
@@ -93,80 +144,46 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
-  background-color: blue;
-}
-
-/* scroll indicator */
-
-.scroll-indicator-wrapper {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.scroll-indicator {
-  width: 25px;
-  height: 40px;
-  border: 2px solid white;
-  border-radius: 20px;
-  margin: auto;
   position: relative;
+  background-image: url("image/3.png");
+  background-position: center;
+  background-size: cover;
+  color: white;
 }
 
-.scroll-indicator::after {
-  content: "";
-  width: 4px;
-  height: 8px;
-  background: white;
+.hero > * {
+  position: relative;
+  z-index: 3;
+}
+
+.hero::after {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 8px;
-  border-radius: 2px;
-  animation: scrollAnim 1.5s infinite;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
 }
 
-@keyframes scrollAnim {
-  0% {
-    opacity: 0;
-    top: 8px;
-  }
-  50% {
-    opacity: 1;
-    top: 16px;
-  }
-  100% {
-    opacity: 0;
-    top: 24px;
-  }
+.hero .top {
+  margin-top: 50px;
 }
 
-/* quote */
-
-.quote {
-  padding: 70px 0;
-  background-color: burlywood;
-  text-align: center !important;
+.hero .bottom {
+  padding: 0 20px;
+  margin-top: 350px;
 }
 
-.quote .header {
-  display: flex;
-  gap: 10px;
-  font-size: 40px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+.hero .bottom p {
+  font-size: 12px;
+  font-weight: lighter;
 }
-
-.quote .header p {
-  font-size: 20px;
-  margin-top: 40px;
+.hero .top p {
+  font-size: 13px;
+  font-weight: bold;
 }
-.quote .header .n {
-  font-size: 20px;
-  margin-top: 60px;
+.hero h1 {
+  font-family: var(--love);
   font-size: 40px;
 }
 
@@ -186,12 +203,12 @@ body {
 /* tinggi selang seling */
 .galery .satu,
 .galery .empat {
-  height: 200px;
+  height: 280px;
 }
 
 .galery .dua,
 .galery .tiga {
-  height: 100px;
+  height: 200px;
 }
 
 /* image */
@@ -199,8 +216,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   margin-top: 6px;
+  display: block;
   border-radius: 10px;
 }
 /* countdown */
