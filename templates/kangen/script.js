@@ -10,29 +10,33 @@ tombol.addEventListener("click", function () {
     rightPanel.style.overflowY = "auto";
     scrollDown.classList.add("muncul");
   }, 2000);
+
+  leftPanel.addEventListener("wheel", function (e) {
+    rightPanel.scrollTop += e.deltaY;
+    e.preventDefault();
+  });
 });
 
-//ambil nama tamu undangan dari url
+//efect paralax hero
 
-const urlParams = new URLSearchParams(window.location.search);
-const nama = urlParams.get("n") || "Tamu Undangan";
-const namaElement = document.querySelector(".landing-top .undangan");
-namaElement.textContent = `${nama}`;
+$(".right-panel").scroll(function () {
+  let rightpanelScroll = $(this).scrollTop();
 
-// animasi hero
+  $(".bg-hero").css({
+    transform: "translateY(" + rightpanelScroll + "px)",
+  });
+});
 
-const hero = document.querySelector(".hero-bg");
+//animasi bg-hero
+const bgHero = document.querySelector(".bg-hero");
 const listImg = ["image/1.png", "image/2.png", "image/3.png", "image/4.png"];
 let index = 0;
 
 function gantiImg() {
-  hero.classList.add("fade-in");
-  hero.classList.remove("fade-out");
-
+  bgHero.style.opacity = 0.2;
   setTimeout(() => {
-    hero.style.backgroundImage = `url(${listImg[index]})`;
-    hero.classList.remove("fade-in");
-    hero.classList.add("fade-out");
+    bgHero.style.backgroundImage = `url(${listImg[index]})`;
+    bgHero.style.opacity = 0.8;
     index = (index + 1) % listImg.length;
   }, 2000);
 }
@@ -40,18 +44,12 @@ function gantiImg() {
 gantiImg();
 setInterval(gantiImg, 8000);
 
-// fixed background
+//ambil nama tamu undangan dari url
 
-document.addEventListener("DOMContentLoaded", function () {
-  const hero = document.querySelector(".hero");
-  const rightPanel = document.getElementById("rightPanel");
-
-  rightPanel.addEventListener("scroll", function () {
-    let scroll = rightPanel.scrollTop;
-
-    hero.style.backgroundPosition = "center " + scroll * 0.2 + "px";
-  });
-});
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("n") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.textContent = `${nama}`;
 
 //countdown
 simplyCountdown(".simply-countdown-circle", {

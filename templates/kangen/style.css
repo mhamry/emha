@@ -7,6 +7,7 @@
 body {
   overflow: hidden;
   font-family: "Poppins";
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -147,19 +148,15 @@ body {
   justify-content: center;
   text-align: center;
   position: relative;
-  background-image: url("image/1.png");
-  background-position: center 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
   color: white;
   overflow: hidden;
 }
 
-.hero > * {
-  position: relative;
-  z-index: 4;
+.hero .content {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: 5;
 }
 
 /* overlay gelap */
@@ -168,8 +165,18 @@ body {
   position: absolute;
   inset: 0;
   background-color: black;
-  opacity: 0.5;
-  z-index: 2;
+  opacity: 0.6;
+  z-index: 4;
+}
+
+.bg-hero {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: url("image/1.png");
+  background-size: cover;
+  background-position: center;
+  transition: opacity 2s;
 }
 
 .hero .top {
@@ -183,7 +190,8 @@ body {
 
 .hero .bottom p {
   font-size: 12px;
-  font-weight: lighter;
+  font-weight: 400;
+  line-height: 18px;
 }
 .hero .top p {
   font-size: 13px;
