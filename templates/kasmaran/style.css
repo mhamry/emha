@@ -105,36 +105,73 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: antiquewhite;
+}
+
+.hero .content {
+  padding: 20px 20px;
+  background-color: black;
+  color: white;
+  border-top-right-radius: 100px;
+  margin-top: 350px;
+}
+
+.hero .content .simpan {
+  display: flex;
+  padding: 10px 10px;
+  height: 100px;
+  align-items: center;
+}
+.hero .content .simpan .vertical-line {
+  height: 100px;
+  width: 1px;
+  background-color: #fff;
+}
+
+.hero .content .line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+
+.hero .content .tanggal {
+  flex: 1;
+  text-align: center;
+}
+
+.hero .content .countdown {
+  flex: 1;
+  text-align: center;
 }
 
 /* countdown */
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
   --sc-circle-secondary: #fff;
-  --sc-circle-bg: #bcd9a2;
+  /* --sc-circle-bg: #bcd9a2; */
   --sc-circle-text: #fff;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 0.4rem; /* jarak antar baris */
   font-family: "Inter", sans-serif;
 }
 
 .simply-countdown-circle > .simply-section {
   position: relative;
-  background-color: #bcd9a2;
-  width: 90px;
-  height: 90px;
-  border: 2px solid #bcd9a2;
-  padding: 1rem;
+  /* background-color: #bcd9a2; */
+  width: 30px;
+  height: 30px;
+  /* border: 2px solid #bcd9a2; */
+  padding: 0rem;
   display: flex;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex: 0 0 calc(50% - 0.75rem);
+  /* flex-direction: column; */
   /* border-radius: 50%; */
   /* background: linear-gradient(45deg, var(--sc-circle-primary), var(--sc-circle-secondary)); */
   /* box-shadow: 0 0 25px -5px var(--sc-circle-primary); */
@@ -162,9 +199,9 @@ body {
 }
 
 .simply-countdown-circle .simply-amount {
-  display: block;
-  font-size: 1.75rem;
-  font-weight: 700;
+  /* display: block; */
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1;
   background: linear-gradient(to right, var(--sc-circle-primary), var(--sc-circle-secondary));
   -webkit-background-clip: text;
@@ -207,13 +244,14 @@ body {
 
   /* countdown */
   .simply-countdown-circle {
-    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
+    column-gap: 1.5rem;
+    row-gap: 0rem; /* jarak antar baris */
   }
 
   .simply-countdown-circle > .simply-section {
-    width: 67px;
-    height: 67px;
-    padding: 0.8rem;
+    width: 35px;
+    height: 35px;
+    padding: 0.5rem;
   }
 
   .simply-countdown-circle .simply-amount {
