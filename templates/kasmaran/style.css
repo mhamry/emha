@@ -8,20 +8,47 @@ body {
   overflow: hidden;
 }
 
+:root {
+  --love: "Loved by the King";
+  --swash: "Berkshire Swash";
+}
+
 .split-layout {
   display: flex;
   height: 100vh;
 }
 
+/* left panel */
+
 .left-panel {
   flex: 2;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
-  background-color: aqua;
+  background-image: url("image/5.png");
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  color: #fff;
 }
 
+.left-panel h5 {
+  margin-top: 500px;
+}
+
+.left-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.left-panel::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+/* right panel */
 .right-panel {
   flex: 1;
   overflow: hidden;
@@ -34,9 +61,31 @@ body {
   inset: 0;
   height: 100vh;
   z-index: 10;
-  background-color: black;
+  background-image: url("image/5.png");
+  background-position: center;
+  background-size: cover;
   color: white;
   transition: 2s;
+}
+
+.landing-top .pengantin {
+  font-family: var(--swash);
+  font-size: 35px;
+  letter-spacing: 7px;
+}
+
+.landing-top::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 70vh;
+  bottom: 0;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.landing-top > * {
+  position: relative;
+  z-index: 2;
 }
 
 .landing-top.hide {
@@ -44,9 +93,13 @@ body {
 }
 
 .landing-top h5 {
-  margin-top: 260px;
+  margin-top: 440px;
 }
 
+.landing-top button {
+  border: 1px solid white;
+}
+/* hero */
 .hero {
   padding: 70px 0;
   height: 100vh;
@@ -141,6 +194,9 @@ body {
 /* responsive */
 
 @media (max-width: 768px) {
+  .landing-top h5 {
+    margin-top: 400px;
+  }
   .left-panel {
     display: none;
   }
