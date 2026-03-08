@@ -18,8 +18,8 @@ document.querySelectorAll(".pesan-btn").forEach((btn) => {
     const harga = this.dataset.harga;
 
     const pesan = `Halo Admin EMHA Undangan, 
-Saya ingin memesan: Template : ${template}
-Dengan total Harga : ${harga}
+Saya ingin memesan Template : ${template}
+Dengan total Harga  ${harga}
 Mohon info langkah selanjutnya ❤️🙏`;
 
     const url = "https://wa.me/6285176856246?text=" + encodeURIComponent(pesan);
