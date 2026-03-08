@@ -239,23 +239,68 @@ body {
 
 /* groom bride */
 
-/* groom bride */
-
 .groom-bride {
   position: relative;
-  height: 100vh;
   overflow: hidden;
+  padding: 80px 0;
+}
+
+.groom-bride > * {
+  position: relative;
+  z-index: 2;
+}
+
+.groom-bride .groom {
+  width: 250px;
+  height: 300px;
+  margin: auto;
+  z-index: 2;
+  position: relative;
+}
+
+.groom-bride .bride {
+  width: 250px;
+  height: 300px;
+  margin-top: 250px !important;
+  margin: auto;
+  margin-bottom: 120px;
+  z-index: 2;
+  position: relative;
+}
+
+.groom-bride .groom .bottom,
+.groom-bride .bride .bottom {
+  color: #fff;
+}
+
+.groom-bride .groom .header h4,
+.groom-bride .bride .header h4 {
+  color: #fff;
+}
+
+.groom-bride .carousel-groom {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  position: relative;
+}
+.groom-bride .carousel-bride {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  position: relative;
 }
 
 /* carousel sebagai background */
-.groom-bride .carousel {
+.groom-bride .carousel-bg {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100vh !important;
+  height: 100% !important;
   will-change: transform;
   transform: translateZ(0);
   z-index: 0;
+  pointer-events: none;
 }
 
 .groom-bride .carousel-inner,
@@ -270,11 +315,11 @@ body {
 }
 
 /* overlay */
-.groom-bride .carousel::after {
+.groom-bride .carousel-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
 
@@ -287,7 +332,7 @@ body {
 /* galery */
 .galery {
   padding: 70px 0;
-  background-color: #bcd9a2;
+  background-color: #fff;
 }
 
 .galery .header {
