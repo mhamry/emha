@@ -11,6 +11,40 @@ tombol.addEventListener("click", function () {
   }, 2000);
 });
 
+//efect groom bride carousel
+
+// $(".right-panel").on("scroll", function () {
+//   let scrollTop = $(this).scrollTop();
+//   let section = $("#groomBride");
+
+//   let sectionTop = section.position().top;
+//   let sectionHeight = section.outerHeight();
+
+//   if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
+//     let move = scrollTop - sectionTop;
+
+//     $("#carouselGroombride").css({
+//       transform: "translateY(" + move + "px)",
+//     });
+//   }
+// });
+
+$(".right-panel").on("scroll", function () {
+  let scrollTop = $(this).scrollTop();
+
+  let section = $("#groomBride");
+  let sectionTop = section.position().top;
+  let sectionHeight = section.outerHeight();
+
+  if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
+    let move = scrollTop - sectionTop;
+
+    $("#carouselGroombride").css({
+      transform: "translateY(" + move + "px)",
+    });
+  }
+});
+
 //countdown
 simplyCountdown(".simply-countdown-circle", {
   year: 2026, // Target year (required)
