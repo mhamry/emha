@@ -15,8 +15,8 @@ tombol.addEventListener("click", function () {
 
 // $(".right-panel").on("scroll", function () {
 //   let scrollTop = $(this).scrollTop();
-//   let section = $("#groomBride");
 
+//   let section = $("#groomBride");
 //   let sectionTop = section.position().top;
 //   let sectionHeight = section.outerHeight();
 
@@ -28,22 +28,6 @@ tombol.addEventListener("click", function () {
 //     });
 //   }
 // });
-
-$(".right-panel").on("scroll", function () {
-  let scrollTop = $(this).scrollTop();
-
-  let section = $("#groomBride");
-  let sectionTop = section.position().top;
-  let sectionHeight = section.outerHeight();
-
-  if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
-    let move = scrollTop - sectionTop;
-
-    $("#carouselGroombride").css({
-      transform: "translateY(" + move + "px)",
-    });
-  }
-});
 
 //countdown
 simplyCountdown(".simply-countdown-circle", {

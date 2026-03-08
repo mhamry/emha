@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-}
-
 :root {
   --love: "Loved by the King";
   --swash: "Berkshire Swash";
@@ -25,8 +21,8 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  background-image: url("image/5.png");
-  background-position: top;
+  background-image: url("https://media.istockphoto.com/id/1357518688/id/foto/outdoor-prewedding-photography.jpg?s=2048x2048&w=is&k=20&c=_NUfg3_b8S_HoR4NCl7sxkVaW26O5gJn-AEy-AD7450=");
+  background-position: center;
   background-size: cover;
   position: relative;
   color: #fff;
@@ -61,7 +57,7 @@ body {
   inset: 0;
   height: 100vh;
   z-index: 10;
-  background-image: url("image/5.png");
+  background-image: url("https://media.istockphoto.com/id/1357518688/id/foto/outdoor-prewedding-photography.jpg?s=2048x2048&w=is&k=20&c=_NUfg3_b8S_HoR4NCl7sxkVaW26O5gJn-AEy-AD7450=");
   background-position: center;
   background-size: cover;
   color: white;
@@ -105,6 +101,52 @@ body {
   position: relative;
   padding: 0;
 }
+
+.hero,
+.quote,
+.groom-bride,
+.galery {
+  position: relative;
+  z-index: 2;
+}
+
+/* carousel sebagai background */
+.landing-bottom .carousel-bg {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh !important;
+  will-change: transform;
+  transform: translateZ(0);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.landing-bottom .carousel-inner,
+.landing-bottom .carousel-item {
+  height: 100%;
+}
+
+.landing-bottom .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay */
+.landing-bottom .carousel-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.landing-bottom .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* hero */
 .hero {
   padding: 0;
@@ -112,6 +154,7 @@ body {
   background-color: aqua;
   position: relative;
   overflow: hidden;
+  margin-top: -100vh;
 }
 
 .hero .content {
@@ -241,7 +284,7 @@ body {
 
 .groom-bride {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .groom-bride > * {
@@ -288,44 +331,6 @@ body {
   height: 100%;
   border: 1px solid white;
   position: relative;
-}
-
-/* carousel sebagai background */
-.groom-bride .carousel-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100vh !important;
-  will-change: transform;
-  transform: translateZ(0);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.groom-bride .carousel-inner,
-.groom-bride .carousel-item {
-  height: 100%;
-}
-
-.groom-bride .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* overlay */
-.groom-bride .carousel-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.groom-bride .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* galery */
