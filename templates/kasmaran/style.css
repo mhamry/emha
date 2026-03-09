@@ -21,7 +21,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  background-image: url("https://media.istockphoto.com/id/1357518688/id/foto/outdoor-prewedding-photography.jpg?s=2048x2048&w=is&k=20&c=_NUfg3_b8S_HoR4NCl7sxkVaW26O5gJn-AEy-AD7450=");
+  background-image: url("image/1.png");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -30,6 +30,11 @@
 
 .left-panel h5 {
   margin-top: 500px;
+}
+
+.left-panel h2 {
+  font-family: var(--swash);
+  font-size: 35px;
 }
 
 .left-panel > * {
@@ -57,7 +62,7 @@
   inset: 0;
   height: 100vh;
   z-index: 10;
-  background-image: url("https://media.istockphoto.com/id/1357518688/id/foto/outdoor-prewedding-photography.jpg?s=2048x2048&w=is&k=20&c=_NUfg3_b8S_HoR4NCl7sxkVaW26O5gJn-AEy-AD7450=");
+  background-image: url("image/1.png");
   background-position: center;
   background-size: cover;
   color: white;
@@ -68,6 +73,7 @@
   font-family: var(--swash);
   font-size: 35px;
   letter-spacing: 7px;
+  font-weight: lighter;
 }
 
 .landing-top::after {
@@ -94,6 +100,10 @@
 
 .landing-top button {
   border: 1px solid white;
+}
+
+.landing-top .maaf {
+  font-size: 12px;
 }
 
 /* landing bottom */
@@ -292,11 +302,18 @@
   z-index: 2;
 }
 
+.groom-bride h1 {
+  font-family: var(--swash);
+  font-size: 30px;
+  margin-bottom: 70px;
+}
+
 .groom-bride .groom {
   width: 200px;
   height: 250px;
   margin: auto;
   z-index: 2;
+  font-family: "Poppins";
   position: relative;
 }
 
@@ -306,8 +323,24 @@
   margin-top: 250px !important;
   margin: auto;
   margin-bottom: 220px;
+  font-family: "Poppins";
   z-index: 2;
   position: relative;
+}
+
+.groom-bride .groom p,
+.groom-bride .bride p {
+  font-size: 13px;
+}
+
+.groom-bride .bride h4 {
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.groom-bride .groom h4 {
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .groom-bride .groom .bottom,
@@ -315,8 +348,8 @@
   color: #fff;
 }
 
-.groom-bride .groom .header h4,
-.groom-bride .bride .header h4 {
+.groom-bride .groom .header h3,
+.groom-bride .bride .header h3 {
   color: #fff;
 }
 
@@ -337,6 +370,11 @@
 .galery {
   padding: 70px 0;
   background-color: #fff;
+}
+
+.galery .header h2 {
+  font-family: var(--swash);
+  font-size: 30px;
 }
 
 .galery .header {
