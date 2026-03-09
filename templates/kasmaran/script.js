@@ -11,6 +11,34 @@ tombol.addEventListener("click", function () {
   }, 1000);
 });
 
+//animasi fade groom bride
+// const fadeSatu = document.querySelector(".fade-satu img");
+
+// const listImage = ["image/1.png", "image/2.png", "image/3.png", "image/4.png"];
+
+// let index = 0;
+
+// function gantiImage() {
+//   fadeSatu.src = listImage[index];
+//   index = (index + 1) % listImage.length;
+// }
+
+// setInterval(gantiImage, 4000);
+
+const images = document.querySelectorAll("img");
+const listImage = ["image/1.png", "image/2.png", "image/3.png", "image/4.png"];
+
+let index = 0;
+
+function gantiImage() {
+  images.forEach((img, i) => {
+    img.src = listImage[(index + i) % listImage.length];
+  });
+
+  index = (index + 1) % listImage.length;
+}
+
+setInterval(gantiImage, 4000);
 //efect groom bride carousel
 
 // $(".right-panel").on("scroll", function () {

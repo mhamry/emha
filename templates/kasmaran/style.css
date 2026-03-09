@@ -406,10 +406,11 @@
 
 .wedding-event .content {
   display: flex;
-  justify-items: center;
   gap: 10px;
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  justify-content: center;
+  margin: 50px auto;
 }
 
 .wedding-event .content .fade-satu {
@@ -419,6 +420,14 @@
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
   margin-left: 20px;
+  overflow: hidden;
+}
+
+.wedding-event .content .fade-satu img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 1s;
 }
 .wedding-event .content .fade-dua {
   height: 150px;
@@ -427,6 +436,21 @@
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
   margin-top: 30px;
+  overflow: hidden;
+}
+.wedding-event .content .fade-dua img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 2s;
+}
+
+.content img {
+  transition: all 2s;
+}
+
+.fade-out {
+  opacity: 0.1;
 }
 
 /* galery */
@@ -586,6 +610,13 @@
 
   /* wedding event */
 
+  .wedding-event .content {
+    display: flex;
+    justify-items: center;
+    gap: 10px;
+    /* margin-top: 40px; */
+  }
+
   .wedding-event .widget {
     width: 80px;
   }
@@ -596,12 +627,24 @@
   .wedding-event .content .fade-satu {
     height: 150px;
     width: 130px;
-    margin-left: 25px;
+    overflow: hidden;
+  }
+  .wedding-event .content .fade-satu img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   .wedding-event .content .fade-dua {
     height: 130px;
     width: 100px;
     margin-top: 20px;
+    overflow: hidden;
+  }
+
+  .wedding-event .content .fade-dua img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   /* countdown */
