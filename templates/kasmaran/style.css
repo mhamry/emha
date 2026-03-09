@@ -413,7 +413,7 @@
   margin: 50px auto;
 }
 
-.wedding-event .content .fade-satu {
+.wedding-event .content .content-satu {
   height: 180px;
   width: 150px;
   background-color: aquamarine;
@@ -423,13 +423,13 @@
   overflow: hidden;
 }
 
-.wedding-event .content .fade-satu img {
+.wedding-event .content .content-satu img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   transition: opacity 1s;
 }
-.wedding-event .content .fade-dua {
+.wedding-event .content .content-dua {
   height: 150px;
   width: 130px;
   background-color: aqua;
@@ -438,7 +438,7 @@
   margin-top: 30px;
   overflow: hidden;
 }
-.wedding-event .content .fade-dua img {
+.wedding-event .content .content-dua img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -624,24 +624,24 @@
     font-size: 35px;
   }
 
-  .wedding-event .content .fade-satu {
+  .wedding-event .content .content-satu {
     height: 150px;
     width: 130px;
     overflow: hidden;
   }
-  .wedding-event .content .fade-satu img {
+  .wedding-event .content .content-satu img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-  .wedding-event .content .fade-dua {
+  .wedding-event .content .content-dua {
     height: 130px;
     width: 100px;
     margin-top: 20px;
     overflow: hidden;
   }
 
-  .wedding-event .content .fade-dua img {
+  .wedding-event .content .content-dua img {
     height: 100%;
     width: 100%;
     object-fit: cover;

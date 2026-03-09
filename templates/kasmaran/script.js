@@ -25,7 +25,7 @@ tombol.addEventListener("click", function () {
 
 // setInterval(gantiImage, 4000);
 
-const images = document.querySelectorAll("img");
+const images = document.querySelectorAll(".content img");
 const listImage = ["image/1.png", "image/2.png", "image/3.png", "image/4.png"];
 
 let index = 0;
