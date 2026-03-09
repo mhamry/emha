@@ -8,7 +8,7 @@ tombol.addEventListener("click", function () {
 
   setTimeout(() => {
     rightPanel.style.overflowY = "auto";
-  }, 2000);
+  }, 1000);
 });
 
 //efect groom bride carousel
