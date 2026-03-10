@@ -29,6 +29,21 @@ body {
   justify-content: center;
   text-align: center;
   background-color: aqua;
+  background-image: url("image/1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.left-panel h1 {
+  font-family: var(--love);
+  color: white;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+
+.left-panel h5 {
+  margin-top: 400px;
+  color: white;
 }
 
 /* SCROLL DOWN */
@@ -87,7 +102,7 @@ body {
   color: white;
   transition: 3s ease-in-out;
   z-index: 10;
-  background-image: url("image/3.png");
+  background-image: url("image/1.png");
   background-position: center;
   background-size: cover;
 }
