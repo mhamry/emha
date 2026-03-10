@@ -39,23 +39,26 @@ function gantiImage() {
 }
 
 setInterval(gantiImage, 4000);
-//efect groom bride carousel
 
-// $(".right-panel").on("scroll", function () {
-//   let scrollTop = $(this).scrollTop();
+//animasi effect save date
 
-//   let section = $("#groomBride");
-//   let sectionTop = section.position().top;
-//   let sectionHeight = section.outerHeight();
+const saveDate = document.querySelector(".save-date");
+const listGambar = ["image/2.png", "image/2.png", "image/3.png", "image/4.png"];
+let i = 0;
 
-//   if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
-//     let move = scrollTop - sectionTop;
+function changeImg() {
+  saveDate.classList.add("fade-in");
+  saveDate.classList.remove("fade-out");
+  setTimeout(() => {
+    saveDate.style.setProperty("--bg", `url(${listGambar[i]})`);
+    saveDate.classList.remove("fade-in");
+    saveDate.classList.add("fade-out");
+    i = (i + 1) % listGambar.length;
+  }, 2000);
+}
 
-//     $("#carouselGroombride").css({
-//       transform: "translateY(" + move + "px)",
-//     });
-//   }
-// });
+changeImg();
+setInterval(changeImg, 8000);
 
 //countdown
 simplyCountdown(".simply-countdown-circle", {
@@ -100,10 +103,10 @@ simplyCountdown(".simply-countdown", {
   seconds: 0, // Target second [0-59], default: 0
   words: {
     // Custom labels, with lambda for plurals
-    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "s" : root) },
-    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "s" : root) },
+    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "" : root) },
   },
   plural: true, // Use plurals for labels
   inline: false, // Inline format: e.g., "24 days, 4 hours, 2 minutes"
