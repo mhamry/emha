@@ -55,15 +55,17 @@
           <div class="container">
             <div class="row justify-conter-center text-center">
               <div class="col">
-                <h5>The Wedding of</h5>
-                <h2 class="pengantin">Amri & Nikel</h2>
-                <div class="undangan">
+                <div class="atas" data-aos="fade-down" data-aos-duration="3000">
+                  <h5>The Wedding of</h5>
+                  <h2 class="pengantin">Amri & Nikel</h2>
+                </div>
+
+                <div class="bawah" data-aos="fade-up" data-aos-duration="3000">
                   <p>Kepada Bapak/ibu/Saudara</p>
                   <p class="undangan"></p>
                   <p class="maaf">Mohon maaf jika ada kesalahan dalam penulisan nama/gelar</p>
+                  <button class="btn btn-dark" id="btnOpen"><i class="bi bi-book me-1"></i>Buka Undangan</button>
                 </div>
-
-                <button class="btn btn-dark" id="btnOpen"><i class="bi bi-book me-1"></i>Buka Undangan</button>
               </div>
             </div>
           </div>
@@ -100,16 +102,16 @@
                     </div>
                   </div>
                   <div class="content">
-                    <h5>THE WEDDING OF</h5>
-                    <h2 class="nama-pengantin">Amri & Nikel</h2>
+                    <h5 data-aos="fade-right" data-aos-duration="3000">THE WEDDING OF</h5>
+                    <h2 class="nama-pengantin" data-aos="fade-left" data-aos-duration="3000">Amri & Nikel</h2>
                     <div class="line"></div>
                     <div class="simpan">
-                      <div class="tanggal">
+                      <div class="tanggal" data-aos="fade-right" data-aos-duration="3000">
                         <p class="mt-3">Save the Date</p>
                         <p>09 - 11 - 2025</p>
                       </div>
                       <div class="vertical-line"></div>
-                      <div class="countdown">
+                      <div class="countdown" data-aos="fade-left" data-aos-duration="3000">
                         <div class="simply-countdown-circle"></div>
                       </div>
                     </div>
@@ -205,14 +207,56 @@
                 <div class="col px-0">
                   <div class="card-wrapper">
                     <div class="widget">
-                      <p>Wedding Event</p>
+                      <p data-aos="fade-up" data-aos-duration="3000">Wedding Event</p>
                     </div>
-                    <div class="content">
-                      <div class="content-satu">
-                        <img src="image/1.png" alt="" class="img-fluid" />
+                    <div class="content-wrapper">
+                      <div class="content" data-aos="fade-up" data-aos-duration="3000">
+                        <div class="content-satu">
+                          <img src="image/1.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="content-dua">
+                          <img src="image/2.png" alt="" class="img-fluid" />
+                        </div>
                       </div>
-                      <div class="content-dua">
-                        <img src="image/2.png" alt="" class="img-fluid" />
+
+                      <div class="akad-nikah">
+                        <h3 class="mb-3">Akad Nikah</h3>
+                        <div class="tanggal"><i class="bi bi-calendar3"></i></div>
+                        <p>Jum'at 09 November 2026</p>
+                        <div class="jam"><i class="bi bi-alarm"></i></div>
+                        <p>10:00 - Selesai</p>
+                        <p>Mesjid Syech H. Jabang Jln. Tabing Pauh Kamang Mudik</p>
+                        <a href="" class="btn btn-dark btn-sm">Lihat Lokasi</a>
+                      </div>
+
+                      <div class="line"></div>
+
+                      <div class="resepsi">
+                        <h3 class="mb-3">Resepsi</h3>
+                        <div class="tanggal"><i class="bi bi-calendar3"></i></div>
+                        <p>Sabtu 10 November 2026</p>
+                        <div class="jam"><i class="bi bi-alarm"></i></div>
+                        <p>10:00 - Selesai</p>
+                        <p>Jln. Tabing Pauh Kamang Mudik</p>
+                        <a href="" class="btn btn-dark btn-sm">Lihat Lokasi</a>
+                      </div>
+
+                      <div class="line"></div>
+
+                      <div class="streaming">
+                        <h3 class="mb-3">Live Streaming</h3>
+                        <p>Temui kami secara virtual untuk menyaksikan acara pernikahan kami yang insyaaAllah akan disiarkan langsung melalui link dibawah ini.</p>
+                        <a href="" class="btn btn-dark btn-sm">Live Streaming</a>
+                      </div>
+
+                      <div class="line"></div>
+                      <div class="dress-code">
+                        <h3>Dress Code</h3>
+                        <p>Dengan kerendahan hati kami berharap agar para tamu memakai pakaian dengan warna di bawah ini sebagai warna dress pada acara kami</p>
+                        <div class="kotak">
+                          <div class="kotak-satu"></div>
+                          <div class="kotak-dua"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -228,7 +272,7 @@
                   <h2>Our Moments</h2>
                 </div>
                 <div class="col-6 px-1">
-                  <div class="satu">
+                  <div class="satu" data-aos="fade-up" data-aos-duration="3000">
                     <img src="image/2.png" alt="" class="img-fluid responsive" />
                   </div>
                   <div class="dua">
@@ -288,7 +332,14 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        offset: 220,
+        offset: 50,
+        // once: true,
+      });
+
+      const scrollContainer = document.querySelector("#rightPanel");
+
+      scrollContainer.addEventListener("scroll", function () {
+        AOS.refresh();
       });
     </script>
 

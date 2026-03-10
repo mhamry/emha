@@ -380,37 +380,64 @@
 .wedding-event .card-wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
+}
+
+.wedding-event .card-wrapper .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.wedding-event .card-wrapper .content-wrapper .akad-nikah h3,
+.wedding-event .card-wrapper .content-wrapper .resepsi h3,
+.wedding-event .card-wrapper .content-wrapper .streaming h3,
+.wedding-event .card-wrapper .content-wrapper .dress-code h3 {
+  font-family: var(--swash);
+}
+
+.wedding-event .card-wrapper .content-wrapper .akad-nikah {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.wedding-event .card-wrapper .content-wrapper .resepsi {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+.wedding-event .card-wrapper .content-wrapper .streaming {
+  padding: 0 20px;
+  margin-top: 30px;
+}
+.wedding-event .card-wrapper .content-wrapper .dress-code {
+  padding: 0 20px;
+  margin-top: 30px;
 }
 
 .wedding-event .widget {
-  width: 100px;
+  width: 160px;
   background-color: black;
   color: #fff;
   display: flex;
-  height: 100%;
   align-items: center;
-  text-align: center;
   justify-content: center;
 }
 
 .wedding-event .widget p {
-  transform: rotate(-90deg);
-  display: flex;
   font-size: 25px;
   font-family: var(--swash);
-  height: 100%;
-  align-items: center;
   white-space: nowrap;
+  letter-spacing: 13px;
+  writing-mode: vertical-rl;
 }
 
 .wedding-event .content {
   display: flex;
   gap: 10px;
   text-align: center;
-  /* margin-top: 50px; */
   justify-content: center;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .wedding-event .content .content-satu {
@@ -419,7 +446,7 @@
   background-color: aquamarine;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   overflow: hidden;
 }
 
@@ -445,12 +472,28 @@
   transition: opacity 2s;
 }
 
-.content img {
-  transition: all 2s;
+.wedding-event .card-wrapper .content-wrapper .line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: 30px;
 }
 
-.fade-out {
-  opacity: 0.1;
+.wedding-event .card-wrapper .content-wrapper .dress-code .kotak {
+  justify-content: center;
+  gap: 20px;
+  display: flex;
+  margin-top: 20px;
+}
+.wedding-event .card-wrapper .content-wrapper .dress-code .kotak .kotak-satu {
+  width: 60px;
+  height: 60px;
+  background-color: crimson;
+}
+.wedding-event .card-wrapper .content-wrapper .dress-code .kotak .kotak-dua {
+  width: 60px;
+  height: 60px;
+  background-color: plum;
 }
 
 /* galery */
@@ -610,18 +653,24 @@
 
   /* wedding event */
 
-  .wedding-event .content {
+  .wedding-event .content-wrapper {
     display: flex;
-    justify-items: center;
-    gap: 10px;
-    /* margin-top: 40px; */
+    justify-content: center;
+    text-align: center;
+  }
+
+  .wedding-event .content-wrapper .content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .wedding-event .widget {
-    width: 80px;
+    width: 200px;
   }
   .wedding-event .widget p {
-    font-size: 35px;
+    font-size: 26px;
+    letter-spacing: 10px;
   }
 
   .wedding-event .content .content-satu {
