@@ -195,7 +195,14 @@ body {
 }
 
 .hero .top {
-  margin-top: 50px;
+  margin-top: 30px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.hero .top h1 {
+  font-size: 50px;
+  font-family: var(--love);
 }
 
 .hero .bottom {
@@ -215,6 +222,105 @@ body {
 .hero h1 {
   font-family: var(--love);
   font-size: 40px;
+}
+
+.hero .foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero .foot p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.hero .foot .line {
+  height: 1px;
+  width: 80px;
+  background-color: white;
+}
+
+/* groom bride */
+
+.groom-bride {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.groom-bride .header h3 {
+  font-size: 40px;
+  color: grey;
+  font-weight: lighter;
+}
+
+.groom-bride .line {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* slide */
+
+.groom-bride .carousel-item img {
+  width: 100%;
+  height: 130px; /* samakan tinggi */
+  object-fit: cover;
+  transition: 3s;
+}
+
+.groom-bride .slide .carousel-item {
+  transition: 10s ease-in-out;
+  padding-right: 8px;
+}
+
+.groom-bride .text {
+  text-align: center;
+  width: 90%;
+  margin: 30px auto;
+  font-weight: 300;
+  font-family: var(--poppins);
+  font-size: 14px;
+}
+
+.groom-bride .image-wrapper {
+  display: block;
+  width: 250px;
+  height: 350px;
+  border-radius: 30%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.groom-bride .image-wrapper .text {
+  position: absolute;
+  color: black;
+  font-size: 40px;
+  font-family: "Ballet";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.groom-bride .dua {
+  margin-top: 150px;
+  border-radius: 30%;
+}
+
+.groom-bride h4 {
+  margin-top: 10px;
+}
+
+.groom-bride .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+  object-fit: cover;
+  transition: 2s;
 }
 
 /* galery */
@@ -332,46 +438,6 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .left-panel {
-    display: none;
-  }
-
-  .right-panel {
-    flex: 1;
-  }
-
-  /* galery */
-  .galery .satu,
-  .galery .empat {
-    height: 280px;
-  }
-
-  .galery .dua,
-  .galery .tiga {
-    height: 200px;
-  }
-
-  /* countdown */
-  .simply-countdown-circle {
-    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
-  }
-
-  .simply-countdown-circle > .simply-section {
-    width: 67px;
-    height: 67px;
-    padding: 0.8rem;
-  }
-
-  .simply-countdown-circle .simply-amount {
-    font-size: 1rem;
-  }
-
-  .simply-countdown-circle .simply-word {
-    font-size: 0.55rem;
-  }
-}
-
 /* batas */
 
 .simply-countdown {
@@ -445,5 +511,51 @@ body {
   50% {
     transform: scale(0.98);
     opacity: 0.9;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+
+  /* hero */
+
+  .hero .bottom {
+    margin-top: 320px;
+  }
+
+  /* galery */
+  .galery .satu,
+  .galery .empat {
+    height: 280px;
+  }
+
+  .galery .dua,
+  .galery .tiga {
+    height: 200px;
+  }
+
+  /* countdown */
+  .simply-countdown-circle {
+    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
+  }
+
+  .simply-countdown-circle > .simply-section {
+    width: 67px;
+    height: 67px;
+    padding: 0.8rem;
+  }
+
+  .simply-countdown-circle .simply-amount {
+    font-size: 1rem;
+  }
+
+  .simply-countdown-circle .simply-word {
+    font-size: 0.55rem;
   }
 }

@@ -44,6 +44,36 @@ function gantiImg() {
 gantiImg();
 setInterval(gantiImg, 8000);
 
+//animasi fade groom bride
+
+//satu
+
+const satu = document.querySelector(".satu img");
+const listImage = ["image/9.png", "image/10.png"];
+
+let indeks = 0;
+
+function gantiImage() {
+  satu.src = listImage[indeks];
+
+  indeks = (indeks + 1) % listImage.length;
+}
+
+setInterval(gantiImage, 4000);
+
+// dua
+const dua = document.querySelector(".dua img");
+const listGambardua = ["image/6.png", "image/7.png", "image/8.png"];
+
+let indek = 0;
+
+function gantiGambar() {
+  dua.src = listGambardua[indek];
+  indek = (indek + 1) % listGambardua.length;
+}
+
+setInterval(gantiGambar, 4000);
+
 //ambil nama tamu undangan dari url
 
 const urlParams = new URLSearchParams(window.location.search);
