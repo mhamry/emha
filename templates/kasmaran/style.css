@@ -446,7 +446,6 @@
   background-color: aquamarine;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
-  /* margin-left: 20px; */
   overflow: hidden;
 }
 
@@ -644,7 +643,7 @@
   width: max-content;
 }
 
-.thumb-track img {
+.galery .thumb-track img {
   width: 90px;
   height: 70px;
   object-fit: cover;
@@ -682,8 +681,262 @@
   width: 100%;
 }
 
-.carousel-inner {
+.galery .carousel-inner {
   border-radius: 20px;
+}
+
+/* gift */
+.gift {
+  padding: 60px 0;
+  background-color: black;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.gift h3 {
+  font-family: var(--swash);
+}
+
+.gift .header i {
+  font-size: 40px;
+}
+
+.gift .card {
+  text-align: left;
+  margin: auto;
+  width: 85%;
+  height: 170px;
+  padding: 20px;
+  line-height: 5px;
+  position: relative;
+  background-image: url("image/bg-card.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gift .card .image-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 80px;
+  height: 30px;
+}
+
+.gift a {
+  margin-top: 20px;
+  background-color: white;
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+.gift .card .nama {
+  margin-top: 70px;
+}
+
+/* rsvp */
+
+.rsvp {
+  padding: 70px 20px;
+  color: #000;
+  position: relative;
+  z-index: 2;
+}
+
+.rsvp > * {
+  position: relative;
+  z-index: 2;
+}
+
+.rsvp::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.rsvp .header {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.rsvp .header h1 {
+  font-family: var(--swash);
+}
+
+.rsvp p {
+  text-align: center;
+}
+
+.rsvp button {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.rsvp .form-check input {
+  background-color: black;
+}
+
+/* congrat */
+
+.congrat {
+  padding: 50px 20px;
+  padding-bottom: 80px;
+  color: black;
+  position: relative;
+  z-index: 2;
+}
+
+.congrat > * {
+  position: relative;
+  z-index: 2;
+}
+
+.congrat::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.congrat .header h2 {
+  font-family: var(--swash);
+  font-size: 30px;
+}
+.congrat .header p {
+  margin-bottom: 50px;
+}
+
+.congrat .kotak-pesan {
+  height: 40vh;
+  margin-top: 40px;
+  background: #000;
+  overflow-y: scroll;
+  padding: 20px 20px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.congrat .kotak-pesan .text-pesan {
+  color: black;
+  padding: 0 10px;
+  background-color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #000;
+}
+.congrat .kotak-pesan .text-pesan .nama {
+  font-weight: bold;
+  margin-top: 14px;
+}
+.congrat .kotak-pesan .text-pesan p {
+  margin-top: -15px;
+}
+
+.congrat .text-pesan i {
+  color: red;
+  font-size: 30px;
+}
+
+.congrat button {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* tahnkyou */
+.thankyou {
+  padding: 80px 0;
+  height: 100vh;
+  position: relative;
+  color: black;
+  z-index: 2;
+  --gambar: url("image/2.png");
+}
+
+.thankyou > * {
+  position: relative;
+  z-index: 2;
+}
+
+.thankyou::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--gambar);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all 2s ease-in-out;
+  z-index: -2;
+}
+.thankyou::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: black;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.thankyou.fade-out::after {
+  opacity: 0.4;
+}
+.thankyou.fade-in::after {
+  opacity: 0.6;
+}
+.thankyou h3 {
+  font-size: 30px;
+  font-family: var(--swash);
+  margin-bottom: 20px;
+  color: white;
+}
+.thankyou i {
+  color: red;
+}
+
+.thankyou .nama_pengantin {
+  font-size: 30px;
+}
+
+.thankyou p {
+  color: white;
+}
+
+/* footer */
+footer {
+  padding: 50px 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+footer a {
+  color: white;
+}
+
+footer .medsos {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
 }
 
 /* countdown */
