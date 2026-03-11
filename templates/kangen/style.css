@@ -379,13 +379,21 @@ body {
 
 .wedding-event .content {
   padding-bottom: 50px;
-  width: 80%;
+  width: 90%;
   border: 2px solid white;
   border-radius: 100px;
   overflow: hidden;
   margin: auto;
   color: #fff;
   position: relative;
+}
+
+.wedding-event .line {
+  width: 90%;
+  height: 2px;
+  background-color: #fff;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .wedding-event .content .line {
@@ -428,6 +436,7 @@ body {
   font-family: var(--love);
   font-size: 40px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 .wedding-event h3 {
   font-family: var(--poppins);
@@ -441,12 +450,92 @@ body {
   border-radius: 20px;
 }
 
+/* save date */
+
+.save-date {
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.save-date .line {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.save-date .header h3 {
+  font-family: var(--poppins);
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.save-date p {
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.save-date a {
+  display: block;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+  width: 130px;
+  margin-top: 40px;
+}
+
+/* love story */
+
+.love-story {
+  padding: 60px 20px;
+  position: relative;
+  color: #fff;
+  z-index: 2;
+}
+
+.love-story .line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.love-story img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.love-story .header {
+  text-align: center;
+}
+.love-story .header h3 {
+  font-size: 50px;
+  text-align: right;
+  font-weight: lighter;
+}
+
+.love-story .satu,
+.love-story .dua,
+.love-story .tiga,
+.love-story .empat {
+  font-size: 13px;
+  font-family: var(--poppins);
+  font-weight: 300;
+}
+
 /* galery */
 .galery {
   padding: 70px 0;
   position: relative;
   z-index: 2;
-  background-color: #fff;
+  background-color: #000;
 }
 
 .galery .header {
@@ -478,10 +567,10 @@ body {
 }
 /* countdown */
 .simply-countdown-circle {
-  --sc-circle-primary: #fff;
-  --sc-circle-secondary: #fff;
-  --sc-circle-bg: #bcd9a2;
-  --sc-circle-text: #fff;
+  --sc-circle-primary: grey;
+  --sc-circle-secondary: grey;
+  /* --sc-circle-bg: #bcd9a2; */
+  --sc-circle-text: black;
 
   display: flex;
   flex-wrap: wrap;
@@ -492,10 +581,10 @@ body {
 
 .simply-countdown-circle > .simply-section {
   position: relative;
-  background-color: #bcd9a2;
+  /* background-color: #bcd9a2; */
   width: 90px;
   height: 90px;
-  border: 2px solid #bcd9a2;
+  /* border: 2px solid #bcd9a2; */
   padding: 1rem;
   display: flex;
   border-radius: 10px;
@@ -530,9 +619,9 @@ body {
 
 .simply-countdown-circle .simply-amount {
   display: block;
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 0.8;
   background: linear-gradient(to right, var(--sc-circle-primary), var(--sc-circle-secondary));
   -webkit-background-clip: text;
   background-clip: text;
@@ -672,7 +761,8 @@ body {
   }
 
   .simply-countdown-circle .simply-amount {
-    font-size: 1rem;
+    font-size: 2rem;
+    line-height: 0.8;
   }
 
   .simply-countdown-circle .simply-word {

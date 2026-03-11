@@ -83,9 +83,9 @@ namaElement.textContent = `${nama}`;
 
 //countdown
 simplyCountdown(".simply-countdown-circle", {
-  year: 2026, // Target year (required)
-  month: 6, // Target month [1-12] (required)
-  day: 28, // Target day [1-31] (required)
+  year: 2025, // Target year (required)
+  month: 12, // Target month [1-12] (required)
+  day: 9, // Target day [1-31] (required)
   hours: 0, // Target hour [0-23], default: 0
   minutes: 0, // Target minute [0-59], default: 0
   seconds: 0, // Target second [0-59], default: 0
