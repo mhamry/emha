@@ -14,6 +14,7 @@ body {
   --poppins: "Poppins";
   --swash: "Berkshire Swash";
   --love: "Loved by the King";
+  --primary: #08cb00;
 }
 
 .split-layout {
@@ -183,7 +184,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
@@ -233,7 +234,7 @@ body {
   position: absolute;
   inset: 0;
   background-color: black;
-  opacity: 0.6;
+  opacity: 0.4;
   z-index: 4;
 }
 
@@ -300,14 +301,15 @@ body {
 
 .groom-bride {
   padding: 60px 0;
-  background-color: #fff;
+  background-color: var(--primary);
   position: relative;
   z-index: 2;
+  color: #fff;
 }
 
 .groom-bride .header h3 {
   font-size: 40px;
-  color: grey;
+  color: #fff;
   font-weight: lighter;
   text-align: left;
 }
@@ -315,7 +317,7 @@ body {
 .groom-bride .line {
   width: 100%;
   height: 1px;
-  background-color: black;
+  background-color: #fff;
   margin-bottom: 20px;
   font-weight: 300;
 }
@@ -469,13 +471,14 @@ body {
   padding: 60px 20px;
   position: relative;
   z-index: 2;
-  background-color: #fff;
+  background-color: var(--primary);
+  color: #fff;
 }
 
 .save-date .line {
   width: 100%;
   height: 1px;
-  background-color: gray;
+  background-color: #fff;
   margin: auto;
   margin-bottom: 20px;
 }
@@ -628,7 +631,7 @@ body {
 .congrat .kotak-pesan .text-pesan {
   color: black;
   padding: 0 10px;
-  background-color: #000;
+  background-color: var(--primary);
   display: flex;
   gap: 10px;
   align-items: center;
@@ -654,6 +657,75 @@ body {
   color: #280905;
   font-weight: bold;
   margin-top: 10px;
+}
+/* gift */
+.gift {
+  padding: 60px 0;
+  background-color: var(--primary);
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.gift .image-wrapper {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.gift .image-wrapper img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+.gift h3 {
+  font-family: var(--poppins);
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.gift .line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.gift .header i {
+  font-size: 40px;
+}
+
+.gift .card {
+  text-align: left;
+  margin: auto;
+  width: 85%;
+  height: 170px;
+  padding: 20px;
+  line-height: 5px;
+  position: relative;
+  background-image: url("image/bg-card.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gift .card .image-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 80px;
+  height: 30px;
+}
+
+.gift a {
+  margin-top: 20px;
+  background-color: #280905;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+.gift .card .nama {
+  margin-top: 70px;
 }
 
 /* galery */
@@ -693,10 +765,10 @@ body {
 }
 /* countdown */
 .simply-countdown-circle {
-  --sc-circle-primary: grey;
-  --sc-circle-secondary: grey;
+  --sc-circle-primary: #fff;
+  --sc-circle-secondary: #fff;
   /* --sc-circle-bg: #bcd9a2; */
-  --sc-circle-text: black;
+  --sc-circle-text: #fff;
 
   display: flex;
   flex-wrap: wrap;
