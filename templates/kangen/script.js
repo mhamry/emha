@@ -3,8 +3,14 @@ const landingTop = document.getElementById("landingTop");
 const scrollDown = document.querySelector(".scroll-down");
 const leftPanel = document.getElementById("leftPanel");
 const rightPanel = document.getElementById("rightPanel");
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
+let isPlaying = false;
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
+  song.play();
+  audioIcon.style.display = "flex";
 
   setTimeout(() => {
     rightPanel.style.overflowY = "auto";
@@ -15,6 +21,22 @@ tombol.addEventListener("click", function () {
     rightPanel.scrollTop += e.deltaY;
     e.preventDefault();
   });
+});
+
+// audio
+
+audioIcon.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle");
+  }
 });
 
 //efect paralax hero
