@@ -103,6 +103,25 @@ body {
 
 .landing-top .pengantin {
   font-family: var(--playball);
+  font-size: 40px;
+}
+
+.landing-top .maaf {
+  font-size: 12px;
+}
+
+.landing-top .image-wrapper {
+  width: 250px;
+  height: 300px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.landing-top,
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* hero */
@@ -113,7 +132,32 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: blue;
+  background-image: url("image/bg.png");
+  background-position: center;
+  background-size: cover;
+  color: #a82323;
+}
+
+.hero .pengantin {
+  font-size: 35px;
+  font-family: var(--playball);
+}
+
+.hero .image-wrapper {
+  width: 250px;
+  height: 300px;
+  border: 3px solid #a82323;
+  margin: auto;
+  --bg: url("image/4.png");
+  position: relative;
+}
+.hero .image-wrapper::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
 }
 
 /* scroll indicator */
@@ -192,21 +236,22 @@ body {
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
   --sc-circle-secondary: #fff;
-  --sc-circle-bg: #bcd9a2;
+  --sc-circle-bg: #a82323;
   --sc-circle-text: #fff;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 1.5rem;
   font-family: "Inter", sans-serif;
 }
 
 .simply-countdown-circle > .simply-section {
   position: relative;
-  background-color: #bcd9a2;
+  background-color: #a82323;
   width: 90px;
-  height: 90px;
+  height: 70px;
   border: 2px solid #bcd9a2;
   padding: 1rem;
   display: flex;
@@ -226,7 +271,7 @@ body {
   /* inset: 7px; */
   left: 7px;
   right: 7px;
-  bottom: 7px;
+  bottom: 0px;
   top: 0;
   border-radius: 15px;
   background: var(--sc-circle-bg);
@@ -238,13 +283,14 @@ body {
   z-index: 1;
   color: var(--sc-circle-text);
   text-align: center;
+  margin-top: 10px;
 }
 
 .simply-countdown-circle .simply-amount {
   display: block;
   font-size: 1.75rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 0.8;
   background: linear-gradient(to right, var(--sc-circle-primary), var(--sc-circle-secondary));
   -webkit-background-clip: text;
   background-clip: text;
@@ -267,35 +313,6 @@ body {
   50% {
     transform: scale(0.98);
     opacity: 0.9;
-  }
-}
-
-@media (max-width: 768px) {
-  .left-panel {
-    display: none;
-  }
-
-  .right-panel {
-    flex: 1;
-  }
-
-  /* countdown */
-  .simply-countdown-circle {
-    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
-  }
-
-  .simply-countdown-circle > .simply-section {
-    width: 67px;
-    height: 67px;
-    padding: 0.8rem;
-  }
-
-  .simply-countdown-circle .simply-amount {
-    font-size: 1rem;
-  }
-
-  .simply-countdown-circle .simply-word {
-    font-size: 0.55rem;
   }
 }
 
@@ -372,5 +389,36 @@ body {
   50% {
     transform: scale(0.98);
     opacity: 0.9;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-panel {
+    flex: 1;
+  }
+
+  /* countdown */
+  .simply-countdown-circle {
+    gap: 0.9rem; /* kecilkan jarak antar lingkaran */
+    align-items: center;
+  }
+
+  .simply-countdown-circle > .simply-section {
+    width: 67px;
+    height: 57px;
+    padding: 0.8rem;
+    align-items: center;
+  }
+
+  .simply-countdown-circle .simply-amount {
+    font-size: 1rem;
+  }
+
+  .simply-countdown-circle .simply-word {
+    font-size: 0.55rem;
   }
 }
