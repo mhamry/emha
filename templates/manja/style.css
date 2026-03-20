@@ -12,6 +12,11 @@ body {
   display: flex;
   height: 100vh;
 }
+
+:root {
+  --playball: "Playball";
+  --nunito: "Nunito Sans";
+}
 /* left panel */
 .left-panel {
   flex: 2;
@@ -20,7 +25,9 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: aqua;
+  background-image: url("image/bg.png");
+  background-position: center;
+  background-size: cover;
 }
 
 /* SCROLL DOWN */
@@ -64,7 +71,7 @@ body {
 .right-panel {
   flex: 1;
   overflow: hidden;
-  background-color: antiquewhite;
+
   position: relative;
 }
 
@@ -77,14 +84,25 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: black;
-  color: white;
+  background-image: url("image/bg.png");
+  background-position: center;
+  background-size: cover;
+  color: #a82323;
   transition: 3s ease-in-out;
   z-index: 10;
 }
 
 .landing-top.hide {
   transform: translateY(-100vh);
+}
+
+.landing-top button {
+  background-color: black;
+  color: #fff;
+}
+
+.landing-top .pengantin {
+  font-family: var(--playball);
 }
 
 /* hero */
