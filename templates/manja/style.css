@@ -82,7 +82,6 @@ body {
   inset: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
   background-image: url("image/bg.png");
   background-position: center;
@@ -124,18 +123,25 @@ body {
   object-fit: cover;
 }
 
+.landing-top .atas {
+  margin-top: 50px;
+}
+
 /* hero */
 
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
   background-image: url("image/bg.png");
   background-position: center;
   background-size: cover;
   color: #a82323;
+}
+
+.hero h5 {
+  margin-top: 50px;
 }
 
 .hero .pengantin {
@@ -150,6 +156,7 @@ body {
   margin: auto;
   --bg: url("image/4.png");
   position: relative;
+  margin-bottom: 30px;
 }
 .hero .image-wrapper::after {
   position: absolute;
@@ -158,13 +165,23 @@ body {
   background-image: var(--bg);
   background-size: cover;
   background-position: center;
+  transition: 2s;
+}
+
+.image-wrapper.fade-in::after {
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+.image-wrapper.fade-out::after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* scroll indicator */
 
 .scroll-indicator-wrapper {
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -208,9 +225,10 @@ body {
 /* quote */
 
 .quote {
-  padding: 70px 0;
+  padding: 70px 10px;
   background-color: burlywood;
   text-align: center !important;
+  color: #a82323;
 }
 
 .quote .header {
@@ -230,6 +248,123 @@ body {
   font-size: 20px;
   margin-top: 60px;
   font-size: 40px;
+}
+
+/* groom-bride */
+
+.groom-bride {
+  background-image: url("image/bg.png");
+  background-position: center;
+  background-size: cover;
+  padding: 30px 5px;
+  color: #a82323;
+}
+
+.groom-bride .content {
+  padding: 30px 3px;
+  position: relative;
+  margin: auto;
+}
+
+.groom-bride .content > * {
+  position: relative;
+  z-index: 2;
+}
+.groom-bride .content::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.groom-bride .bride,
+.groom-bride .groom {
+  width: 250px;
+  height: 300px;
+  margin: auto;
+  border: 2px solid #a82323;
+}
+.groom-bride .bride img,
+.groom-bride .groom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.groom-bride .groom {
+  margin-top: 100px;
+}
+.groom-bride .content a {
+  border-radius: 10px;
+  display: inline-block;
+  height: 25px;
+  line-height: 12px;
+}
+.groom-bride .content h4 {
+  font-family: var(--playball);
+  font-size: 30px;
+  margin-top: 20px;
+}
+.groom-bride .content span {
+  font-weight: bold;
+  font-size: large;
+}
+
+/* wedding -event */
+
+.wedding-event {
+  padding: 50px 10px;
+  background-color: burlywood;
+}
+
+.wedding-event .akad-nikah,
+.wedding-event .resepsi,
+.wedding-event .streaming {
+  padding: 40px 5px;
+  background-image: url("image/bg.png");
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.wedding-event .akad-nikah .kapan,
+.wedding-event .resepsi .kapan {
+  display: flex;
+  margin: auto;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+.wedding-event .akad-nikah .line,
+.wedding-event .resepsi .line {
+  height: 50px;
+  width: 1px;
+  background-color: #a82323;
+}
+.wedding-event .akad-nikah .tanggal,
+.wedding-event .resepsi .tanggal {
+  line-height: 15px;
+}
+
+.wedding-event .akad-nikah .tanggal .angka,
+.wedding-event .resepsi .tanggal .angka {
+  font-size: 40px;
+  margin-top: 25px;
+}
+
+.wedding-event a {
+  border-radius: 10px;
+  display: inline-block;
+  height: 25px;
+  line-height: 12px;
+  background-color: #a82323;
+  color: #fff;
+  text-decoration: none;
+  padding: 2px 10px;
+  font-size: 13px;
+  line-height: 17px;
 }
 
 /* countdown */

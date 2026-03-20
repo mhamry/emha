@@ -15,6 +15,25 @@ tombol.addEventListener("click", function () {
   });
 });
 
+// animasi hero image wrapper
+
+const imageWrapper = document.querySelector(".hero .image-wrapper");
+const listImg = ["image/1.png", "image/2.png", "image/3.png"];
+let index = 0;
+function changeImage() {
+  imageWrapper.classList.add("fade-in");
+  imageWrapper.classList.remove("fade-out");
+  setTimeout(() => {
+    imageWrapper.style.setProperty("--bg", `url(${listImg[index]})`);
+    imageWrapper.classList.remove("fade-in");
+    imageWrapper.classList.add("fade-out");
+    index = (index + 1) % listImg.length;
+  }, 2000);
+}
+
+changeImage();
+setInterval(changeImage, 8000);
+
 //countdown
 simplyCountdown(".simply-countdown-circle", {
   year: 2026, // Target year (required)
