@@ -474,7 +474,7 @@
   z-index: 2;
   transition: all 5s;
   font-size: 35px;
-  top: 0;
+  top: 15px;
 }
 
 .timeline-dot i {
@@ -489,6 +489,8 @@
 .timeline-content {
   background-color: #a82323;
   padding: 30px 0;
+  width: 350px;
+  margin: auto;
   color: #fff;
 }
 
@@ -1025,8 +1027,11 @@ footer .medsos {
   }
 
   .timeline-content {
-    flex-direction: column;
     text-align: center;
+    padding: 30px 20px;
+    width: 270px;
+    margin: auto;
+    margin-left: -13px;
   }
 
   .timeline-content .image img {

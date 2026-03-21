@@ -513,7 +513,6 @@ body {
   top: 13px;
   left: -12px;
   transform: rotate(45deg);
-
   background-color: var(--secondary);
 }
 
@@ -538,16 +537,6 @@ body {
   color: var(--secondary);
 }
 
-/* Content kanan */
-.timeline-content {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
 .timeline-content .image {
   flex: 1;
 }
