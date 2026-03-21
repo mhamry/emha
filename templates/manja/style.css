@@ -13,6 +13,51 @@
   --playball: "Playball";
   --nunito: "Nunito Sans";
 }
+
+.top-right {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  animation: putar1 10s infinite linear;
+  transform-origin: top center;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: -20px;
+  left: -30px;
+  animation: putar2 10s infinite linear;
+  transform-origin: bottom center;
+}
+@keyframes putar1 {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes putar2 {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 /* left panel */
 .left-panel {
   flex: 2;
@@ -24,6 +69,14 @@
   background-image: url("image/bg.png");
   background-position: center;
   background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-panel .top-right img,
+.left-panel .bottom-left img {
+  width: 200px;
+  transition: 2s;
 }
 
 /* SCROLL DOWN */
@@ -216,6 +269,12 @@
     opacity: 0;
     top: 24px;
   }
+}
+
+.hero .top-right img,
+.hero .bottom-left img {
+  width: 200px;
+  transition: 2s;
 }
 
 /* quote */
