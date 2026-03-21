@@ -34,6 +34,78 @@ function changeImage() {
 changeImage();
 setInterval(changeImage, 8000);
 
+// //animasi effect timeline
+
+// $(window).on("scroll", function () {
+//   let scrollTop = $(window).scrollTop();
+//   let windowHeight = $(window).height();
+//   let viewportCenter = scrollTop + windowHeight / 2;
+
+//   let sectionTop = $(".love-story").offset().top;
+//   let sectionHeight = $(".love-story").outerHeight();
+//   let sectionBottom = sectionTop + sectionHeight;
+
+//   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+//     let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+//     let timelineHeight = $(".timeline").height();
+//     let lineHeight = progress * timelineHeight;
+
+//     lineHeight = Math.min(lineHeight, timelineHeight);
+
+//     document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+//     $(".timeline-dot").each(function () {
+//       let dotTop = $(this).offset().top - $(".timeline").offset().top;
+
+//       if (lineHeight >= dotTop) {
+//         $(this).addClass("active");
+//       } else {
+//         $(this).removeClass("active");
+//       }
+//     });
+//   }
+// });
+
+$("#rightPanel").on("scroll", function () {
+  let scrollTop = $(this).scrollTop();
+  let windowHeight = $(this).height();
+  let viewportCenter = scrollTop + windowHeight / 2;
+
+  let sectionTop = $(".love-story").offset().top - $("#rightPanel").offset().top + scrollTop;
+
+  let sectionHeight = $(".love-story").outerHeight();
+  let sectionBottom = sectionTop + sectionHeight;
+
+  console.log({
+    scrollTop,
+    viewportCenter,
+    sectionTop,
+    sectionBottom,
+  });
+
+  if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+    let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+    let timelineHeight = $(".timeline").height();
+    let lineHeight = progress * timelineHeight;
+
+    lineHeight = Math.max(0, Math.min(lineHeight, timelineHeight));
+
+    document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+    $(".timeline-dot").each(function () {
+      let dotTop = $(this).offset().top - $(".timeline").offset().top;
+
+      if (lineHeight >= dotTop) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  }
+});
+
 //countdown
 simplyCountdown(".simply-countdown-circle", {
   year: 2026, // Target year (required)

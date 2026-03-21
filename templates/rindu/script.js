@@ -1,6 +1,7 @@
-const tombol = document.getElementById("openBtn");
-const landingTop = document.getElementById("landing-top");
+const tombol = document.getElementById("btnOpen");
+const landingTop = document.getElementById("landingTop");
 const song = document.querySelector(".song");
+const rightPanel = document.querySelector(".right-panel");
 const audioIcon = document.querySelector(".audio-icon");
 const iconWrapper = document.querySelector(".icon-wrapper i");
 const heroSection1 = document.querySelector(".hero-hidden1");
@@ -13,7 +14,7 @@ tombol.addEventListener("click", () => {
 
   // aktifkan scroll setelah animasi
   setTimeout(() => {
-    document.body.style.overflowY = "auto";
+    rightPanel.style.overflowY = "auto";
     heroSection1.classList.remove("hero-hidden1");
     heroSection2.classList.remove("hero-hidden2");
 
@@ -44,11 +45,11 @@ iconWrapper.addEventListener("click", function () {
   }
 });
 
-// //animasi effect timeline
+// // //animasi effect timeline
 
-$(window).on("scroll", function () {
-  let scrollTop = $(window).scrollTop();
-  let windowHeight = $(window).height();
+$("#rightPanel").on("scroll", function () {
+  let scrollTop = $("#rightPanel").scrollTop();
+  let windowHeight = $("#rightPanel").height();
   let viewportCenter = scrollTop + windowHeight / 2;
 
   let sectionTop = $(".love-story").offset().top;
