@@ -3,16 +3,38 @@ const landingTop = document.getElementById("landingTop");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
 const scrollDown = document.querySelector(".scroll-down");
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
+let isPlaying = false;
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflowY = "auto";
   scrollDown.classList.add("muncul");
+  song.play();
+  audioIcon.style.display = "flex";
 
   leftPanel.addEventListener("wheel", function (e) {
     rightPanel.scrollTop += e.deltaY;
 
     e.preventDefault();
   });
+});
+
+// audio
+
+audioIcon.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle");
+  }
 });
 
 // animasi hero image wrapper
@@ -35,37 +57,6 @@ changeImage();
 setInterval(changeImage, 8000);
 
 // //animasi effect timeline
-
-// $(window).on("scroll", function () {
-//   let scrollTop = $(window).scrollTop();
-//   let windowHeight = $(window).height();
-//   let viewportCenter = scrollTop + windowHeight / 2;
-
-//   let sectionTop = $(".love-story").offset().top;
-//   let sectionHeight = $(".love-story").outerHeight();
-//   let sectionBottom = sectionTop + sectionHeight;
-
-//   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-//     let progress = (viewportCenter - sectionTop) / sectionHeight;
-
-//     let timelineHeight = $(".timeline").height();
-//     let lineHeight = progress * timelineHeight;
-
-//     lineHeight = Math.min(lineHeight, timelineHeight);
-
-//     document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
-
-//     $(".timeline-dot").each(function () {
-//       let dotTop = $(this).offset().top - $(".timeline").offset().top;
-
-//       if (lineHeight >= dotTop) {
-//         $(this).addClass("active");
-//       } else {
-//         $(this).removeClass("active");
-//       }
-//     });
-//   }
-// });
 
 $("#rightPanel").on("scroll", function () {
   let scrollTop = $(this).scrollTop();
