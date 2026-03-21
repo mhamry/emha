@@ -588,6 +588,7 @@
   background-image: url("image/bg-card.png");
   background-size: cover;
   background-repeat: no-repeat;
+  color: #a82323;
 }
 
 .gift .card .image-wrapper {
@@ -602,8 +603,8 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: #fff;
-  color: #000;
+  background-color: #a82323;
+  color: #fff;
   padding: 4px 10px;
   border-radius: 6px;
   border: 1px solid white;
@@ -611,6 +612,26 @@
 
 .gift .card .nama {
   margin-top: 70px;
+}
+
+.gift .kado {
+  height: 200px;
+}
+.gift .kado .nama {
+  margin-top: 1px;
+}
+.gift .kado .penerima {
+  margin-top: 20px;
+}
+
+.gift .kado .image-wrapper {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+.gift .kado .image-wrapper i {
+  font-size: 30px;
+  color: #a82323;
 }
 
 /* countdown */
