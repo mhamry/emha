@@ -144,6 +144,7 @@ body {
   padding: 40px 0;
   background-color: var(--primary);
   color: white;
+  overflow: hidden;
 }
 .slider .carousel-item img {
   width: 100%;
@@ -166,6 +167,7 @@ body {
 .groom-bride {
   padding: 70px 10px;
   background-image: linear-gradient(to top, var(--primary), white);
+  overflow: hidden;
 }
 
 .groom-bride .header {
@@ -261,6 +263,7 @@ body {
   background-image: url("image/6.png");
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 }
 
 .save-date > * {
@@ -307,6 +310,7 @@ body {
   text-align: center;
   position: relative;
   color: white;
+  overflow: hidden;
 }
 
 .quote > * {
@@ -347,6 +351,7 @@ body {
 .wedding-event {
   padding: 70px 10px;
   background-color: azure;
+  overflow: hidden;
 }
 
 .wedding-event .card {
@@ -406,6 +411,7 @@ body {
 }
 .wedding-event .card-body .widget .akad {
   font-size: 25px;
+  white-space: nowrap;
 }
 
 .wedding-event .carousel-inner {
@@ -458,6 +464,7 @@ body {
   padding: 60px 0;
   background-color: #5a0e24;
   color: #fff;
+  overflow: hidden;
 }
 
 .gift h3 {
@@ -507,6 +514,7 @@ body {
 .love-story {
   padding: 70px 10px;
   background-image: linear-gradient(to top, var(--primary), white);
+  overflow: hidden;
 }
 
 .love-story img {
@@ -546,6 +554,7 @@ body {
   padding: 70px 20px;
   background-color: #5a0e24;
   color: #fff;
+  overflow: hidden;
 }
 
 .rsvp .header {
@@ -577,6 +586,7 @@ body {
   padding-bottom: 80px;
   background-color: #280905;
   color: white;
+  overflow: hidden;
 }
 
 .congrat .header h2 {
@@ -632,6 +642,7 @@ body {
   margin-top: -1px;
   padding: 50px 20px;
   background-color: azure;
+  overflow: hidden;
 }
 
 .gallery .header {
@@ -672,6 +683,7 @@ body {
   padding: 80px 0;
   height: 100vh;
   position: relative;
+  overflow: hidden;
   color: white;
   z-index: 1;
   --gambar: url("image/2.png");
