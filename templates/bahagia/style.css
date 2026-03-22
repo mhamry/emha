@@ -20,48 +20,18 @@ body {
   --secondary: #3e2c23;
 }
 
-.top-right {
+.top-left {
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 0;
+  left: 0;
   animation: putar1 10s infinite linear;
-  transform-origin: top center;
 }
 
-.bottom-left {
+.bottom-right {
   position: absolute;
-  bottom: -20px;
-  left: -30px;
-  animation: putar2 10s infinite linear;
-  transform-origin: bottom center;
-}
-@keyframes putar1 {
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(0);
-  }
-  75% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
-@keyframes putar2 {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
+  bottom: 0;
+  right: 0;
+  animation: putar 10s infinite linear;
 }
 
 /* left panel */
@@ -231,6 +201,11 @@ body {
 .image-wrapper.fade-out::after {
   opacity: 1;
   transform: scale(1);
+}
+
+.hero .top-left img,
+.hero .bottom-right img {
+  width: 200px;
 }
 
 /* scroll indicator */
