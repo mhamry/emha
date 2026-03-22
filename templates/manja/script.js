@@ -37,6 +37,12 @@ audioIcon.addEventListener("click", function () {
   }
 });
 
+//ambil nama tamu undangan dari url
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("to") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.textContent = `${nama}`;
+
 // animasi hero image wrapper
 
 const imageWrapper = document.querySelector(".hero .image-wrapper");

@@ -1,30 +1,106 @@
-const openBtn = document.getElementById("openBtn");
-const landingTop = document.getElementById("landing-top");
+const tombol = document.getElementById("btnOpen");
+const landingTop = document.getElementById("landingTop");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
 const scrollDown = document.querySelector(".scroll-down");
-
-openBtn.addEventListener("click", () => {
-  // Hilangkan layar pembuka
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
+let isPlaying = false;
+tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
-
-  // Aktifkan scroll panel kanan
-  setTimeout(() => {
-    rightPanel.style.overflowY = "auto";
-  });
-
-  // Aktifkan scroll body (mobile)
-  document.body.style.overflow = "auto";
+  rightPanel.style.overflowY = "auto";
   scrollDown.classList.add("muncul");
+  song.play();
+  audioIcon.style.display = "flex";
 
-  // Saat scroll di panel kiri
   leftPanel.addEventListener("wheel", function (e) {
-    // Arahkan scroll ke panel kanan
     rightPanel.scrollTop += e.deltaY;
 
-    // Cegah panel kiri ikut scroll
     e.preventDefault();
   });
+});
+
+// audio
+
+audioIcon.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle");
+  }
+});
+
+//ambil nama tamu undangan dari url
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("to") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.textContent = `${nama}`;
+
+// animasi hero image wrapper
+
+const imageWrapper = document.querySelector(".hero .image-wrapper");
+const listImg = ["image/1.png", "image/2.png", "image/3.png"];
+let index = 0;
+function changeImage() {
+  imageWrapper.classList.add("fade-in");
+  imageWrapper.classList.remove("fade-out");
+  setTimeout(() => {
+    imageWrapper.style.setProperty("--bg", `url(${listImg[index]})`);
+    imageWrapper.classList.remove("fade-in");
+    imageWrapper.classList.add("fade-out");
+    index = (index + 1) % listImg.length;
+  }, 2000);
+}
+
+changeImage();
+setInterval(changeImage, 8000);
+
+// //animasi effect timeline
+
+$("#rightPanel").on("scroll", function () {
+  let scrollTop = $(this).scrollTop();
+  let windowHeight = $(this).height();
+  let viewportCenter = scrollTop + windowHeight / 2;
+
+  let sectionTop = $(".love-story").offset().top - $("#rightPanel").offset().top + scrollTop;
+
+  let sectionHeight = $(".love-story").outerHeight();
+  let sectionBottom = sectionTop + sectionHeight;
+
+  console.log({
+    scrollTop,
+    viewportCenter,
+    sectionTop,
+    sectionBottom,
+  });
+
+  if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+    let progress = (viewportCenter - sectionTop) / sectionHeight;
+
+    let timelineHeight = $(".timeline").height();
+    let lineHeight = progress * timelineHeight;
+
+    lineHeight = Math.max(0, Math.min(lineHeight, timelineHeight));
+
+    document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+    $(".timeline-dot").each(function () {
+      let dotTop = $(this).offset().top - $(".timeline").offset().top;
+
+      if (lineHeight >= dotTop) {
+        $(this).addClass("active");
+      } else {
+        $(this).removeClass("active");
+      }
+    });
+  }
 });
 
 //countdown

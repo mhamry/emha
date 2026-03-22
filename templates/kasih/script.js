@@ -3,124 +3,101 @@ const landingTop = document.getElementById("landingTop");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
 const scrollDown = document.querySelector(".scroll-down");
-const scrollIndicatorewraaper = document.querySelector(".scroll-indicator-wrapper");
-
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
+let isPlaying = false;
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflowY = "auto";
   scrollDown.classList.add("muncul");
+  song.play();
+  audioIcon.style.display = "flex";
 
   leftPanel.addEventListener("wheel", function (e) {
     rightPanel.scrollTop += e.deltaY;
-    e.preventDefault();
-  });
 
-  rightPanel.addEventListener("scroll", function () {
-    if (rightPanel.scrollTop > 100) {
-      scrollIndicatorewraaper.classList.add("hide");
-    } else {
-      scrollIndicatorewraaper.classList.remove("hide");
-    }
+    e.preventDefault();
   });
 });
 
+// audio
+
+audioIcon.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle");
+  }
+});
+
+//ambil nama tamu undangan dari url
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("to") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.textContent = `${nama}`;
+
+// animasi hero image wrapper
+
+const imageWrapper = document.querySelector(".hero .image-wrapper");
+const listImg = ["image/1.png", "image/2.png", "image/3.png"];
+let index = 0;
+function changeImage() {
+  imageWrapper.classList.add("fade-in");
+  imageWrapper.classList.remove("fade-out");
+  setTimeout(() => {
+    imageWrapper.style.setProperty("--bg", `url(${listImg[index]})`);
+    imageWrapper.classList.remove("fade-in");
+    imageWrapper.classList.add("fade-out");
+    index = (index + 1) % listImg.length;
+  }, 2000);
+}
+
+changeImage();
+setInterval(changeImage, 8000);
+
 // //animasi effect timeline
 
-// $(window).on("scroll", function () {
-//   let scrollTop = $(window).scrollTop();
-//   let windowHeight = $(window).height();
-//   let viewportCenter = scrollTop + windowHeight / 2;
+$("#rightPanel").on("scroll", function () {
+  let scrollTop = $(this).scrollTop();
+  let windowHeight = $(this).height();
+  let viewportCenter = scrollTop + windowHeight / 2;
 
-//   let sectionTop = $(".love-story").offset().top;
-//   let sectionHeight = $(".love-story").outerHeight();
-//   let sectionBottom = sectionTop + sectionHeight;
+  let sectionTop = $(".love-story").offset().top - $("#rightPanel").offset().top + scrollTop;
 
-//   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-//     let progress = (viewportCenter - sectionTop) / sectionHeight;
+  let sectionHeight = $(".love-story").outerHeight();
+  let sectionBottom = sectionTop + sectionHeight;
 
-//     let timelineHeight = $(".timeline").height();
-//     let lineHeight = progress * timelineHeight;
-
-//     lineHeight = Math.min(lineHeight, timelineHeight);
-
-//     document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
-
-//     $(".timeline-dot").each(function () {
-//       let dotTop = $(this).offset().top - $(".timeline").offset().top;
-
-//       if (lineHeight >= dotTop) {
-//         $(this).addClass("active");
-//       } else {
-//         $(this).removeClass("active");
-//       }
-//     });
-//   }
-// });
-
-// $(document).ready(function () {
-//   $("#rightPanel").on("scroll", function () {
-//     let scrollTop = $(this).scrollTop();
-//     let windowHeight = $(this).height();
-//     let viewportCenter = scrollTop + windowHeight / 2;
-
-//     let sectionTop = $(".love-story").position().top;
-//     let sectionHeight = $(".love-story").outerHeight();
-//     let sectionBottom = sectionTop + sectionHeight;
-
-//     if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-//       let progress = (viewportCenter - sectionTop) / sectionHeight;
-
-//       let timelineHeight = $(".timeline").height();
-//       let lineHeight = progress * timelineHeight;
-
-//       lineHeight = Math.min(lineHeight, timelineHeight);
-
-//       document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
-
-//       $(".timeline-dot").each(function () {
-//         let dotTop = $(this).position().top;
-
-//         if (lineHeight >= dotTop) {
-//           $(this).addClass("active");
-//         } else {
-//           $(this).removeClass("active");
-//         }
-//       });
-//     }
-//   });
-// });
-
-//animasi effect timeline tanpa j-query
-
-rightPanel.addEventListener("scroll", function () {
-  const scrollTop = rightPanel.scrollTop;
-  const windowHeight = rightPanel.clientHeight;
-  const viewportCenter = scrollTop + windowHeight / 2;
-
-  const section = document.querySelector(".love-story");
-
-  const sectionTop = section.offsetTop;
-  const sectionHeight = section.offsetHeight;
-  const sectionBottom = sectionTop + sectionHeight;
+  console.log({
+    scrollTop,
+    viewportCenter,
+    sectionTop,
+    sectionBottom,
+  });
 
   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-    const progress = (viewportCenter - sectionTop) / sectionHeight;
+    let progress = (viewportCenter - sectionTop) / sectionHeight;
 
-    const timeline = document.querySelector(".timeline");
-    const timelineHeight = timeline.offsetHeight;
-
+    let timelineHeight = $(".timeline").height();
     let lineHeight = progress * timelineHeight;
-    lineHeight = Math.min(lineHeight, timelineHeight);
 
-    timeline.style.setProperty("--line-height", lineHeight + "px");
+    lineHeight = Math.max(0, Math.min(lineHeight, timelineHeight));
 
-    document.querySelectorAll(".timeline-dot").forEach((dot) => {
-      const dotTop = dot.offsetTop;
+    document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
+
+    $(".timeline-dot").each(function () {
+      let dotTop = $(this).offset().top - $(".timeline").offset().top;
 
       if (lineHeight >= dotTop) {
-        dot.classList.add("active");
+        $(this).addClass("active");
       } else {
-        dot.classList.remove("active");
+        $(this).removeClass("active");
       }
     });
   }
@@ -169,10 +146,10 @@ simplyCountdown(".simply-countdown", {
   seconds: 0, // Target second [0-59], default: 0
   words: {
     // Custom labels, with lambda for plurals
-    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "" : root) },
-    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "" : root) },
-    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "" : root) },
-    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "" : root) },
+    days: { root: "hari", lambda: (root, n) => (n > 1 ? root + "s" : root) },
+    hours: { root: "jam", lambda: (root, n) => (n > 1 ? root + "s" : root) },
+    minutes: { root: "menit", lambda: (root, n) => (n > 1 ? root + "s" : root) },
+    seconds: { root: "detik", lambda: (root, n) => (n > 1 ? root + "s" : root) },
   },
   plural: true, // Use plurals for labels
   inline: false, // Inline format: e.g., "24 days, 4 hours, 2 minutes"

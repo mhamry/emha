@@ -359,6 +359,7 @@
   height: 25px;
   line-height: 12px;
   background-color: #a82323 !important;
+  color: #fff;
 }
 .groom-bride .content h4 {
   font-family: var(--playball);
