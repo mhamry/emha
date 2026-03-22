@@ -45,7 +45,7 @@ audioIcon.addEventListener("click", function () {
 //ambil nama tamu undangan dari url
 
 const urlParams = new URLSearchParams(window.location.search);
-const nama = urlParams.get("n") || "Tamu Undangan";
+const nama = urlParams.get("to") || "Tamu Undangan";
 const namaElement = document.querySelector(".landing-top .tamu_undangan");
 namaElement.innerHTML = `${nama}`;
 
