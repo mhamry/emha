@@ -284,6 +284,7 @@
   padding: 30px 5px;
   color: var(--primary);
   position: relative;
+  overflow: hidden;
 }
 
 .groom-bride .content {
@@ -301,7 +302,7 @@
   content: "";
   inset: 0;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .groom-bride .bride,
@@ -421,7 +422,7 @@
   inset: 0;
   background-color: #fff;
   padding: 40px 0;
-  opacity: 0.8;
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -642,7 +643,7 @@
   bottom: 20px;
   right: 20px;
   background-color: var(--primary);
-  color: var(--primary);
+  color: #fff;
   padding: 4px 10px;
   border-radius: 6px;
   border: 1px solid white;
