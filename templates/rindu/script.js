@@ -105,7 +105,7 @@ const saveBtn = document.getElementById("saveDate");
 if (saveBtn) {
   const title = "Wedding Amri & Nikel";
   const startDate = "20261109T100000";
-  const endDate = "20261109T130000";
+  const endDate = "20261109T180000";
   const details = "Acara pernikahan Amri dan Nikel";
   const location = "Jorong Tabing Pauh Agam, Sumatera Barat";
 
