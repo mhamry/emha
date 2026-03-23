@@ -359,8 +359,8 @@ body {
 .groom-bride .image-wrapper .text {
   position: absolute;
   color: black;
-  font-size: 40px;
-  font-family: "Ballet";
+  font-size: 20px;
+  font-family: var(--swash);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
