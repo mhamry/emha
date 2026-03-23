@@ -84,7 +84,7 @@
 .scroll-down {
   position: absolute;
   bottom: 40px;
-  left: 32%;
+  left: 50%;
   transform: translate(-50%, -300px); /* posisi awal di atas */
   font-size: 30px;
   color: white;
@@ -144,7 +144,7 @@
 }
 
 .landing-top button {
-  background-color: black;
+  background-color: #a82323;
   color: #fff;
 }
 
@@ -316,6 +316,7 @@
   background-size: cover;
   padding: 30px 5px;
   color: #a82323;
+  position: relative;
 }
 
 .groom-bride .content {
@@ -333,7 +334,7 @@
   content: "";
   inset: 0;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .groom-bride .bride,
@@ -386,6 +387,7 @@
   background-position: center;
   background-size: cover;
   border-radius: 10px;
+  position: relative;
 }
 
 .wedding-event .akad-nikah .kapan,
@@ -444,6 +446,7 @@
   padding: 40px 20px;
   color: white;
   z-index: 2;
+  overflow: hidden;
 }
 
 .love-story .content::before {
@@ -637,6 +640,7 @@
   padding: 60px 0;
   background-image: url("image/bg.png");
   color: #a82323;
+  position: relative;
 }
 
 .gift h3 {
@@ -808,6 +812,7 @@
   padding: 80px 10px;
   background-image: url("image/bg.png");
   color: #a82323;
+  position: relative;
 }
 
 .thankyou h3 {

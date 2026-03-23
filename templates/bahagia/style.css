@@ -121,7 +121,7 @@ body {
 }
 
 .landing-top button {
-  background-color: black;
+  background-color: var(--primary);
   color: #fff;
 }
 
