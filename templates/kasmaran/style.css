@@ -149,7 +149,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -225,6 +225,7 @@
 .hero .content .countdown {
   flex: 1;
   text-align: center;
+  margin-left: 20px;
 }
 
 .hero .carousel,
@@ -523,17 +524,17 @@
 }
 
 .save-date.fade-in::after {
-  opacity: 0.2;
+  opacity: 0.9;
 }
 .save-date.fade-out::after {
-  opacity: 0.9;
+  opacity: 1;
 }
 .save-date::before {
   position: absolute;
   content: "";
   inset: 0;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .save-date h3 {
@@ -939,6 +940,21 @@ footer .medsos {
   text-align: center;
 }
 
+/* audio icon */
+.audio-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  place-content: center;
+  transform-origin: center;
+  font-size: 40px;
+  z-index: 12;
+  line-height: 0;
+  animation: rotating 2s infinite linear;
+  cursor: pointer;
+}
+
 /* countdown */
 .simply-countdown-circle {
   --sc-circle-primary: #fff;
@@ -1106,7 +1122,7 @@ footer .medsos {
 
 @media (max-width: 768px) {
   .landing-top h5 {
-    margin-top: 400px;
+    margin-top: 350px;
   }
 
   .landing-top {

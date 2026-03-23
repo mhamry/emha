@@ -2,14 +2,42 @@ const tombol = document.getElementById("btnOpen");
 const landingTop = document.getElementById("landingTop");
 const leftPanel = document.getElementById("leftPanel");
 const rightPanel = document.getElementById("rightPanel");
+const song = document.querySelector(".song");
+const audioIcon = document.querySelector(".audio-icon");
+const iconWrapper = document.querySelector(".icon-wrapper i");
 
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
+  song.play();
+  audioIcon.style.display = "flex";
 
   setTimeout(() => {
     rightPanel.style.overflowY = "auto";
   }, 1000);
 });
+
+// audio
+let isPlaying = true;
+iconWrapper.addEventListener("click", function () {
+  if (isPlaying) {
+    song.pause();
+    // song.volume(0.6);
+    isPlaying = false;
+    iconWrapper.classList.remove("bi-disc-fill");
+    iconWrapper.classList.add("bi-pause-circle-fill");
+  } else {
+    song.play();
+    isPlaying = true;
+    iconWrapper.classList.add("bi-disc-fill");
+    iconWrapper.classList.remove("bi-pause-circle-fill");
+  }
+});
+
+//ambil nama tamu undangan data dari url
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get("to") || "Tamu Undangan";
+const namaElement = document.querySelector(".landing-top .undangan");
+namaElement.textContent = `${nama}`;
 
 //animasi fade groom bride
 
