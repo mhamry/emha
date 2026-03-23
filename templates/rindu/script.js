@@ -1,7 +1,7 @@
-const tombol = document.getElementById("btnOpen");
+const tombol = document.getElementById("openBtn");
 const landingTop = document.getElementById("landingTop");
+const landingBottom = document.querySelector(".landing-bottom");
 const song = document.querySelector(".song");
-const rightPanel = document.querySelector(".right-panel");
 const audioIcon = document.querySelector(".audio-icon");
 const iconWrapper = document.querySelector(".icon-wrapper i");
 const heroSection1 = document.querySelector(".hero-hidden1");
@@ -14,7 +14,7 @@ tombol.addEventListener("click", () => {
 
   // aktifkan scroll setelah animasi
   setTimeout(() => {
-    rightPanel.style.overflowY = "auto";
+    document.body.style.overflowY = "auto";
     heroSection1.classList.remove("hero-hidden1");
     heroSection2.classList.remove("hero-hidden2");
 
@@ -45,11 +45,11 @@ iconWrapper.addEventListener("click", function () {
   }
 });
 
-// // //animasi effect timeline
+//animasi effect timeline
 
-$("#rightPanel").on("scroll", function () {
-  let scrollTop = $("#rightPanel").scrollTop();
-  let windowHeight = $("#rightPanel").height();
+$(window).on("scroll", function () {
+  let scrollTop = $(window).scrollTop();
+  let windowHeight = $(window).height();
   let viewportCenter = scrollTop + windowHeight / 2;
 
   let sectionTop = $(".love-story").offset().top;
@@ -98,6 +98,21 @@ function gantiImg() {
 
 gantiImg();
 setInterval(gantiImg, 8000);
+
+// save the date
+const saveBtn = document.getElementById("saveDate");
+
+if (saveBtn) {
+  const title = "Wedding Amri & Nikel";
+  const startDate = "20261109T100000";
+  const endDate = "20261109T130000";
+  const details = "Acara pernikahan Amri dan Nikel";
+  const location = "Jorong Tabing Pauh Agam, Sumatera Barat";
+
+  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
+
+  saveBtn.href = url;
+}
 
 //countdown
 simplyCountdown(".simply-countdown-circle", {
