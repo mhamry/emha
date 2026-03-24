@@ -254,6 +254,51 @@ body {
   z-index: 5;
 }
 
+/* scroll indicator */
+
+.scroll-indicator-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.scroll-indicator {
+  width: 25px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: auto;
+  position: relative;
+}
+
+.scroll-indicator::after {
+  content: "";
+  width: 4px;
+  height: 8px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 8px;
+  border-radius: 2px;
+  animation: scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim {
+  0% {
+    opacity: 0;
+    top: 8px;
+  }
+  50% {
+    opacity: 1;
+    top: 16px;
+  }
+  100% {
+    opacity: 0;
+    top: 24px;
+  }
+}
+
 /* quote */
 
 .quote {
@@ -1159,6 +1204,7 @@ footer .medsos {
   }
   .hero .content {
     margin-top: 40px;
+    position: relative;
   }
 
   .hero .image-wrapper {
@@ -1168,6 +1214,10 @@ footer .medsos {
     background-color: bisque;
     border-radius: 20px;
     object-fit: cover;
+  }
+
+  .hero .scroll-indicator-wrapper {
+    bottom: 50px;
   }
 
   /* groom-bride */
