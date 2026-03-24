@@ -37,6 +37,21 @@ audioIcon.addEventListener("click", function () {
   }
 });
 
+// save the date
+const saveBtn = document.getElementById("saveDate");
+
+if (saveBtn) {
+  const title = "Wedding Amri & Nikel";
+  const startDate = "20261109T100000";
+  const endDate = "20261109T180000";
+  const details = "Acara pernikahan Amri dan Nikel";
+  const location = "Jorong Tabing Pauh Agam, Sumatera Barat";
+
+  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
+
+  saveBtn.href = url;
+}
+
 //ambil nama tamu undangan dari url
 const urlParams = new URLSearchParams(window.location.search);
 const nama = urlParams.get("to") || "Tamu Undangan";

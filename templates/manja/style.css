@@ -217,6 +217,17 @@
   transition: 2s;
 }
 
+.hero #saveDate {
+  padding: 8px 15px;
+  background-color: #a82323;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 20px;
+  margin-top: 30px;
+  position: relative;
+}
+
 .image-wrapper.fade-in::after {
   opacity: 0.5;
   transform: scale(1.05);
@@ -1058,6 +1069,18 @@ footer .medsos {
 
   .right-panel {
     flex: 1;
+  }
+  /* hero */
+  .hero h5 {
+    margin-top: 30px;
+  }
+
+  .hero #saveDate {
+    margin-top: 20px;
+  }
+
+  .scroll-indicator-wrapper {
+    bottom: 20px;
   }
 
   /* countdown */

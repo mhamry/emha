@@ -152,7 +152,7 @@ body {
   color: white;
 }
 .hero .content {
-  margin-top: 50px;
+  margin-top: 30px;
   overflow-x: hidden;
 }
 
@@ -191,6 +191,17 @@ body {
 }
 .hero .content .image-wrapper.fade-in::before {
   opacity: 0.8;
+}
+
+.hero #saveDate {
+  padding: 8px 15px;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 20px;
+  margin-top: 30px;
+  position: relative;
 }
 
 /* quote */
@@ -933,7 +944,7 @@ footer a i {
   /* hero */
 
   .hero .content {
-    margin-top: 80px;
+    margin-top: 30px;
     overflow-x: hidden;
   }
 
