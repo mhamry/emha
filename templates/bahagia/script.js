@@ -52,6 +52,40 @@ if (saveBtn) {
   saveBtn.href = url;
 }
 
+//aktifkan live streaming
+const liveBtn = document.getElementById("liveBtn");
+const eventDate = new Date(2026, 11, 9, 8, 0, 0); // 9 Desember 2026
+const now = new Date();
+if (now >= eventDate) {
+  liveBtn.href = "https://www.youtube.com/watch?v=XXXXXXXX";
+  liveBtn.classList.remove("disabled-link");
+}
+
+//salin data
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const text = this.getAttribute("data-copy");
+    navigator.clipboard.writeText(text).then(() => {
+      this.innerHTML = '<i class="bi bi-check"></i> Tersalin';
+
+      setTimeout(() => {
+        this.innerHTML = '<i class="bi bi-copy me-1"></i>Salin';
+      }, 4000);
+    });
+
+    // navigator.clipboard
+    //   .writeText(text)
+    //   .then(() => {
+    //     alert("Berhasil disalin: " + text);
+    //   })
+    //   .catch(() => {
+    //     alert("Gagal menyalin");
+    //   });
+  });
+});
+
 //ambil nama tamu undangan dari url
 const urlParams = new URLSearchParams(window.location.search);
 const nama = urlParams.get("to") || "Tamu Undangan";

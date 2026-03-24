@@ -1,76 +1,134 @@
-const landingTop = document.getElementById("landing-top");
-const landingBottom = document.querySelector(".landing-bottom");
-const hero = document.querySelector(".hero");
-const tombol = document.getElementById("openBtn");
+const tombol = document.getElementById("btnOpen");
+const landingTop = document.getElementById("landingTop");
+const rightPanel = document.getElementById("rightPanel");
+const leftPanel = document.getElementById("leftPanel");
+const scrollDown = document.querySelector(".scroll-down");
 const song = document.querySelector(".song");
 const audioIcon = document.querySelector(".audio-icon");
 const iconWrapper = document.querySelector(".icon-wrapper i");
-
+let isPlaying = false;
 tombol.addEventListener("click", function () {
-  // Hero naik dari bawah
-
   landingTop.classList.add("hide");
-  audioIcon.style.display = "flex";
+  rightPanel.style.overflowY = "auto";
+  scrollDown.classList.add("muncul");
   song.play();
+  audioIcon.style.display = "flex";
 
-  // Aktifkan scroll
-  setTimeout(() => {
-    document.body.style.overflowY = "auto";
-  }, 2000);
+  leftPanel.addEventListener("wheel", function (e) {
+    rightPanel.scrollTop += e.deltaY;
+
+    e.preventDefault();
+  });
 });
 
-//audio
-let isPlaying = true;
-iconWrapper.addEventListener("click", function () {
+// audio
+
+audioIcon.addEventListener("click", function () {
   if (isPlaying) {
     song.pause();
     isPlaying = false;
     iconWrapper.classList.remove("bi-disc-fill");
-    iconWrapper.classList.add("bi-pause-circle-fill");
+    iconWrapper.classList.add("bi-pause-circle");
   } else {
     song.play();
     isPlaying = true;
     iconWrapper.classList.add("bi-disc-fill");
-    iconWrapper.classList.remove("bi-pause-circle-fill");
+    iconWrapper.classList.remove("bi-pause-circle");
   }
 });
 
-//ambil nama tamu undangan dari url
+// save the date
+const saveBtn = document.getElementById("saveDate");
 
+if (saveBtn) {
+  const title = "Wedding Amri & Nikel";
+  const startDate = "20261109T100000";
+  const endDate = "20261109T180000";
+  const details = "Acara pernikahan Amri dan Nikel";
+  const location = "Jorong Tabing Pauh Agam, Sumatera Barat";
+
+  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
+
+  saveBtn.href = url;
+}
+
+//aktifkan live streaming
+const liveBtn = document.getElementById("liveBtn");
+const eventDate = new Date(2026, 11, 9, 8, 0, 0); // 9 Desember 2026
+const now = new Date();
+if (now >= eventDate) {
+  liveBtn.href = "https://www.youtube.com/watch?v=XXXXXXXX";
+  liveBtn.classList.remove("disabled-link");
+}
+
+//salin data
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const text = this.getAttribute("data-copy");
+    navigator.clipboard.writeText(text).then(() => {
+      this.innerHTML = '<i class="bi bi-check"></i> Tersalin';
+
+      setTimeout(() => {
+        this.innerHTML = '<i class="bi bi-copy me-1"></i>Salin';
+      }, 4000);
+    });
+
+    // navigator.clipboard
+    //   .writeText(text)
+    //   .then(() => {
+    //     alert("Berhasil disalin: " + text);
+    //   })
+    //   .catch(() => {
+    //     alert("Gagal menyalin");
+    //   });
+  });
+});
+
+//ambil nama tamu undangan dari url
 const urlParams = new URLSearchParams(window.location.search);
-const nama = urlParams.get("nama") || "Tamu Undangan";
+const nama = urlParams.get("to") || "Tamu Undangan";
 const namaElement = document.querySelector(".landing-top .undangan");
 namaElement.textContent = `${nama}`;
 
-// animasi bg-hero
-const bgHero = document.querySelector(".bg-hero");
-const gambar = ["1", "2", "3"];
-let i = 0;
-function changeImg() {
-  bgHero.classList.add("fade-in");
-  bgHero.classList.remove("fade-out");
+// animasi hero image wrapper
 
-  setTimeout(function () {
-    bgHero.setAttribute("src", "image/" + gambar[i] + ".jpg");
-    bgHero.classList.remove("fade-in");
-    bgHero.classList.add("fade-out");
-    i = (i + 1) % gambar.length;
-  }, 3000);
+const imageWrapper = document.querySelector(".hero .image-wrapper");
+const listImg = ["image/1.png", "image/2.png", "image/3.png"];
+let index = 0;
+function changeImage() {
+  imageWrapper.classList.add("fade-in");
+  imageWrapper.classList.remove("fade-out");
+  setTimeout(() => {
+    imageWrapper.style.setProperty("--bg", `url(${listImg[index]})`);
+    imageWrapper.classList.remove("fade-in");
+    imageWrapper.classList.add("fade-out");
+    index = (index + 1) % listImg.length;
+  }, 2000);
 }
 
-changeImg();
-setInterval(changeImg, 9000);
+changeImage();
+setInterval(changeImage, 8000);
 
-//animasi effect timeline
+// //animasi effect timeline
 
-$(window).on("scroll", function () {
-  let scrollTop = $(window).scrollTop();
-  let windowHeight = $(window).height();
+$("#rightPanel").on("scroll", function () {
+  let scrollTop = $(this).scrollTop();
+  let windowHeight = $(this).height();
   let viewportCenter = scrollTop + windowHeight / 2;
 
-  let sectionTop = $(".love-story").offset().top;
+  let sectionTop = $(".love-story").offset().top - $("#rightPanel").offset().top + scrollTop;
+
   let sectionHeight = $(".love-story").outerHeight();
   let sectionBottom = sectionTop + sectionHeight;
+
+  console.log({
+    scrollTop,
+    viewportCenter,
+    sectionTop,
+    sectionBottom,
+  });
 
   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
     let progress = (viewportCenter - sectionTop) / sectionHeight;
@@ -78,7 +136,7 @@ $(window).on("scroll", function () {
     let timelineHeight = $(".timeline").height();
     let lineHeight = progress * timelineHeight;
 
-    lineHeight = Math.min(lineHeight, timelineHeight);
+    lineHeight = Math.max(0, Math.min(lineHeight, timelineHeight));
 
     document.querySelector(".timeline").style.setProperty("--line-height", lineHeight + "px");
 
