@@ -114,9 +114,17 @@ body {
   color: white;
   display: flex;
   overflow: hidden;
-  align-items: center;
   position: relative;
   background-image: radial-gradient(circle at top left, var(--primary), var(--dark));
+}
+
+.hero .content {
+  margin-top: 40px;
+}
+
+.hero .content > * {
+  position: relative;
+  z-index: 4;
 }
 
 .hero .nama-pengantin {
