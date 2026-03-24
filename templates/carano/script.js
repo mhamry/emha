@@ -19,6 +19,22 @@ tombol.addEventListener("click", function () {
   }, 2000);
 });
 
+//salin data
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const text = this.getAttribute("data-copy");
+    navigator.clipboard.writeText(text).then(() => {
+      this.innerHTML = '<i class="bi bi-check"></i> Tersalin';
+
+      setTimeout(() => {
+        this.innerHTML = '<i class="bi bi-copy me-1"></i>Salin';
+      }, 4000);
+    });
+  });
+});
+
 // save the date
 const saveBtn = document.getElementById("saveDate");
 
