@@ -51,6 +51,22 @@ document.querySelectorAll(".copy-btn").forEach((btn) => {
   });
 });
 
+//lihat konfirmasi kehadiran
+document.addEventListener("DOMContentLoaded", function () {
+  const btnKonfirmasi = document.getElementById("konfirmasi");
+  const kotakRsvp = document.querySelector(".rsvp .kotak-rsvp");
+
+  btnKonfirmasi.addEventListener("click", function () {
+    kotakRsvp.classList.toggle("show");
+
+    if (kotakRsvp.classList.contains("show")) {
+      btnKonfirmasi.innerHTML = "<i class='bi bi-eye-slash me-2'></i> Tutup Konfirmasi Kehadiran";
+    } else {
+      btnKonfirmasi.innerHTML = " <i class='bi bi-eye m-2'></i>Lihat Konfirmasi Kehadiran";
+    }
+  });
+});
+
 // save the date
 const saveBtn = document.getElementById("saveDate");
 if (saveBtn) {

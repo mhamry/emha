@@ -14,6 +14,9 @@
     />
 
     <!-- Akhir font -->
+      <!-- awal icon emha -->
+      <link rel="shortcut icon" href="../../asset/image/logo.png" type="image/x-icon" />
+     <!-- ahir icon emha -->
     <!-- awal css -->
     <link rel="stylesheet" href="style.css" />
     <!-- akhir css -->
@@ -545,14 +548,14 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-7 col-10">
-              <form>
+              <form action="" method="post">
                 <div class="mb-3">
                   <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
                 </div>
                 <div class="mb-3">
                   <textarea name="ucapan" id="ucapan" class="form-control">Ucapan</textarea>
                 </div>
-                <button type="submit" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
+                <button type="submit" name="kirim" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
               </form>
             </div>
           </div>

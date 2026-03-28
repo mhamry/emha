@@ -1,5 +1,6 @@
 const tombol = document.getElementById("btnOpen");
 const landingTop = document.getElementById("landingTop");
+const landingBottom = document.getElementById("landingBottom");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
 const scrollDown = document.querySelector(".scroll-down");
@@ -10,6 +11,7 @@ let isPlaying = false;
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflowY = "auto";
+
   scrollDown.classList.add("muncul");
   song.play();
   audioIcon.style.display = "flex";
@@ -74,6 +76,23 @@ const nama = urlParams.get("to") || "Tamu Undangan";
 const namaElement = document.querySelector(".landing-top .undangan");
 namaElement.textContent = `${nama}`;
 
+//lihat konfirmasi kehadiran
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btnKonfirmasi = document.getElementById("konfirmasi");
+  const kotakRsvp = document.querySelector(".rsvp .kotak-rsvp");
+
+  btnKonfirmasi.addEventListener("click", function () {
+    kotakRsvp.classList.toggle("show");
+
+    if (kotakRsvp.classList.contains("show")) {
+      btnKonfirmasi.innerHTML = "<i class='bi bi-eye-slash me-2'></i> Tutup Konfirmasi Kehadiran";
+    } else {
+      btnKonfirmasi.innerHTML = " <i class='bi bi-eye m-2'></i>Lihat Konfirmasi Kehadiran";
+    }
+  });
+});
+
 // animasi hero image wrapper
 
 const imageWrapper = document.querySelector(".hero .image-wrapper");
@@ -105,13 +124,6 @@ $("#rightPanel").on("scroll", function () {
   let sectionHeight = $(".love-story").outerHeight();
   let sectionBottom = sectionTop + sectionHeight;
 
-  console.log({
-    scrollTop,
-    viewportCenter,
-    sectionTop,
-    sectionBottom,
-  });
-
   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
     let progress = (viewportCenter - sectionTop) / sectionHeight;
 
@@ -131,6 +143,32 @@ $("#rightPanel").on("scroll", function () {
         $(this).removeClass("active");
       }
     });
+  }
+});
+
+//kode atasi scroll terkunci setelah kirim pesan
+document.addEventListener("DOMContentLoaded", function () {
+  const rightPanel = document.getElementById("rightPanel");
+  const landingTop = document.getElementById("landingTop");
+
+  // pastikan scroll aktif setelah reload
+
+  const hash = window.location.hash;
+  if (hash) {
+    rightPanel.style.overflowY = "auto";
+    landingTop.classList.add("hide");
+  }
+
+  const scrollContainer = rightPanel;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target && scrollContainer) {
+      scrollContainer.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth",
+      });
+    }
   }
 });
 

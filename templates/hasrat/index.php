@@ -1,3 +1,43 @@
+<?php
+
+require_once "../../config.php";
+
+if(isset($_POST['kirim_ucapan'])){
+  if(insert($_POST) > 0){
+    header("Location: ?msg=berhasil#congrat");
+
+  } else{
+
+    header("Location: ?msg=gagal#congrat");
+
+  }
+
+  
+}
+
+if(isset($_POST['kirim_rsvp'])){
+  if(tambah($_POST) > 0){
+    header("Location: ?msg=berhasi#rsvp");
+  } else{
+      header("Location: ?msg=gagal#rsvp");
+  }
+
+  exit;
+}
+
+if(isset($_GET['msg'])){
+  $msg = $_GET['msg'];
+} else {
+  $msg = '';
+}
+
+$alert = '';
+$template_id = "hasrat";
+
+$congrats = query("SELECT * FROM tbl_ucapan WHERE template_id='$template_id' ORDER BY id DESC");
+
+$reservations = query("SELECT * FROM tbl_rsvp WHERE template_id='$template_id' ORDER BY id DESC");
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,6 +54,9 @@
     />
 
     <!-- Akhir font -->
+      <!-- awal icon emha -->
+      <link rel="shortcut icon" href="../../asset/image/logo.png" type="image/x-icon" />
+     <!-- ahir icon emha -->
     <!-- awal css -->
     <link rel="stylesheet" href="style.css" />
     <!-- akhir css -->
@@ -368,16 +411,18 @@
               </div>
             </div>
           </section>
-          <section class="rsvp" id="rsvp">
+
+           <section class="rsvp" id="rsvp">
             <div class="container">
               <div class="row">
                 <div class="col">
-                  <div class="header" data-aos="fade-down" data-aos-duration="2000">
-                    <h1>RSVP</h1>
+                  <div class="header" data-aos="fade-down" data-aos-duration="3000">
+                    <h2>RSVP</h2>
                   </div>
-                  <p data-aos="zoom-in" data-aos-duration="2000">Untuk membantu kami mempersiapkan segalanya dengan lebih baik, silakan konfirmasi kehadiran Anda melalui formulir RSVP berikut:</p>
-                </div>
-                <form action="">
+                  <p data-aos="fade-down" data-aos-duration="3000">Untuk membantu kami mempersiapkan segalanya dengan lebih baik, silakan konfirmasi kehadiran Anda melalui formulir RSVP berikut:</p>
+               
+                <form action="" method="post">
+                   <input type="hidden" name="template_id" value="hasrat">
                   <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" required />
@@ -393,7 +438,7 @@
 
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="kehadiran" id="tidakHadir" value="Tidak Hadir" />
-                      <label class="form-check-label" for="tidakHadir"> Maaf bisa Tidak Hadir </label>
+                      <label class="form-check-label" for="tidakHadir"> Maaf Tidak bisa Hadir </label>
                     </div>
                   </div>
                   <div class="mb-3">
@@ -407,34 +452,41 @@
                     </select>
                   </div>
 
-                  <button type="submit" class="btn btn-sm" name="kirim"><i class="bi bi-send me-1"></i>Kirim</button>
+                  <button type="submit" class="btn btn-sm" name="kirim_rsvp"><i class="bi bi-send me-1"></i>Kirim</button>
                 </form>
 
-                <button type="button" class="btn btn-sm d-block w-100 mt-5" id="konfirmasi" style="background-color: #a82323; color: white; border-radius: 0"><i class="bi bi-eye me-2"></i>Lihat Konfirmasi Kehadiran</button>
+                  <button type="button" class="btn btn-sm d-block w-100 mt-5" id="konfirmasi" style="background-color: #a82323; color:white; border-radius: 0;" ><i class="bi bi-eye me-2"></i>Lihat Konfirmasi Kehadiran</button>
+                </div>
               </div>
-
               <div class="row justify-content-center">
                 <div class="col">
-                  <div class="kotak-rsvp" style="background-color: aliceblue">
-                    <table class="table table-striped responsive">
+                  <div class="kotak-rsvp"  style="background-color: aliceblue;"> 
+                  
+                       <table class="table table-striped responsive">
                       <thead>
                         <tr>
-                          <th>No</th>
-                          <th>Nama</th>
-                          <th>Ket</th>
-                          <th style="text-align: center">Jumlah</th>
-                        </tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Ket</th>
+                        <th style="text-align: center;">Jumlah</th>
+                        </tr> 
                       </thead>
                       <tbody>
+                        <?php  
+                        $no = 1; 
+                        foreach($reservations as $reservation)
+                        :?>
+                         
                         <tr>
-                          <td>1</td>
-                          <td>Amri</td>
-                          <td>4</td>
-                          <td style="text-align: center"><?= $reservation["jumlahtamu"]?></td>
-                        </tr>
-                      </tbody>
+                        <td><?= $no++ ?></td>
+                        <td><?= $reservation["nama"]?></td>
+                        <td><?= $reservation["kehadiran"]?></td>
+                        <td style="text-align: center;"><?= $reservation["jumlahtamu"]?></td>
+                      </tr>
+                      <?php endforeach; ?>
+                      </tbody>   
                     </table>
-                  </div>
+                    </div>                    
                 </div>
               </div>
             </div>
@@ -444,7 +496,7 @@
             <div class="conatainer">
               <div class="row justify-content-center text-center">
                 <div class="col">
-                  <div class="header" data-aos="fade-down" data-aos-duration="2000">
+                  <div class="header" data-aos="fade-down" data-aos-duration="3000">
                     <h2>Ucapan & Doa</h2>
                     <p>Beri Ucapan dan Doa terbaik buat kami</p>
                   </div>
@@ -452,61 +504,42 @@
               </div>
               <div class="row justify-content-center">
                 <div class="col">
-                  <form>
+                  <form action="" method="post">
+                    <input type="hidden" name="template_id" value="hasrat">
                     <div class="mb-3">
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required/>
                     </div>
                     <div class="mb-3">
-                      <textarea name="ucapan" id="ucapan" class="form-control">Ucapan</textarea>
+                      <textarea name="ucapan" id="ucapan" class="form-control" maxlength="100" autocomplete="off" required>Ucapan</textarea>
                     </div>
-                    <button type="submit" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
+                    <button type="submit" name="kirim_ucapan" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
                   </form>
                 </div>
               </div>
               <div class="row justify-content-center">
                 <div class="col">
                   <div class="kotak-pesan">
+
+                  <?php foreach ($congrats as $congrat): ?>
                     <div class="text-pesan">
                       <div class="icon">
                         <i class="bi bi-hearts"></i>
                       </div>
                       <div>
-                        <p class="nama">Nikel</p>
-                        <p>Undangannya bagus banget..❤️❤️</p>
+                        <p class="nama"><?= $congrat["nama"] ?></p>
+                        <p><?= $congrat["ucapan"] ?></p>
                       </div>
                     </div>
-                    <div class="text-pesan">
-                      <div class="icon">
-                        <i class="bi bi-hearts"></i>
-                      </div>
-                      <div>
-                        <p class="nama">No Name</p>
-                        <p>Desain undangannya keren abisss👍👍</p>
-                      </div>
-                    </div>
-                    <div class="text-pesan">
-                      <div class="icon">
-                        <i class="bi bi-hearts"></i>
-                      </div>
-                      <div>
-                        <p class="nama">Amri</p>
-                        <p>Selamat menempuh hidup baru</p>
-                      </div>
-                    </div>
-                    <div class="text-pesan">
-                      <div class="icon">
-                        <i class="bi bi-hearts"></i>
-                      </div>
-                      <div>
-                        <p class="nama">Icung</p>
-                        <p>Selamat menempuh hidup baru</p>
-                      </div>
-                    </div>
+
+                    <?php endforeach; ?>
+                   
                   </div>
                 </div>
               </div>
             </div>
           </section>
+
+
           <section class="gallery" id="gallery">
             <div class="container">
               <div class="header" data-aos="fade-down" data-aos-duration="2000">
@@ -578,6 +611,33 @@
       </div>
     </main>
 
+      <!-- awal toast alert -->
+     <div class="toast-container position-fixed top-0 end-0 p-3">
+        <?php if($msg == 'berhasil'): ?>
+        <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert">
+          <div class="d-flex">
+            <div class="toast-body">
+              ✅ Pesan berhasil dikirim
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if($msg == 'gagal'): ?>
+        <div id="liveToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+          <div class="d-flex">
+            <div class="toast-body">
+              ❌ Pesan gagal dikirim
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+      </div>
+     <!-- ahir toast alert -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- j-query cdn -->
@@ -597,6 +657,19 @@
         AOS.refresh();
       });
     </script>
+
+      <!-- scrip toast alert -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const toastEl = document.getElementById('liveToast');
+          if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl, {
+              delay: 3000 // 3 detik hilang
+            });
+            toast.show();
+          }
+        });
+      </script>
 
     <script src="script.js"></script>
   </body>

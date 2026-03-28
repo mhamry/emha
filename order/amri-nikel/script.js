@@ -1,5 +1,6 @@
 const tombol = document.getElementById("btnOpen");
 const landingTop = document.getElementById("landingTop");
+const landingBottom = document.getElementById("landingBottom");
 const rightPanel = document.getElementById("rightPanel");
 const leftPanel = document.getElementById("leftPanel");
 const scrollDown = document.querySelector(".scroll-down");
@@ -10,6 +11,7 @@ let isPlaying = false;
 tombol.addEventListener("click", function () {
   landingTop.classList.add("hide");
   rightPanel.style.overflowY = "auto";
+
   scrollDown.classList.add("muncul");
   song.play();
   audioIcon.style.display = "flex";
@@ -36,6 +38,7 @@ audioIcon.addEventListener("click", function () {
     iconWrapper.classList.remove("bi-pause-circle");
   }
 });
+
 //salin data
 document.querySelectorAll(".copy-btn").forEach((btn) => {
   btn.addEventListener("click", function (e) {
@@ -120,13 +123,6 @@ $("#rightPanel").on("scroll", function () {
   let sectionHeight = $(".love-story").outerHeight();
   let sectionBottom = sectionTop + sectionHeight;
 
-  console.log({
-    scrollTop,
-    viewportCenter,
-    sectionTop,
-    sectionBottom,
-  });
-
   if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
     let progress = (viewportCenter - sectionTop) / sectionHeight;
 
@@ -146,6 +142,33 @@ $("#rightPanel").on("scroll", function () {
         $(this).removeClass("active");
       }
     });
+  }
+});
+
+//kode atasi scroll terkunci setelah kirim pesan
+document.addEventListener("DOMContentLoaded", function () {
+  const rightPanel = document.getElementById("rightPanel");
+  const landingTop = document.getElementById("landingTop");
+
+  // pastikan scroll aktif setelah reload
+
+  const hash = window.location.hash;
+
+  if (hash) {
+    rightPanel.style.overflowY = "auto";
+    landingTop.classList.add("hide");
+  }
+
+  const scrollContainer = rightPanel;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target && scrollContainer) {
+      scrollContainer.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth",
+      });
+    }
   }
 });
 

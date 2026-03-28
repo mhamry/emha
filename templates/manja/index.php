@@ -1,0 +1,722 @@
+
+<?php
+
+require_once "../../config.php";
+
+ if(isset($_POST['kirim_ucapan'])){
+
+    if(insert($_POST) > 0) {
+
+    header("Location: ?msg=berhasil#congrat");
+   
+    } else {
+    header("Location: ?msg=gagal#congrat");
+    }
+ }
+
+
+ if(isset($_POST['kirim_rsvp'])){
+
+    if(tambah($_POST) > 0) {
+
+    header("Location: ?msg=berhasil#rsvp");  
+    } else {
+     header("Location: ?msg=gagal#rsvp");
+    }
+    exit;
+    
+ }
+
+ if(isset($_GET['msg'])){
+  $msg = $_GET['msg'];
+
+ } else{
+  $msg = '';
+ }
+
+ $alert = '';
+
+ 
+
+$template_id = "manja";
+$ucapan = query("SELECT * FROM tbl_ucapan WHERE template_id='$template_id' ORDER BY id DESC");
+
+
+$reservations = query("SELECT * FROM tbl_rsvp WHERE template_id='$template_id' ORDER BY id DESC");
+
+
+
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manja</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!--Awal font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Berkshire+Swash&family=Cinzel:wght@400..900&family=Loved+by+the+King&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Akhir font -->
+      <!-- awal icon emha -->
+      <link rel="shortcut icon" href="../../asset/image/logo.png" type="image/x-icon" />
+     <!-- ahir icon emha -->
+    <!-- awal css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- akhir css -->
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- icon -->
+
+    <!-- Awal countdown -->
+
+    <script src="../../asset/countdown/simplyCountdown.umd.js"></script>
+    <!-- akhir countdown -->
+
+    <!-- awal Glightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <!-- ahir GLlightbox -->
+
+    <!-- awal aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- akhir aos -->
+  </head>
+  <body>
+    <main class="split-layout">
+      <div class="left-panel" id="leftPanel">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="bottom-left">
+                <img src="image/bottom-left.png" alt="" />
+              </div>
+              <div class="top-right">
+                <img src="image/top-right.png" alt="" />
+              </div>
+
+              <h5>The Wedding of</h5>
+              <h1>Amri & Nikel</h1>
+              <div class="scroll-down">
+                <i class="bi bi-file-arrow-down-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-panel" id="rightPanel">
+        <section class="landing-top" id="landingTop">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="atas" data-aos="fade-down" data-aos-duration="3000">
+                  <h5>The Wedding of</h5>
+                  <h1 class="pengantin">Amri & Nikel</h1>
+                </div>
+
+                <div class="image-wrapper">
+                  <img src="image/4.png" alt="" />
+                </div>
+
+                <div class="bawah" data-aos="fade-up" data-aos-duration="3000">
+                  <p>
+                    Kepada Yth. <br />
+                    Bapak/ibu/saudara/i
+                  </p>
+                  <div class="undangan fs-4"></div>
+                  <p class="maaf">Maaf jika ada kesalahan dalam penulisan nama/gelar</p>
+                  <button class="btn btn-dark" id="btnOpen"><i class="bi bi-book me-1"></i>Buka Undangan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="landing-bottom" id="landingBottom">
+          <section class="hero" id="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" />
+                  </div>
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" />
+                  </div>
+                  <h5>The Wedding of</h5>
+                  <div class="image-wrapper"></div>
+                  <h1 class="pengantin">Amri & Nikel</h1>
+                  <p>11 Nov 2025</p>
+                  <div class="simply-countdown-circle"></div>
+                  <a class="btn btn-sm" id="saveDate" target="_blank"><i class="bi bi-floppy-fill me-2"></i>Simpan Tanggal</a>
+                  <div class="scroll-indicator-wrapper">
+                    <div class="scroll-indicator"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="quote" id="quote">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="header">
+                    <h1 class="a" data-aos="fade-right" data-aos-duration="3000">N</h1>
+                    <p>&</p>
+                    <h1 class="n" data-aos="fade-left" data-aos-duration="3000">A</h1>
+                  </div>
+                  <p data-aos="zoom-in" data-aos-duration="3000">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
+                  </p>
+                  <p class="fw-bold">Q.S Ar-Rum : 21</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="groom-bride">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" width="200px" />
+                  </div>
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" width="200px" />
+                  </div>
+                  <div class="content">
+                    <h6 data-aos="fade-left" data-aos-duration="3000">Assalamu’alaikum Warahmatullahi Wabarakatuh</h6>
+                    <p data-aos="fade-right" data-aos-duration="3000">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami.</p>
+
+                    <div class="bride" data-aos="zoom-in" data-aos-duration="3000">
+                      <img src="image/7.png" alt="" />
+                    </div>
+                    <h4 data-aos="fade-left" data-aos-duration="3000">Nikel Janunati,S.Pd</h4>
+                    <p data-aos="fade-right" data-aos-duration="3000"><span>Putri Pertama dari</span> <br />Bapak Ipsum dan Ibu Lorem</p>
+
+                    <a href="" class="btn btn-dark btn-sm"><i class="bi bi-instagram me-1"></i>username</a>
+
+                    <div class="groom" data-aos="zoom-in" data-aos-duration="3000">
+                      <img src="image/9.png" alt="" />
+                    </div>
+                    <h4 data-aos="fade-left" data-aos-duration="3000">M.Hamri,S.Pd</h4>
+                    <p data-aos="fade-right" data-aos-duration="3000"><span>Putra kelima dari</span> <br />Bapak Ipsum dan Ibu Lorem</p>
+
+                    <a href="" class="btn btn-sm"><i class="bi bi-instagram me-1"></i>username</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="wedding-event">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <div class="akad-nikah" data-aos="fade-left" data-aos-duration="3000">
+                    <div class="bottom-left">
+                      <img src="image/bottom-left.png" alt="" width="150px" />
+                    </div>
+                    <div class="top-right">
+                      <img src="image/top-right.png" alt="" width="150px" />
+                    </div>
+                    <h4>Akad Nikah</h4>
+                    <div class="kapan">
+                      <p class="mt-2">Sabtu</p>
+                      <div class="line"></div>
+                      <div class="tanggal">
+                        <p class="angka">09</p>
+                        <p>2026</p>
+                      </div>
+                      <div class="line"></div>
+                      <p class="mt-2">Desember</p>
+                    </div>
+                    <div class="icon"><i class="bi bi-alarm"></i></div>
+                    <p>08:00 WIB</p>
+                    <div class="icon">Lokasi</div>
+                    <p>Jorong Tabiang Pauh Kamang Mudik Agam</p>
+                    <a href="https://maps.app.goo.gl/L4fxyPvsZuLrPfbx8"><i class="bi bi-geo-alt me-1"></i>Lihat Lokasi</a>
+                  </div>
+                  <div class="resepsi mt-5" data-aos="fade-right" data-aos-duration="3000">
+                    <div class="bottom-left">
+                      <img src="image/bottom-left.png" alt="" width="150px" />
+                    </div>
+                    <div class="top-right">
+                      <img src="image/top-right.png" alt="" width="150px" />
+                    </div>
+                    <h4>resepsi</h4>
+                    <div class="kapan">
+                      <p class="mt-2">Minggu</p>
+                      <div class="line"></div>
+                      <div class="tanggal">
+                        <p class="angka">10</p>
+                        <p>2026</p>
+                      </div>
+                      <div class="line"></div>
+                      <p class="mt-2">Desember</p>
+                    </div>
+                    <div class="icon"><i class="bi bi-alarm"></i></div>
+                    <p>08:00 - Selesai</p>
+                    <div class="icon">Lokasi</div>
+                    <p>Jorong Tabiang Pauh Kamang Mudik Agam</p>
+                    <a href="https://maps.app.goo.gl/L4fxyPvsZuLrPfbx8"><i class="bi bi-geo-alt me-1"></i>Lihat Lokasi</a>
+                  </div>
+                  <div class="streaming mt-5" data-aos="fade-left" data-aos-duration="3000">
+                    <div class="bottom-left">
+                      <img src="image/bottom-left.png" alt="" width="150px" />
+                    </div>
+                    <div class="top-right">
+                      <img src="image/top-right.png" alt="" width="150px" />
+                    </div>
+                    <h4>Live Streaming</h4>
+                    <p>Temui kami secara virtual untuk menyaksikan acara pernikahan kami yang insyaaAllah akan disiarkan langsung melalui link dibawah ini.</p>
+                    <a href="">Live streaming</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="love-story" id="love-story">
+            <div class="bottom-left">
+              <img src="image/bottom-left.png" alt="" width="200px" />
+            </div>
+            <div class="top-right">
+              <img src="image/top-right.png" alt="" width="200px" />
+            </div>
+            <div class="container content">
+              <div class="row justify-content-center text-center mb-5">
+                <div class="col">
+                  <h2 data-aos="fade-left" data-aos-duration="3000">Our Love Story</h2>
+                  <p data-aos="fade-right" data-aos-duration="3000">Perjalanan cinta kami dari awal bertemu hingga menuju hari bahagia.</p>
+
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="timeline">
+                        <!-- Item 1 -->
+
+                        <div class="timeline-item">
+                          <div class="timeline-dot satu"><i class="bi bi-heart-fill"></i></div>
+                          <div class="timeline-content" data-aos="fade-left" data-aos-duration="3000">
+                            <div class="speech-buble"></div>
+                            <div class="image">
+                              <img src="image/4.png" alt="First Meet" class="img-fluid" />
+                            </div>
+                            <div class="text mt-2">
+                              <h4>Awal Jumpa</h4>
+                              <span class="date">2018</span>
+                              <p>Kami pertama kali bertemu di sebuah acara yang tidak pernah kami sangka akan mempertemukan kami.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Item 2 -->
+
+                        <div class="timeline-item">
+                          <div class="timeline-dot dua"><i class="bi bi-heart-fill"></i></div>
+                          <div class="timeline-content" data-aos="fade-left" data-aos-duration="3000">
+                            <div class="speech-buble"></div>
+                            <div class="image">
+                              <img src="image/2.png" alt="Relationship" class="img-fluid" />
+                            </div>
+                            <div class="text mt-2">
+                              <h4>Menjalin Hubungan</h4>
+                              <span class="date">2020</span>
+                              <p>Seiring waktu berjalan, kami semakin dekat dan memutuskan untuk melangkah bersama.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Item 3 -->
+
+                        <div class="timeline-item">
+                          <div class="timeline-dot tiga"><i class="bi bi-heart-fill"></i></div>
+                          <div class="timeline-content" data-aos="fade-left" data-aos-duration="3000">
+                            <div class="speech-buble"></div>
+                            <div class="image">
+                              <img src="image/3.png" alt="Engagement" class="img-fluid" />
+                            </div>
+                            <div class="text mt-2">
+                              <h4>Menuju Pernikahan</h4>
+                              <span class="date">2024</span>
+                              <p>Dengan penuh keyakinan dan cinta, kami memutuskan untuk melanjutkan ke jenjang yang lebih serius.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="galery" id="galery">
+            <div class="container">
+              <div class="row justify-content-center g-0">
+                <div class="header" data-aos="zoom-in" data-aos-duration="3000">
+                  <h2>Our Moments</h2>
+                </div>
+                <div class="col-6 px-1">
+                  <div class="satu" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/2.png" alt="" class="img-fluid responsive" />
+                  </div>
+                  <div class="dua" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/3.png" alt="" class="img-fluid responsive" />
+                  </div>
+                </div>
+                <div class="col-6 px-1">
+                  <div class="tiga" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/4.png" alt="" class="img-fluid responsive" />
+                  </div>
+                  <div class="empat" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/5.png" alt="" class="img-fluid responsive" />
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center g-0">
+                <div class="col-6 px-1">
+                  <div class="satu" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/7.png" alt="" class="img-fluid responsive" />
+                  </div>
+                  <div class="dua" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/4.png" alt="" class="img-fluid responsive" />
+                  </div>
+                </div>
+                <div class="col-6 px-1">
+                  <div class="tiga" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/5.png" alt="" class="img-fluid responsive" />
+                  </div>
+                  <div class="empat" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/2.png" alt="" class="img-fluid responsive" />
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center g-0">
+                <div class="col-7 px-1">
+                  <div class="satu" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/1.png" alt="" class="img-fluid" />
+                  </div>
+                </div>
+                <div class="col-5 px-1">
+                  <div class="empat" data-aos="zoom-in" data-aos-duration="3000">
+                    <img src="image/8.png" alt="" class="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="gift" id="gift">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" width="200px" />
+                  </div>
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" width="200px" />
+                  </div>
+                  <div class="header" data-aos="zoom-in" data-aos-duration="3000">
+                    <h3>Wedding Gift</h3>
+                    <i class="bi bi-gift"></i>
+                  </div>
+                  <p class="mb-4 mt-4 px-4" data-aos="zoom-in" data-aos-duration="3000">
+                    Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui dibawah ini.
+                  </p>
+                  <div class="card" data-aos="fade-left" data-aos-duration="3000">
+                    <p>No. Rekening</p>
+                    <span class="fw-bold">1234567890</span>
+                    <p class="nama">Atas Nama</p>
+                    <span class="fw-bold">Nikel Januanti</span>
+                    <div class="image-wrapper">
+                      <img src="image/bri.png" alt="" class="img-fluid" />
+                    </div>
+                    <a href="#" class="btn btn-sm copy-btn" data-copy="1234567890"> <i class="bi bi-copy me-1"></i>Salin </a>
+                  </div>
+                  <div class="card mt-4" data-aos="fade-right" data-aos-duration="3000">
+                    <p>No. Rekening</p>
+                    <span class="fw-bold">1234567890</span>
+                    <p class="nama">Atas Nama</p>
+                    <span class="fw-bold">Nikel Januanti</span>
+                    <div class="image-wrapper">
+                      <img src="image/bni.png" alt="" class="img-fluid" />
+                    </div>
+                    <a href="#" class="btn btn-sm copy-btn" data-copy="1234567890"> <i class="bi bi-copy me-1"></i>Salin </a>
+                  </div>
+                  <div class="card kado mt-4" data-aos="fade-left" data-aos-duration="3000">
+                    <p class="fw-bold">Kado</p>
+                    <p class="penerima fw-bold">Penerima</p>
+                    <p class="nama">Nikel Januanti</p>
+                    <p class="wa">085272908546</p>
+                    <p style="line-height: 20px">
+                      Jln Tabing Pauh <br />
+                      <span> Kamang Mudik Agam</span>
+                    </p>
+
+                    <div class="image-wrapper">
+                      <i class="bi bi-gift"></i>
+                    </div>
+                    <a href="#" class="btn btn-sm copy-btn" data-copy="Jln.Tabiang Pauh Kamang Mudik Agam"> <i class="bi bi-copy me-1"></i>Salin </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="rsvp" id="rsvp">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="header" data-aos="fade-down" data-aos-duration="3000">
+                    <h2>RSVP</h2>
+                  </div>
+                  <p data-aos="fade-down" data-aos-duration="3000">Untuk membantu kami mempersiapkan segalanya dengan lebih baik, silakan konfirmasi kehadiran Anda melalui formulir RSVP berikut:</p>
+               
+                <form action="" method="post">
+                   <input type="hidden" name="template_id" value="manja">
+                  <div class="mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" required />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label d-block">Kehadiran</label>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="kehadiran" id="hadir" value="Hadir" required />
+                      <label class="form-check-label" for="hadir"> Insya Allah Hadir </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="kehadiran" id="tidakHadir" value="Tidak Hadir" />
+                      <label class="form-check-label" for="tidakHadir"> Maaf Tidak bisa Hadir </label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="jumlahtamu" class="form-label">Jumlah Tamu</label>
+                    <select name="jumlahtamu" id="jumlahtamu" class="form-select">
+                      <option value="" disabled selected>--Pilih Jumlah Tamu--</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+
+                  <button type="submit" class="btn btn-sm" name="kirim_rsvp"><i class="bi bi-send me-1"></i>Kirim</button>
+                </form>
+
+                  <button type="button" class="btn btn-sm d-block w-100 mt-5" id="konfirmasi" style="background-color: #a82323; color:white; border-radius: 0;" ><i class="bi bi-eye me-2"></i>Lihat Konfirmasi Kehadiran</button>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col">
+                  <div class="kotak-rsvp" style="background-color: aliceblue;"> 
+                  
+                       <table class="table table-striped">
+                      <thead>
+                        <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Ket</th>
+                        <th style="text-align: center;">Jumlah</th>
+                        </tr> 
+                      </thead>
+                      <tbody>
+                        <?php  
+                        $no = 1; 
+                        foreach($reservations as $reservation)
+                        :?>
+                         
+                        <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $reservation["nama"]?></td>
+                        <td><?= $reservation["kehadiran"]?></td>
+                        <td style="text-align: center;"><?= $reservation["jumlahtamu"]?></td>
+                      </tr>
+                      <?php endforeach; ?>
+                      </tbody>   
+                    </table>
+                    </div>                    
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="congrat" id="congrat">
+            <div class="conatainer">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <div class="header" data-aos="fade-down" data-aos-duration="3000">
+                    <h2>Ucapan & Doa</h2>
+                    <p>Beri Ucapan dan Doa terbaik buat kami</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col">
+                  <form action="" method="post">
+                    <input type="hidden" name="template_id" value="manja">
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required/>
+                    </div>
+                    <div class="mb-3">
+                      <textarea name="ucapan" id="ucapan" class="form-control" maxlength="100" autocomplete="off" required>Ucapan</textarea>
+                    </div>
+                    <button type="submit" name="kirim_ucapan" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
+                  </form>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col">
+                  <div class="kotak-pesan">
+
+                  <?php foreach ($ucapan as $u): ?>
+                    <div class="text-pesan">
+                      <div class="icon">
+                        <i class="bi bi-hearts"></i>
+                      </div>
+                      <div>
+                        <p class="nama"><?= $u["nama"] ?></p>
+                        <p><?= $u["ucapan"] ?></p>
+                      </div>
+                    </div>
+
+                    <?php endforeach; ?>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="section thankyou">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" width="200px" />
+                  </div>
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" width="200px" />
+                  </div>
+                  <div class="line"></div>
+                  <h3 data-aos="fade-down" data-aos-duration="3000">Terima Kasih</h3>
+                  <p style="font-family: Poppins; color: #a82323" data-aos="fade-down" data-aos-duration="3000">
+                    Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu kepada kami.
+                  </p>
+                  <p style="font-family: Poppins; color: #a82323; margin-top: 30px" data-aos="fade-down" data-aos-duration="3000">Wassalamu’alaikum warahmatullahi wabarakatuh</p>
+                  <p style="font-family: Poppins; color: #a82323; margin-top: 50px; text-transform: uppercase">kami yang berbahagia</p>
+                  <p style="font-family: Ballet; color: #a82323; margin-top: 50px" class="nama_pengantin">Amri <i class="bi bi-heart-fill me-3 ms-3"></i> Nikel</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer>
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col">
+                  <div><a href="" style="text-decoration: none; font-weight: bold; margin-bottom: 20px">emhaundangan.id</a></div>
+                  <br />
+                  <div><a href="" style="text-decoration: none; text-transform: uppercase">hubungi kami</a></div>
+
+                  <div class="medsos">
+                    <div class="wa">
+                      <a href=""><i class="bi bi-whatsapp me-2"></i></a>
+                    </div>
+                    <div class="ig">
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <div class="fb">
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                    </div>
+                    <div class="tiktok">
+                      <a href=""><i class="bi bi-tiktok"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+          <div class="audio-icon" style="display: none">
+            <audio class="song" loop>
+              <source src="../../asset/audio/song2.mp3" />
+            </audio>
+            <div class="icon-wrapper">
+              <i class="bi bi-disc-fill"></i>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- awal toast alert -->
+     <div class="toast-container position-fixed top-0 end-0 p-3">
+        <?php if($msg == 'berhasil'): ?>
+        <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert">
+          <div class="d-flex">
+            <div class="toast-body">
+              ✅ Pesan berhasil dikirim
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if($msg == 'gagal'): ?>
+        <div id="liveToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+          <div class="d-flex">
+            <div class="toast-body">
+              ❌ Pesan gagal dikirim
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+      </div>
+     <!-- ahir toast alert -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- j-query cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 120,
+      });
+
+      const scrollContainer = document.querySelector("#rightPanel");
+
+      scrollContainer.addEventListener("scroll", function () {
+        AOS.refresh();
+      });
+    </script>
+
+     <!-- scrip toast alert -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const toastEl = document.getElementById('liveToast');
+          if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl, {
+              delay: 3000 // 3 detik hilang
+            });
+            toast.show();
+          }
+        });
+      </script>
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

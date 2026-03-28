@@ -52,6 +52,23 @@ body {
   padding: 10px 15px;
   cursor: pointer;
   z-index: 11;
+  animation: pulse 5s infinite;
+  transition: 2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .floral-wrapper {

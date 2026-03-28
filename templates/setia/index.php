@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rindu Template</title>
+    <title>Setia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 
     <!--Awal font -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +15,9 @@
     />
 
     <!-- Akhir font -->
+      <!-- awal icon emha -->
+      <link rel="shortcut icon" href="../../asset/image/logo.png" type="image/x-icon" />
+     <!-- ahir icon emha -->
     <!-- awal css -->
     <link rel="stylesheet" href="style.css" />
     <!-- akhir css -->
@@ -38,34 +40,37 @@
     <!-- akhir aos -->
   </head>
   <body>
-    <section class="landing-top" id="landingTop">
-      <div class="bird-gif">
-        <img src="image/bird.gif" alt="" width="100px" />
-      </div>
-      <div class="floral-wrapper">
-        <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-          <img src="image/bottom-left.png" alt="" width="400px" />
-        </div>
-
-        <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-          <img src="image/top-right.png" alt="" width="400px" />
-        </div>
-      </div>
+    <section class="landing-top" id="landing-top">
       <div class="container">
-        <div class="row justify-content-center content">
-          <div class="col text-center">
-            <h6 class="mb-3">THE WEDDING OF</h6>
-            <div class="gambar" data-aos="fade-up" data-aos-duration="3000">
-              <img src="image/bg-landing-page.jpg" alt="" class="img-fluid img-thumbnail rounded-circle mb-3" width="300px" />
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-7 col-10 content">
+            <div class="floral-wrapper">
+              <div class="bottom-satu">
+                <img src="image/bottom-satu.png" alt="" class="img-fluid" width="150" />
+              </div>
+              <div class="bottom-dua">
+                <img src="image/bottom-dua.png" alt="" class="img-fluid" width="150" />
+              </div>
+              <div class="bottom-tiga">
+                <img src="image/bottom-tiga.png" alt="" class="img-fluid" width="150" />
+              </div>
+              <div class="bottom-empat">
+                <img src="image/bottom-empat.png" alt="" class="img-fluid" width="150" />
+              </div>
+              <div class="kupu-satu">
+                <img src="image/kupu1.gif" alt="" class="img-fluid" width="100" />
+              </div>
+              <div class="kupu-dua">
+                <img src="image/kupu2.gif" alt="" class="img-fluid" width="100" />
+              </div>
             </div>
+            <h6 data-aos="zoom-in" data-aos-duration="3000">THE WEDDING OF</h6>
+            <h2 class="nama-pengantin" data-aos="zoom-in" data-aos-duration="3000">Amri & Nikel</h2>
+            <p data-aos="zoom-in" data-aos-duration="3000">Kepada Yth <br />Bapak/Ibu/Saudara/i</p>
+            <span class="nama-undangan">Tamu Undangan</span>
+            <p style="font-size: 10px" data-aos="zoom-in" data-aos-duration="3000">Mohon maaf Jika ada kesalahan dalam penulisan nama/gelar</p>
 
-            <h2 class="nama-pengantin" data-aos="fade-up" data-aos-duration="3000">Amri & Nikel</h2>
-            <div class="undangan" data-aos="fade-up" data-aos-duration="2000">
-              <p>Kepada Yth <br />Bapak/Ibu/Saudara/i</p>
-              <p class="nama-undangan">Tamu Undangan</p>
-              <p style="font-size: 10px">Mohon maaf Jika ada kesalahan dalam penulisan nama/gelar</p>
-              <button class="btn-open" id="openBtn"><i class="bi bi-book me-2"></i> Lihat Undangan</button>
-            </div>
+            <button class="btn-open mt-3" id="openBtn" data-aos="zoom-in" data-aos-duration="3000"><i class="bi bi-envelope-check-fill"></i> Lihat Undangan</button>
           </div>
         </div>
       </div>
@@ -73,25 +78,32 @@
 
     <section class="landing-bottom" id="landing-bottom">
       <section class="hero" id="hero">
-        <div class="floral-wrapper">
-          <div class="top-right hero-hidden1" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
-          </div>
-          <div class="bottom-left hero-hidden2" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
-          </div>
-        </div>
-        <div class="container content">
-          <div class="row">
-            <div class="col">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-8 col-12">
               <div class="content text-center">
-                <h5 data-aos="zoom-in" data-aos-duration="3000">THE WEDDING OF</h5>
-                <div class="image-wrapper mb-2 mt-2" data-aos="zoom-in" data-aos-duration="3000"></div>
+                <div class="floral-wrapper">
+                  <div class="bottom-satu">
+                    <img src="image/bottom-satu.png" alt="" class="img-fluid" width="150" />
+                  </div>
+                  <div class="bottom-dua">
+                    <img src="image/bottom-dua.png" alt="" class="img-fluid" width="150" />
+                  </div>
+                  <div class="bottom-tiga">
+                    <img src="image/bottom-tiga.png" alt="" class="img-fluid" width="150" />
+                  </div>
+                  <div class="bottom-empat">
+                    <img src="image/bottom-empat.png" alt="" class="img-fluid" width="150" />
+                  </div>
+                </div>
+                <h5 data-aos="fade-up" data-aos-duration="3000">THE WEDDING OF</h5>
 
-                <h2 class="nama-pengantin" data-aos="zoom-in" data-aos-duration="3000">Amri & Nikel</h2>
-                <p data-aos="zoom-in" data-aos-duration="3000">09 - 11 - 2026</p>
-                <div class="simply-countdown-circle" data-aos="fade-up" data-aos-duration="3000"></div>
-
+                <div class="image-wrapper mb-3 mt-3" data-aos="fade-up" data-aos-duration="3000">
+                  <img src="image/9.jpg" alt="" class="img-fluid img-responsive" />
+                </div>
+                <h2 class="nama-pengantin" data-aos="fade-up" data-aos-duration="3000">Amri & Nikel</h2>
+                <p data-aos="fade-up" data-aos-duration="3000">09 - 11 - 2025</p>
+                <div class="simply-countdown-circle"></div>
                 <a class="btn btn-sm" id="saveDate" target="_blank"><i class="bi bi-floppy-fill me-2"></i>Simpan Tanggal</a>
               </div>
             </div>
@@ -101,13 +113,18 @@
       <section class="quote" id="quote">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-8 col-11 text-center">
-              <div class="header" data-aos="zoom-in" data-aos-duration="3000">
-                <h1 data-aos="fade-right" data-aos-duration="2000">A</h1>
-                <div class="line"></div>
-                <h1 data-aos="fade-left" data-aos-duration="2000">N</h1>
+            <div class="col-lg-7 col-10 text-center">
+              <div class="kupu-satu">
+                <img src="image/kupu.gif" alt="" class="img-fluid" width="100" />
               </div>
-              <p data-aos="zoom-in" data-aos-duration="3000">
+
+              <div class="header" data-aos="fade-right" data-aos-duration="3000">
+                <h1>A</h1>
+                <div class="fs-4 fw-bold">&</div>
+                <h1>N</h1>
+              </div>
+
+              <p data-aos="fade-left" data-aos-duration="3000">
                 "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
               </p>
               <span>Q.S Ar-Rum : 21</span>
@@ -116,25 +133,33 @@
         </div>
       </section>
       <section class="groom-bride" id="groom-bride">
-        <div class="floral-wrapper">
-          <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
-          </div>
-
-          <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
-          </div>
-        </div>
         <div class="container">
-          <div class="row justify-content-center text-center content">
-            <div class="col-lg-8 col-11">
-              <div class="header px-4" data-aos="zoom-in" data-aos-duration="3000">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-8 col-11 content">
+              <div class="floral-wrapper">
+                <div class="bottom-satu" data-aos="fade-up" data-aos-duration="2000">
+                  <img src="image/bottom-satu.png" alt="" class="img-fluid" width="500" />
+                </div>
+                <div class="bottom-dua" data-aos="fade-up" data-aos-duration="2000">
+                  <img src="image/bottom-dua.png" alt="" class="img-fluid" width="500" />
+                </div>
+                <div class="bottom-tiga" data-aos="fade-up" data-aos-duration="2000">
+                  <img src="image/bottom-tiga.png" alt="" class="img-fluid" width="500" />
+                </div>
+                <div class="bottom-empat" data-aos="fade-up" data-aos-duration="2000">
+                  <img src="image/bottom-empat.png" alt="" class="img-fluid" width="500" />
+                </div>
+              </div>
+
+              <div class="header px-4" data-aos="zoom-in" data-aos-duration="2500">
+                <h3><span>The Groom</span><br />The Bride</h3>
+
                 <p class="fw-bold">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
                 <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi pernikahan kami.</p>
               </div>
-              <div class="groom mb-2" data-aos="fade-up" data-aos-duration="3000">
+              <div class="groom mb-2" data-aos="fade-right" data-aos-duration="2500">
                 <div class="image-wrapper">
-                  <img src="image/groom.jpg" alt="" class="img-fluid" />
+                  <img src="image/6.jpg" alt="" class="img-fluid" />
                 </div>
 
                 <p class="man">Muhammad Hamri,S.Pd</p>
@@ -143,16 +168,15 @@
                   <span>Bapak Lorem dan Ibu Ipsum</span>
                 </p>
               </div>
-              <div class="love-icon" data-aos="zoom-in" data-aos-duration="3000"><i class="bi bi-heart-fill"></i></div>
-
-              <div class="bride mt-3" data-aos="fade-up" data-aos-duration="3000">
+              <p data-aos="zoom-in" data-aos-duration="3000"><i class="bi bi-heart-fill"></i></p>
+              <div class="bride mt-3" data-aos="fade-left" data-aos-duration="2500">
                 <div class="image-wrapper">
-                  <img src="image/bride.jpg" alt="" class="img-fluid" />
+                  <img src="image/9.jpg" alt="" class="img-fluid" />
                 </div>
 
                 <p class="woman">Nikel Januanti,S.Pd</p>
                 <p>
-                  Putri kedua dari <br />
+                  Putra kedua dari <br />
                   <span>Bapak Lorem dan Ibu Ipsum</span>
                 </p>
               </div>
@@ -160,21 +184,29 @@
           </div>
         </div>
       </section>
-
       <section class="acara" id="acara">
         <div class="floral-wrapper">
-          <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
+          <div class="bottom-satu" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-satu.png" alt="" class="img-fluid" width="500" />
           </div>
 
-          <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
+          <div class="bottom-dua" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-dua.png" alt="" class="img-fluid" width="500" />
+          </div>
+          <div class="bottom-tiga" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-tiga.png" alt="" class="img-fluid" width="500" />
+          </div>
+          <div class="bottom-empat" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-empat.png" alt="" class="img-fluid" width="500" />
           </div>
         </div>
         <div class="container">
           <div class="row justify-content-center text-center">
             <div class="col-lg-7 col-11">
-              <div class="akad-nikah py-4" data-aos="fade-right" data-aos-duration="3000">
+              <div class="header" data-aos="fade-right" data-aos-duration="3000">
+                <h3><span>Wedding</span><br />Event</h3>
+              </div>
+              <div class="akad-nikah py-4" data-aos="fade-up" data-aos-duration="3000">
                 <div class="content">
                   <h3>Akad Nikah</h3>
                   <div class="waktu">
@@ -190,7 +222,7 @@
                     <p>Desemaber</p>
                   </div>
 
-                  <p class="jam fw-bold"><i class="bi bi-alarm-fill me-2"></i>08:00 - Selesai</p>
+                  <p class="jam fw-bold"><i class="bi bi-alarm-fill me-2"></i>08:00</p>
                   <p class="fw-bold">Lokasi</p>
                   <p>Tabing Pauh. Kamang Mudik Agam</p>
                   <a href="https://maps.app.goo.gl/r4ZqUMrAXUdvDvjV6" target="_blank"><i class="bi bi-geo-alt-fill me-2"></i>Google Map</a>
@@ -200,7 +232,7 @@
           </div>
           <div class="row justify-content-center text-center mt-4">
             <div class="col-lg-7 col-11">
-              <div class="resepsi py-4" data-aos="fade-left" data-aos-duration="3000">
+              <div class="resepsi py-4" data-aos="fade-up" data-aos-duration="3000">
                 <div class="content">
                   <h3>Resepsi</h3>
                   <div class="waktu">
@@ -216,7 +248,7 @@
 
                     <p>Desember</p>
                   </div>
-                  <p class="jam fw-bold"><i class="bi bi-alarm-fill me-2"></i>08:00 - 18:00</p>
+                  <p class="jam fw-bold"><i class="bi bi-alarm-fill me-2"></i>08:00 samapi 18:00</p>
                   <p class="fw-bold">Lokasi</p>
                   <p>Tabing Pauh. Kamang Mudik Agam</p>
                   <a href="https://maps.app.goo.gl/r4ZqUMrAXUdvDvjV6" target="_blank"><i class="bi bi-geo-alt-fill me-2"></i>Google Map</a>
@@ -226,12 +258,12 @@
           </div>
           <div class="row justify-content-center text-center mt-4">
             <div class="col-lg-7 col-11">
-              <div class="live-streaming py-4" data-aos="zoom-in" data-aos-duration="3000">
+              <div class="live-streaming py-4" data-aos="fade-up" data-aos-duration="3000">
                 <div class="content px-5">
                   <h3 class="mb-5">Live Streaming</h3>
                   <p>Temui kami secara virtual untuk menyaksikan acara pernikahan kami yang insyaaAllah akan disiarkan langsung melalui link dibawah ini.</p>
 
-                  <a href=""><i class="bi bi-camera-video-fill me-2"></i>Lihat Live Streaming</a>
+                  <a href=""><i class="bi bi-camera-video-fill me-2"></i> Live Streaming</a>
                 </div>
               </div>
             </div>
@@ -240,33 +272,38 @@
       </section>
       <section class="love-story" id="love-story">
         <div class="floral-wrapper">
-          <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
+          <div class="bottom-satu" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-satu.png" alt="" class="img-fluid" width="400" />
           </div>
 
-          <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
+          <div class="bottom-dua" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-dua.png" alt="" class="img-fluid" width="400" />
+          </div>
+          <div class="bottom-tiga" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-tiga.png" alt="" class="img-fluid" width="400" />
+          </div>
+          <div class="bottom-empat" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-empat.png" alt="" class="img-fluid" width="400" />
           </div>
         </div>
 
         <div class="container content">
           <div class="row justify-content-center text-center mb-5">
-            <div class="col-lg-6 px-5" data-aos="zoom-in" data-aos-duration="3000">
-              <h2>Our Love Story</h2>
-              <p>Perjalanan cinta kami dari awal bertemu hingga menuju hari bahagia.</p>
+            <div class="col-lg-6 px-5">
+              <h2 data-aos="fade-left" data-aos-duration="3000">Our Love Story</h2>
+              <p data-aos="fade-right" data-aos-duration="3000">Perjalanan cinta kami dari awal bertemu hingga menuju hari bahagia.</p>
             </div>
           </div>
 
           <div class="row justify-content-center">
             <div class="col-lg-8 col-12">
               <div class="timeline">
-                <!-- Item 1 -->
                 <div class="timeline-item">
                   <div class="timeline-dot"><i class="bi bi-heart-fill"></i></div>
-                  <div class="timeline-content" data-aos="fade-left" data-aos-duration="2000">
+                  <div class="timeline-content" data-aos="fade-left" data-aos-duration="3000">
                     <div class="speech-buble"></div>
                     <div class="image">
-                      <img src="image/4.jpg" alt="First Meet" class="img-fluid" />
+                      <img src="image/6.jpg" alt="First Meet" class="img-fluid" />
                     </div>
                     <div class="text">
                       <h4>First Meet</h4>
@@ -277,12 +314,13 @@
                 </div>
 
                 <!-- Item 2 -->
+
                 <div class="timeline-item">
                   <div class="timeline-dot"><i class="bi bi-heart-fill"></i></div>
-                  <div class="timeline-content" data-aos="fade-left" data-aos-duration="2000">
+                  <div class="timeline-content" data-aos="fade-left" data-aos-duration="3000">
                     <div class="speech-buble"></div>
                     <div class="image">
-                      <img src="image/2.jpg" alt="Relationship" class="img-fluid" />
+                      <img src="image/7.jpg" alt="Relationship" class="img-fluid" />
                     </div>
                     <div class="text">
                       <h4>In a Relationship</h4>
@@ -296,10 +334,10 @@
 
                 <div class="timeline-item">
                   <div class="timeline-dot"><i class="bi bi-heart-fill"></i></div>
-                  <div class="timeline-content" data-aos="fade-left" data-aos-duration="2000">
+                  <div class="timeline-content" data-aos="fade-left" data-aos-duration="3000">
                     <div class="speech-buble"></div>
                     <div class="image">
-                      <img src="image/3.jpg" alt="Engagement" class="img-fluid" />
+                      <img src="image/8.jpg" alt="Engagement" class="img-fluid" />
                     </div>
                     <div class="text">
                       <h4>Engagement</h4>
@@ -309,69 +347,65 @@
                   </div>
                 </div>
               </div>
+              <!-- Item 1 -->
             </div>
           </div>
         </div>
       </section>
-
       <section class="galery" id="galery">
-        <div class="floral-wrapper">
-          <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
-          </div>
-
-          <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
-          </div>
-        </div>
-        <div class="content">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-7 col-12 text-center">
-                <div class="header" data-aos="fade-left" data-aos-duration="2000"><h3>Our Moment</h3></div>
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-6 col-12">
+              <div class="header mb-4" data-aos="fade-left" data-aos-duration="3000">
+                <h3>Our Moments</h3>
               </div>
-            </div>
-            <div class="row justify-content-center mb-5">
-              <div class="col-lg-7 col-12 text-center ratio ratio-16x9 mb-5">
-                <iframe src="https://www.youtube.com/embed/I7JK2itPR6U" title="YouTube video"> </iframe>
+              <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="image/6.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/7.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/8.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/9.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item active">
+                    <img src="image/6.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/7.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/8.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="image/9.jpg" class="d-block w-100" alt="..." />
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/2.jpg"><img src="image/2.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/3.jpg"><img src="image/3.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/4.jpg"><img src="image/4.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/5.jpg"><img src="image/5.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/2.jpg"><img src="image/2.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/3.jpg"><img src="image/3.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/4.jpg"><img src="image/4.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/5.jpg"><img src="image/5.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/2.jpg"><img src="image/2.jpg" alt="" class="img-fluid" /></a>
-              </div>
-              <div class="col-lg-4 col-6 mt-2 g-0 px-1" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/3.jpg"><img src="image/3.jpg" alt="" class="img-fluid" /></a>
-              </div>
-            </div>
-
-            <div class="row justify-content-center mt-1 satu" data-aos="zoom-in" data-aos-duration="2000">
-              <div class="col-12 text-center g-0" data-aos="zoom-in" data-aos-duration="2000">
-                <a href="image/2.jpg"><img src="image/2.jpg" alt="" class="img-fluid" width="100%" /></a>
+              <div class="thumb-wrapper mt-3">
+                <div class="thumb-track">
+                  <img src="image/6.jpg" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" />
+                  <img src="image/7.jpg" data-bs-target="#carouselExample" data-bs-slide-to="1" />
+                  <img src="image/8.jpg" data-bs-target="#carouselExample" data-bs-slide-to="2" />
+                  <img src="image/9.jpg" data-bs-target="#carouselExample" data-bs-slide-to="3" />
+                  <img src="image/6.jpg" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" />
+                  <img src="image/7.jpg" data-bs-target="#carouselExample" data-bs-slide-to="1" />
+                  <img src="image/8.jpg" data-bs-target="#carouselExample" data-bs-slide-to="2" />
+                  <img src="image/9.jpg" data-bs-target="#carouselExample" data-bs-slide-to="3" />
+                </div>
               </div>
             </div>
           </div>
@@ -390,14 +424,14 @@
         </div>
         <div class="container text-center">
           <p class="d-inline-flex gap-1 text-center tombol">
-            <button class="btn" style="background-color: #982598; color: white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="background-color: #740a03">
               <i class="bi bi-play-btn me-1"></i>Klik di sini
             </button>
           </p>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
-              <div class="row justify-content-center py-5 rek">
-                <div class="col">
+              <div class="row justify-content-center rek">
+                <div class="col -lg-6 col-10">
                   <div class="bri">
                     <div>
                       <span>No Rekening <br />1234567890</span> <br />
@@ -414,11 +448,13 @@
                       <a href="#" class="btn btn-sm copy-btn" data-copy="1234567890"> <i class="bi bi-copy me-1"></i>Salin </a>
                     </div>
                   </div>
-                  <div class="line"></div>
+                  <!-- <div class="line"></div> -->
                 </div>
               </div>
-              <div class="row justify-content-center py-5 rek">
-                <div class="col">
+            </div>
+            <div class="card card-body">
+              <div class="row justify-content-center rek">
+                <div class="col -lg-6 col-10">
                   <div class="bri">
                     <div>
                       <span>No Rekening <br />1234567890</span> <br />
@@ -435,11 +471,13 @@
                       <a href="#" class="btn btn-sm copy-btn" data-copy="1234567890"> <i class="bi bi-copy me-1"></i>Salin </a>
                     </div>
                   </div>
-                  <div class="line"></div>
+                  <!-- <div class="line"></div> -->
                 </div>
               </div>
-              <div class="row justify-content-center py-5 rek">
-                <div class="col">
+            </div>
+            <div class="card card-body">
+              <div class="row justify-content-center rek">
+                <div class="col-lg-6 col-10">
                   <div class="bri">
                     <div>
                       <span class="fw-bold">Nama Penerima <br />Amri <br />Wa. 085272908546</span> <br />
@@ -453,27 +491,30 @@
                       <span>Alamat Penerima <br />Jorong Tabiang Pauh. Nagari Pauh Kamang Mudik. Kamang magek Agam</span>
                     </div>
                     <div>
-                      <a href="#" class="btn btn-sm copy-btn" data-copy="Jorong Tabiang Pauh. Nagari Pauh Kamang Mudik Agam"> <i class="bi bi-copy me-1"></i>Salin </a>
+                      <a href="#" class="btn btn-sm copy-btn" data-copy="Jorong Tabiang Pauh. Nagari Pauh Kamang Mudik. Kamang magek Agam"> <i class="bi bi-copy me-1"></i>Salin </a>
                     </div>
                   </div>
-                  <div class="line"></div>
-
-                  <a href="https://wa.me/6285272908546" class="btn btn-dark d-block mt-3" target="_blank"><i class="bi bi-whatsapp me-2"></i>Konfirmasi Transfer</a>
+                  <!-- <div class="line"></div> -->
                 </div>
               </div>
             </div>
+            <a href="https://wa.me/6285272908546" class="btn btn-light d-block mt-3" target="_blank"><i class="bi bi-whatsapp me-2"></i>Konfirmasi Transfer</a>
           </div>
         </div>
       </section>
-
       <section class="congrat" id="congrat">
         <div class="floral-wrapper">
-          <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
+          <div class="bottom-satu" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-satu.png" alt="" width="200px" />
           </div>
-
-          <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
+          <div class="bottom-dua" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-dua.png" alt="" width="200px" />
+          </div>
+          <div class="bottom-tiga" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-tiga.png" alt="" width="200px" />
+          </div>
+          <div class="bottom-empat" data-aos="fade-up" data-aos-duration="2000">
+            <img src="image/bottom-empat.png" alt="" width="200px" />
           </div>
         </div>
         <div class="container content">
@@ -487,14 +528,14 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-7 col-10">
-              <form>
+              <form action="" method="post">
                 <div class="mb-3">
                   <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
                 </div>
                 <div class="mb-3">
                   <textarea name="ucapan" id="ucapan" class="form-control">Ucapan</textarea>
                 </div>
-                <button type="submit" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
+                <button type="submit" name="kirim" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
               </form>
             </div>
           </div>
@@ -601,25 +642,30 @@
       </section>
       <section class="thankyou" id="thankyou">
         <div class="floral-wrapper">
-          <div class="bottom-left" data-aos="fade-up-right" data-aos-duration="2000">
-            <img src="image/bottom-left.png" alt="" width="400px" />
+          <div class="bottom-satu" data-aos="fade-up-right" data-aos-duration="2000">
+            <img src="image/bottom-satu.png" alt="" width="400px" />
           </div>
-
-          <div class="top-right" data-aos="fade-down-left" data-aos-duration="2000">
-            <img src="image/top-right.png" alt="" width="400px" />
+          <div class="bottom-dua" data-aos="fade-up-right" data-aos-duration="2000">
+            <img src="image/bottom-dua.png" alt="" width="400px" />
+          </div>
+          <div class="bottom-tiga" data-aos="fade-up-right" data-aos-duration="2000">
+            <img src="image/bottom-tiga.png" alt="" width="400px" />
+          </div>
+          <div class="bottom-empat" data-aos="fade-up-right" data-aos-duration="2000">
+            <img src="image/bottom-empat.png" alt="" width="400px" />
           </div>
         </div>
         <div class="container content">
           <div class="row justify-content-center">
             <div class="col-lg-7 col-11 text-center">
-              <img src="image/jumbo/1.png" alt="" class="img-fluid mb-5" data-aos="zoom-in" data-aos-duration="2500" />
+              <img src="image/6.jpg" alt="" class="img-fluid mb-5" data-aos="zoom-in" data-aos-duration="2500" />
               <h3>Terima Kasih</h3>
               <p style="font-family: Poppins; color: white" data-aos="zoom-in" data-aos-duration="2500">
                 Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu kepada kami.
               </p>
               <p style="font-family: Poppins; color: white; margin-top: 30px">Wassalamu’alaikum warahmatullahi wabarakatuh</p>
               <p style="font-family: Poppins; color: white; margin-top: 50px; text-transform: uppercase">kami yang berbahagia</p>
-              <p style="font-family: Ballet; color: white; margin-top: 50px" class="nama_pengantin">Amri <i class="bi bi-heart-fill me-3 ms-3"></i> Nikel</p>
+              <p style="font-family: Ballet; margin-top: 50px" class="nama_pengantin">Amri <i class="bi bi-heart-fill me-3 ms-3"></i> Nikel</p>
             </div>
           </div>
         </div>
@@ -644,7 +690,7 @@
       </footer>
       <div class="audio-icon" style="display: none">
         <audio class="song" loop>
-          <source src="../../asset/audio/song3.mp3" />
+          <source src="../../asset/audio/song2.mp3" />
         </audio>
         <div class="icon-wrapper">
           <i class="bi bi-disc-fill"></i>
@@ -652,6 +698,7 @@
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
     <!-- j-query cdn -->
     <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
 
@@ -659,7 +706,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        offset: 120,
+        offset: 100,
+      });
+    </script>
+
+    <!-- carousel thumbnail -->
+    <script>
+      const carousel = document.querySelector("#carouselExample");
+      const thumbs = document.querySelectorAll(".thumb-track img");
+
+      carousel.addEventListener("slide.bs.carousel", function (e) {
+        thumbs.forEach((img) => img.classList.remove("active"));
+        thumbs[e.to].classList.add("active");
       });
     </script>
 

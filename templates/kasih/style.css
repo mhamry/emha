@@ -121,6 +121,22 @@
 .landing-top button {
   background-color: black;
   color: #fff;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .landing-top .pengantin {
@@ -719,6 +735,34 @@
   font-weight: bold;
   border-radius: 8px;
   margin-top: 10px;
+}
+
+.rsvp #konfirmasi {
+  border-radius: 0;
+}
+
+.rsvp .kotak-rsvp {
+  height: 0;
+  background: #fff;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding: 0 20px;
+  -ms-overflow-style: none;
+  transition: all 2s ease-in-out;
+  opacity: 0;
+}
+.rsvp .kotak-rsvp.show {
+  height: 40vh;
+  opacity: 1;
+}
+
+.rsvp table thead {
+  position: sticky;
+  top: 0;
+}
+
+.rsvp table {
+  font-size: 12px;
 }
 
 /* congrat */

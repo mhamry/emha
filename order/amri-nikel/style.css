@@ -803,6 +803,10 @@
   top: 0;
 }
 
+.rsvp table {
+  font-size: 12px;
+}
+
 /* congrat */
 
 .congrat {

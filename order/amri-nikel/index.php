@@ -1,9 +1,58 @@
+
+<?php
+
+require_once "../../config.php";
+
+ if(isset($_POST['kirim_ucapan'])){
+
+    if(insert($_POST) > 0) {
+
+    header("Location: ?msg=berhasil#congrat");
+   
+    } else {
+    header("Location: ?msg=gagal#congrat");
+    }
+ }
+
+
+ if(isset($_POST['kirim_rsvp'])){
+
+    if(tambah($_POST) > 0) {
+
+    header("Location: ?msg=berhasil#rsvp");  
+    } else {
+     header("Location: ?msg=gagal#rsvp");
+    }
+    exit;
+    
+ }
+
+ if(isset($_GET['msg'])){
+  $msg = $_GET['msg'];
+
+ } else{
+  $msg = '';
+ }
+
+ $alert = '';
+
+ 
+
+$template_id = "amri-nikel";
+$ucapan = query("SELECT * FROM tbl_ucapan WHERE template_id='$template_id' ORDER BY id DESC");
+
+
+$reservations = query("SELECT * FROM tbl_rsvp WHERE template_id='$template_id' ORDER BY id DESC");
+
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kasih</title>
+    <title>Amri&Nikel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
     <!--Awal font -->
 
@@ -15,6 +64,9 @@
     />
 
     <!-- Akhir font -->
+      <!-- awal icon emha -->
+      <link rel="shortcut icon" href="../../asset/image/logo.png" type="image/x-icon" />
+     <!-- ahir icon emha -->
     <!-- awal css -->
     <link rel="stylesheet" href="style.css" />
     <!-- akhir css -->
@@ -42,12 +94,13 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <div class="bottom-right" data-aos="fade-left" data-aos-duration="3000">
-                <img src="image/bottom-right.png" alt="" width="150px" />
+              <div class="bottom-left">
+                <img src="image/bottom-left.png" alt="" />
               </div>
-              <div class="top-left" data-aos="fade-right" data-aos-duration="3000">
-                <img src="image/top-left.png" alt="" width="150px" />
+              <div class="top-right">
+                <img src="image/top-right.png" alt="" />
               </div>
+
               <h5>The Wedding of</h5>
               <h1>Amri & Nikel</h1>
               <div class="scroll-down">
@@ -65,6 +118,10 @@
                 <div class="atas" data-aos="fade-down" data-aos-duration="3000">
                   <h5>The Wedding of</h5>
                   <h1 class="pengantin">Amri & Nikel</h1>
+                </div>
+
+                <div class="image-wrapper">
+                  <img src="image/4.png" alt="" />
                 </div>
 
                 <div class="bawah" data-aos="fade-up" data-aos-duration="3000">
@@ -85,11 +142,11 @@
             <div class="container">
               <div class="row">
                 <div class="col">
-                  <div class="bottom-right">
-                    <img src="image/bottom-right.png" alt="" />
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" />
                   </div>
-                  <div class="top-left">
-                    <img src="image/top-left.png" alt="" />
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" />
                   </div>
                   <h5>The Wedding of</h5>
                   <div class="image-wrapper"></div>
@@ -125,11 +182,11 @@
             <div class="container">
               <div class="row justify-content-center text-center">
                 <div class="col">
-                  <div class="bottom-right" data-aos="fade-up-left" data-aos-duration="3000">
-                    <img src="image/bottom-right.png" alt="" width="200px" />
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" width="200px" />
                   </div>
-                  <div class="top-left" data-aos="fade-down-right" data-aos-duration="3000">
-                    <img src="image/top-left.png" alt="" width="200px" />
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" width="200px" />
                   </div>
                   <div class="content">
                     <h6 data-aos="fade-left" data-aos-duration="3000">Assalamu’alaikum Warahmatullahi Wabarakatuh</h6>
@@ -161,11 +218,11 @@
               <div class="row justify-content-center text-center">
                 <div class="col">
                   <div class="akad-nikah" data-aos="fade-left" data-aos-duration="3000">
-                    <div class="bottom-right">
-                      <img src="image/bottom-right.png" alt="" width="100px" />
+                    <div class="bottom-left">
+                      <img src="image/bottom-left.png" alt="" width="150px" />
                     </div>
-                    <div class="top-left">
-                      <img src="image/top-left.png" alt="" width="100px" />
+                    <div class="top-right">
+                      <img src="image/top-right.png" alt="" width="150px" />
                     </div>
                     <h4>Akad Nikah</h4>
                     <div class="kapan">
@@ -185,11 +242,11 @@
                     <a href="https://maps.app.goo.gl/L4fxyPvsZuLrPfbx8"><i class="bi bi-geo-alt me-1"></i>Lihat Lokasi</a>
                   </div>
                   <div class="resepsi mt-5" data-aos="fade-right" data-aos-duration="3000">
-                    <div class="bottom-right">
-                      <img src="image/bottom-right.png" alt="" width="100px" />
+                    <div class="bottom-left">
+                      <img src="image/bottom-left.png" alt="" width="150px" />
                     </div>
-                    <div class="top-left">
-                      <img src="image/top-left.png" alt="" width="100px" />
+                    <div class="top-right">
+                      <img src="image/top-right.png" alt="" width="150px" />
                     </div>
                     <h4>resepsi</h4>
                     <div class="kapan">
@@ -209,11 +266,11 @@
                     <a href="https://maps.app.goo.gl/L4fxyPvsZuLrPfbx8"><i class="bi bi-geo-alt me-1"></i>Lihat Lokasi</a>
                   </div>
                   <div class="streaming mt-5" data-aos="fade-left" data-aos-duration="3000">
-                    <div class="bottom-right">
-                      <img src="image/bottom-right.png" alt="" width="100px" />
+                    <div class="bottom-left">
+                      <img src="image/bottom-left.png" alt="" width="150px" />
                     </div>
-                    <div class="top-left">
-                      <img src="image/top-left.png" alt="" width="100px" />
+                    <div class="top-right">
+                      <img src="image/top-right.png" alt="" width="150px" />
                     </div>
                     <h4>Live Streaming</h4>
                     <p>Temui kami secara virtual untuk menyaksikan acara pernikahan kami yang insyaaAllah akan disiarkan langsung melalui link dibawah ini.</p>
@@ -224,11 +281,11 @@
             </div>
           </section>
           <section class="love-story" id="love-story">
-            <div class="bottom-right" data-aos="fade-up-left" data-aos-duration="3000">
-              <img src="image/bottom-right.png" alt="" width="200px" />
+            <div class="bottom-left">
+              <img src="image/bottom-left.png" alt="" width="200px" />
             </div>
-            <div class="top-left" data-aos="fade-down-right" data-aos-duration="3000">
-              <img src="image/top-left.png" alt="" width="200px" />
+            <div class="top-right">
+              <img src="image/top-right.png" alt="" width="200px" />
             </div>
             <div class="container content">
               <div class="row justify-content-center text-center mb-5">
@@ -356,11 +413,11 @@
             <div class="container">
               <div class="row justify-content-center text-center">
                 <div class="col">
-                  <div class="bottom-right" data-aos="fade-left" data-aos-duration="3000">
-                    <img src="image/bottom-right.png" alt="" width="150px" />
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" width="200px" />
                   </div>
-                  <div class="top-left" data-aos="fade-right" data-aos-duration="3000">
-                    <img src="image/top-left.png" alt="" width="150px" />
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" width="200px" />
                   </div>
                   <div class="header" data-aos="zoom-in" data-aos-duration="3000">
                     <h3>Wedding Gift</h3>
@@ -402,7 +459,7 @@
                     <div class="image-wrapper">
                       <i class="bi bi-gift"></i>
                     </div>
-                    <a href="#" class="btn btn-sm copy-btn" data-copy="Jln. Tabiang Pauh Kamang Mudik Agam"> <i class="bi bi-copy me-1"></i>Salin </a>
+                    <a href="#" class="btn btn-sm copy-btn" data-copy="Jln.Tabiang Pauh Kamang Mudik Agam"> <i class="bi bi-copy me-1"></i>Salin </a>
                   </div>
                 </div>
               </div>
@@ -417,8 +474,9 @@
                     <h2>RSVP</h2>
                   </div>
                   <p data-aos="fade-down" data-aos-duration="3000">Untuk membantu kami mempersiapkan segalanya dengan lebih baik, silakan konfirmasi kehadiran Anda melalui formulir RSVP berikut:</p>
-                </div>
-                <form action="">
+               
+                <form action="" method="post">
+                   <input type="hidden" name="template_id" value="amri-nikel">
                   <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" required />
@@ -448,8 +506,42 @@
                     </select>
                   </div>
 
-                  <button type="submit" class="btn btn-sm" name="kirim"><i class="bi bi-send me-1"></i>Kirim</button>
+                  <button type="submit" class="btn btn-sm" name="kirim_rsvp"><i class="bi bi-send me-1"></i>Kirim</button>
                 </form>
+
+                  <button type="button" class="btn btn-sm d-block w-100 mt-5" id="konfirmasi" style="background-color: #a82323; color:white; border-radius: 0;" ><i class="bi bi-eye me-2"></i>Lihat Konfirmasi Kehadiran</button>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col">
+                  <div class="kotak-rsvp"  style="background-color: aliceblue;"> 
+                  
+                       <table class="table table-striped responsive">
+                      <thead>
+                        <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Ket</th>
+                        <th style="text-align: center;">Jumlah</th>
+                        </tr> 
+                      </thead>
+                      <tbody>
+                        <?php  
+                        $no = 1; 
+                        foreach($reservations as $reservation)
+                        :?>
+                         
+                        <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $reservation["nama"]?></td>
+                        <td><?= $reservation["kehadiran"]?></td>
+                        <td style="text-align: center;"><?= $reservation["jumlahtamu"]?></td>
+                      </tr>
+                      <?php endforeach; ?>
+                      </tbody>   
+                    </table>
+                    </div>                    
+                </div>
               </div>
             </div>
           </section>
@@ -466,56 +558,35 @@
               </div>
               <div class="row justify-content-center">
                 <div class="col">
-                  <form>
+                  <form action="" method="post">
+                    <input type="hidden" name="template_id" value="amri-nikel">
                     <div class="mb-3">
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required/>
                     </div>
                     <div class="mb-3">
-                      <textarea name="ucapan" id="ucapan" class="form-control">Ucapan</textarea>
+                      <textarea name="ucapan" id="ucapan" class="form-control" maxlength="100" autocomplete="off" required>Ucapan</textarea>
                     </div>
-                    <button type="submit" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
+                    <button type="submit" name="kirim_ucapan" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
                   </form>
                 </div>
               </div>
               <div class="row justify-content-center">
                 <div class="col">
                   <div class="kotak-pesan">
+
+                  <?php foreach ($ucapan as $u): ?>
                     <div class="text-pesan">
                       <div class="icon">
                         <i class="bi bi-hearts"></i>
                       </div>
                       <div>
-                        <p class="nama">Nikel</p>
-                        <p>Undangannya bagus banget..❤️❤️</p>
+                        <p class="nama"><?= $u["nama"] ?></p>
+                        <p><?= $u["ucapan"] ?></p>
                       </div>
                     </div>
-                    <div class="text-pesan">
-                      <div class="icon">
-                        <i class="bi bi-hearts"></i>
-                      </div>
-                      <div>
-                        <p class="nama">No Name</p>
-                        <p>Desain undangannya keren abisss👍👍</p>
-                      </div>
-                    </div>
-                    <div class="text-pesan">
-                      <div class="icon">
-                        <i class="bi bi-hearts"></i>
-                      </div>
-                      <div>
-                        <p class="nama">Amri</p>
-                        <p>Selamat menempuh hidup baru</p>
-                      </div>
-                    </div>
-                    <div class="text-pesan">
-                      <div class="icon">
-                        <i class="bi bi-hearts"></i>
-                      </div>
-                      <div>
-                        <p class="nama">Icung</p>
-                        <p>Selamat menempuh hidup baru</p>
-                      </div>
-                    </div>
+
+                    <?php endforeach; ?>
+                   
                   </div>
                 </div>
               </div>
@@ -526,20 +597,20 @@
             <div class="container">
               <div class="row justify-content-center text-center">
                 <div class="col">
-                  <div class="bottom-right" data-aos="fade-left" data-aos-duration="3000">
-                    <img src="image/bottom-right.png" alt="" width="150px" />
+                  <div class="bottom-left">
+                    <img src="image/bottom-left.png" alt="" width="200px" />
                   </div>
-                  <div class="top-left" data-aos="fade-right" data-aos-duration="3000">
-                    <img src="image/top-left.png" alt="" width="150px" />
+                  <div class="top-right">
+                    <img src="image/top-right.png" alt="" width="200px" />
                   </div>
                   <div class="line"></div>
                   <h3 data-aos="fade-down" data-aos-duration="3000">Terima Kasih</h3>
-                  <p style="font-family: Poppins; color: #280905" data-aos="fade-down" data-aos-duration="3000">
+                  <p style="font-family: Poppins; color: #a82323" data-aos="fade-down" data-aos-duration="3000">
                     Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu kepada kami.
                   </p>
-                  <p style="font-family: Poppins; color: #280905; margin-top: 30px" data-aos="fade-down" data-aos-duration="3000">Wassalamu’alaikum warahmatullahi wabarakatuh</p>
-                  <p style="font-family: Poppins; color: #280905; margin-top: 50px; text-transform: uppercase">kami yang berbahagia</p>
-                  <p style="font-family: Ballet; color: #280905; margin-top: 50px" class="nama_pengantin">Amri <i class="bi bi-heart-fill me-3 ms-3"></i> Nikel</p>
+                  <p style="font-family: Poppins; color: #a82323; margin-top: 30px" data-aos="fade-down" data-aos-duration="3000">Wassalamu’alaikum warahmatullahi wabarakatuh</p>
+                  <p style="font-family: Poppins; color: #a82323; margin-top: 50px; text-transform: uppercase">kami yang berbahagia</p>
+                  <p style="font-family: Ballet; color: #a82323; margin-top: 50px" class="nama_pengantin">Amri <i class="bi bi-heart-fill me-3 ms-3"></i> Nikel</p>
                 </div>
               </div>
             </div>
@@ -583,10 +654,39 @@
         </section>
       </div>
     </main>
+
+    <!-- awal toast alert -->
+     <div class="toast-container position-fixed top-0 end-0 p-3">
+        <?php if($msg == 'berhasil'): ?>
+        <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert">
+          <div class="d-flex">
+            <div class="toast-body">
+              ✅ Pesan berhasil dikirim
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if($msg == 'gagal'): ?>
+        <div id="liveToast" class="toast align-items-center text-bg-danger border-0" role="alert">
+          <div class="d-flex">
+            <div class="toast-body">
+              ❌ Pesan gagal dikirim
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+          </div>
+        </div>
+        <?php endif; ?>
+
+      </div>
+     <!-- ahir toast alert -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <!-- j-query cdn -->
     <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    
 
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -601,6 +701,21 @@
         AOS.refresh();
       });
     </script>
+
+     <!-- scrip toast alert -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const toastEl = document.getElementById('liveToast');
+          if (toastEl) {
+            const toast = new bootstrap.Toast(toastEl, {
+              delay: 3000 // 3 detik hilang
+            });
+            toast.show();
+          }
+        });
+      </script>
+
+
 
     <script src="script.js"></script>
   </body>

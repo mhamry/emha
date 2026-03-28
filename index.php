@@ -117,7 +117,7 @@
               <div class="card-body">
                 <h5 class="card-title">Romantis99</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/romantis99/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/romantis99/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Romantis99" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -128,7 +128,7 @@
               <div class="card-body">
                 <h5 class="card-title">Asmara02</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/asmara/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/asmara/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Asmara02" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -139,7 +139,7 @@
               <div class="card-body">
                 <h5 class="card-title">Setia100</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/setia/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/setia/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Setia100" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -150,7 +150,7 @@
               <div class="card-body">
                 <h5 class="card-title">Rindu05</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/rindu/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/rindu/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Rindu05" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -161,7 +161,7 @@
               <div class="card-body">
                 <h5 class="card-title">Sayang100</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/sayang/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/sayang/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Sayang100" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -172,7 +172,7 @@
               <div class="card-body">
                 <h5 class="card-title">Carano01</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/carano/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/carano/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Carano01" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -183,7 +183,7 @@
               <div class="card-body">
                 <h5 class="card-title">Bahagia02</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/bahagia/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/bahagia/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Bahagia02" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -195,7 +195,7 @@
               <div class="card-body">
                 <h5 class="card-title">Kasmaran</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/kasmaran/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/kasmaran/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Kasmaran" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -206,7 +206,7 @@
               <div class="card-body">
                 <h5 class="card-title">Hasrat66</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/hasrat/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/hasrat/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Hasrat66" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -217,7 +217,7 @@
               <div class="card-body">
                 <h5 class="card-title">Kasih66</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/kasih/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/kasih/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Kasih66" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -228,7 +228,7 @@
               <div class="card-body">
                 <h5 class="card-title">Kangen99</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/kangen/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/kangen/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Kangen99" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>
@@ -239,7 +239,7 @@
               <div class="card-body">
                 <h5 class="card-title">Manja01</h5>
                 <p class="card-text">Rp:75.000.</p>
-                <a href="templates/manja/index.html" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
+                <a href="templates/manja/index.php" class="btn btn-dark btn-sm"><i class="bi bi-eye-fill me-2"></i>Preview</a>
                 <a href="#" class="btn btn-dark btn-sm pesan-btn" data-template="Manja01" data-harga="Rp.75.000"><i class="bi bi-cart-fill me-2"></i>Pesan</a>
               </div>
             </div>

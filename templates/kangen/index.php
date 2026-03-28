@@ -15,6 +15,9 @@
     />
 
     <!-- Akhir font -->
+      <!-- awal icon emha -->
+      <link rel="shortcut icon" href="../../asset/image/logo.png" type="image/x-icon" />
+     <!-- ahir icon emha -->
     <!-- awal css -->
     <link rel="stylesheet" href="style.css" />
     <!-- akhir css -->
@@ -63,7 +66,7 @@
                   <h4 class="undangan"></h4>
 
                   <p class="maaf">Maaf jika ada kesalahan dalam penulisan nama/gelar</p>
-                  <button class="btn btn-sm btn-light" id="btnOpen" style="background: transparent; color: white"><i class="bi bi-book me-1"></i>Buka Undangan</button>
+                  <button class="btn btn-sm btn-light" id="btnOpen"><i class="bi bi-book me-1"></i>Buka Undangan</button>
                 </div>
               </div>
             </div>
@@ -350,14 +353,14 @@
               </div>
               <div class="row justify-content-center">
                 <div class="col">
-                  <form>
+                  <form action="" method="post">
                     <div class="mb-3">
                       <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
                     </div>
                     <div class="mb-3">
                       <textarea name="ucapan" id="ucapan" class="form-control">Ucapan</textarea>
                     </div>
-                    <button type="submit" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
+                    <button type="submit" name="kirim" class="btn btn-dark"><i class="bi bi-send me-2"></i>Kirim</button>
                   </form>
                 </div>
               </div>
